@@ -264,6 +264,26 @@ const App = (() => {
     document.getElementById("btnLegend").addEventListener("click", () =>
       document.getElementById("legend").classList.toggle("open"));
 
+    // ---- Theme toggle (light <-> dark). Dark is default; preference is
+    // persisted via localStorage when the host allows it. -----------------
+    const themeBtn = document.getElementById("btnTheme");
+    function applyThemeIcon() {
+      const t = document.documentElement.getAttribute("data-theme") || "dark";
+      if (!themeBtn) return;
+      // crescent ☾ when in dark (offers to switch to light),
+      // sun ☀ when in light (offers to switch to dark)
+      themeBtn.querySelector(".icon").textContent = (t === "dark") ? "\u263E" : "\u2600";
+      themeBtn.setAttribute("title", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+    applyThemeIcon();
+    if (themeBtn) themeBtn.addEventListener("click", () => {
+      const cur = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = cur === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("apac-theme", next); } catch (e) { /* sandbox */ }
+      applyThemeIcon();
+    });
+
     // mobile filter drawer toggle
     const fbToggle = document.getElementById("btnFilters");
     if (fbToggle) fbToggle.addEventListener("click", () =>
