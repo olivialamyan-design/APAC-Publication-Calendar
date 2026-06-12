@@ -1,0 +1,1100 @@
+[
+  {
+    "id": "gl-apac-investment-quarterly-q1-2026-d99b0c",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Investment Quarterly Q1 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2025-08-12",
+    "team": "APAC Research",
+    "notes": "Cross-border capital flows into APAC; dry powder and cap-rate trajectory.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "gl-apac-logistics-outlook-h2-2026-11eff1",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Logistics Outlook H2 2026",
+    "asset_class": [
+      "Logistics",
+      "Industrial"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2026-10-20",
+    "team": "APAC Research",
+    "notes": "Supply pipeline vs. occupier demand across core APAC logistics hubs.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "gl-apac-data-centres-spotlight-2026-1a1c32",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Data Centres Spotlight 2026",
+    "asset_class": [
+      "Data Centres"
+    ],
+    "publication_type": "White Papers",
+    "language": "English",
+    "expected_publication_date": "2026-08-08",
+    "team": "APAC Research",
+    "notes": "Power availability and hyperscaler demand mapped across APAC submarkets.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "gl-apac-prime-office-index-q3-2026-5e0dcc",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Prime Office Index Q3 2026",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-12-18",
+    "team": "APAC Research",
+    "notes": "Prime rents and incentives across 20 APAC office markets.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "gl-apac-living-sectors-outlook-2027-4bd126",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Living Sectors Outlook 2027",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2027-03-10",
+    "team": "APAC Research",
+    "notes": "Multifamily, BTR and student housing momentum across the region.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ja-tokyo-office-briefing-q4-2025-e29592",
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "publication_name": "Tokyo Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-02-09",
+    "team": "Japan Research",
+    "notes": "Grade A vacancy tightening in the central five wards.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ja-tokyo-retail-market-spotlight-ed7c9b",
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "publication_name": "Tokyo Retail Market Spotlight",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Japanese",
+    "expected_publication_date": "2026-05-22",
+    "team": "Japan Research",
+    "notes": "Ginza and Omotesando prime rents and tourist spend recovery.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ja-osaka-logistics-briefing-h1-2026-b1a102",
+    "country": "Japan",
+    "city_state": "Osaka",
+    "publication_name": "Osaka Logistics Briefing H1 2026",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-07-14",
+    "team": "Japan Research",
+    "notes": "Kansai logistics supply wave and rent resilience.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ja-japan-capital-markets-outlook-2026-6a3c0b",
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "publication_name": "Japan Capital Markets Outlook 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "Japanese",
+    "expected_publication_date": "2026-09-05",
+    "team": "Japan Research",
+    "notes": "J-REIT activity and inbound investment appetite.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ja-tokyo-hotels-recovery-tracker-65d09b",
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "publication_name": "Tokyo Hotels Recovery Tracker",
+    "asset_class": [
+      "Hotels"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-01-16",
+    "team": "Japan Research",
+    "notes": "RevPAR vs. pre-pandemic and pipeline of luxury openings.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ch-shanghai-office-briefing-q3-2025-4f2203",
+    "country": "China",
+    "city_state": "Shanghai",
+    "publication_name": "Shanghai Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "Chinese (Simplified)",
+    "expected_publication_date": "2025-12-11",
+    "team": "China Research",
+    "notes": "Decentralisation of demand and rising vacancy in core CBD.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ch-beijing-retail-update-h2-2025-f8843f",
+    "country": "China",
+    "city_state": "Beijing",
+    "publication_name": "Beijing Retail Update H2 2025",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Chinese (Simplified)",
+    "expected_publication_date": "2026-03-19",
+    "team": "China Research",
+    "notes": "Consumption sentiment and prime mall performance.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ch-china-logistics-outlook-2026-ee2129",
+    "country": "China",
+    "city_state": "Shanghai",
+    "publication_name": "China Logistics Outlook 2026",
+    "asset_class": [
+      "Logistics",
+      "Industrial"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-08-07",
+    "team": "China Research",
+    "notes": "E-commerce normalisation and Tier 1 warehouse rents.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ch-shenzhen-capital-markets-spotlight-a1e60b",
+    "country": "China",
+    "city_state": "Shenzhen",
+    "publication_name": "Shenzhen Capital Markets Spotlight",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2026-11-21",
+    "team": "China Research",
+    "notes": "Distressed opportunities and domestic buyer dominance.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ch-guangzhou-mixed-use-briefing-087189",
+    "country": "China",
+    "city_state": "Guangzhou",
+    "publication_name": "Guangzhou Mixed Use Briefing",
+    "asset_class": [
+      "Mixed Use",
+      "Retail"
+    ],
+    "publication_type": "Market Reports",
+    "language": "Chinese (Simplified)",
+    "expected_publication_date": "2027-02-13",
+    "team": "China Research",
+    "notes": "Integrated developments and footfall trends.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "th-bangkok-office-briefing-q4-2025-08c552",
+    "country": "Thailand",
+    "city_state": "Bangkok",
+    "publication_name": "Bangkok Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-01-10",
+    "team": "Thailand Research",
+    "notes": "Flight to quality as new green-certified supply completes.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "th-bangkok-condominium-update-940c35",
+    "country": "Thailand",
+    "city_state": "Bangkok",
+    "publication_name": "Bangkok Condominium Update",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Thai",
+    "expected_publication_date": "2026-04-17",
+    "team": "Thailand Research",
+    "notes": "Foreign demand quota and luxury launch pipeline.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "th-phuket-hotels-spotlight-2026-1b5271",
+    "country": "Thailand",
+    "city_state": "Phuket",
+    "publication_name": "Phuket Hotels Spotlight 2026",
+    "asset_class": [
+      "Hotels"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2026-09-24",
+    "team": "Thailand Research",
+    "notes": "Branded residences and resort investment momentum.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "th-thailand-logistics-briefing-h2-2026-ca2f81",
+    "country": "Thailand",
+    "city_state": "Bangkok",
+    "publication_name": "Thailand Logistics Briefing H2 2026",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-12-09",
+    "team": "Thailand Research",
+    "notes": "EEC corridor demand and built-to-suit activity.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-office-briefing-q3-2025-31dc64",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2025-11-12",
+    "team": "HK Research",
+    "notes": "Central rents stabilising amid elevated availability.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-retail-spotlight-7675dc",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Retail Spotlight",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Chinese (Traditional)",
+    "expected_publication_date": "2026-05-26",
+    "team": "HK Research",
+    "notes": "Mainland visitor recovery and high-street rent reset.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-capital-markets-outlook-2026-b572a2",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Capital Markets Outlook 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-08-15",
+    "team": "HK Research",
+    "notes": "Repricing of commercial assets and family-office activity.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-office-briefing-q3-2026-7fccb3",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Office Briefing Q3 2026",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-12-12",
+    "team": "HK Research",
+    "notes": "Forward view on Kowloon East absorption.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-living-sectors-blog-e1744d",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Living Sectors Blog",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-03-08",
+    "team": "HK Research",
+    "notes": "Co-living and rental housing demand drivers.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "si-singapore-office-briefing-q4-2025-2f0ee8",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-02-14",
+    "team": "Singapore Research",
+    "notes": "CBD Grade A rents and flight-to-green dynamics.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "si-singapore-industrial-update-h2-2025-f6ffe2",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Industrial Update H2 2025",
+    "asset_class": [
+      "Industrial",
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-04-20",
+    "team": "Singapore Research",
+    "notes": "Business park demand and prime logistics rents.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "si-singapore-capital-markets-outlook-2026-960ced",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Capital Markets Outlook 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-07-09",
+    "team": "Singapore Research",
+    "notes": "REIT M&A and big-ticket transaction pipeline.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "si-singapore-data-centres-briefing-0ee29b",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Data Centres Briefing",
+    "asset_class": [
+      "Data Centres"
+    ],
+    "publication_type": "White Papers",
+    "language": "English",
+    "expected_publication_date": "2026-11-18",
+    "team": "Singapore Research",
+    "notes": "Moratorium easing and green DC capacity awards.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "si-singapore-residential-spotlight-2026-c4c0c4",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Residential Spotlight 2026",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2027-02-11",
+    "team": "Singapore Research",
+    "notes": "Cooling measures impact and prime non-landed demand.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "vi-hcmc-office-briefing-q3-2025-591087",
+    "country": "Vietnam",
+    "city_state": "Ho Chi Minh City",
+    "publication_name": "HCMC Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2025-12-13",
+    "team": "Vietnam Research",
+    "notes": "Grade A supply surge in Thu Thiem.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "vi-hanoi-residential-update-255115",
+    "country": "Vietnam",
+    "city_state": "Hanoi",
+    "publication_name": "Hanoi Residential Update",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Vietnamese",
+    "expected_publication_date": "2026-05-21",
+    "team": "Vietnam Research",
+    "notes": "Primary launch absorption and pricing.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "vi-vietnam-industrial-outlook-2026-8ee775",
+    "country": "Vietnam",
+    "city_state": "Ho Chi Minh City",
+    "publication_name": "Vietnam Industrial Outlook 2026",
+    "asset_class": [
+      "Industrial",
+      "Logistics"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-09-16",
+    "team": "Vietnam Research",
+    "notes": "FDI-driven factory demand across northern provinces.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "vi-da-nang-hotels-spotlight-02ef7d",
+    "country": "Vietnam",
+    "city_state": "Da Nang",
+    "publication_name": "Da Nang Hotels Spotlight",
+    "asset_class": [
+      "Hotels"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-01-07",
+    "team": "Vietnam Research",
+    "notes": "Coastal resort pipeline and tourism rebound.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ph-manila-office-briefing-q4-2025-c20026",
+    "country": "Philippines",
+    "city_state": "Manila",
+    "publication_name": "Manila Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-03-12",
+    "team": "Philippines Research",
+    "notes": "BPO and POGO vacancy overhang in Metro Manila.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ph-metro-manila-residential-update-56e9d1",
+    "country": "Philippines",
+    "city_state": "Manila",
+    "publication_name": "Metro Manila Residential Update",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-05-24",
+    "team": "Philippines Research",
+    "notes": "Pre-selling condo demand and end-user shift.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ph-cebu-industrial-briefing-2026-1f3491",
+    "country": "Philippines",
+    "city_state": "Cebu",
+    "publication_name": "Cebu Industrial Briefing 2026",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-10-15",
+    "team": "Philippines Research",
+    "notes": "Manufacturing and logistics demand in VisMin.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ph-philippines-capital-markets-blog-35bd02",
+    "country": "Philippines",
+    "city_state": "Manila",
+    "publication_name": "Philippines Capital Markets Blog",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-02-09",
+    "team": "Philippines Research",
+    "notes": "Investor appetite for income-producing assets.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ma-kl-office-briefing-q3-2025-47d666",
+    "country": "Malaysia",
+    "city_state": "Kuala Lumpur",
+    "publication_name": "KL Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-01-11",
+    "team": "Malaysia Research",
+    "notes": "Oversupply persists; tenant-favourable conditions.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ma-kl-retail-update-h2-2025-2a87f3",
+    "country": "Malaysia",
+    "city_state": "Kuala Lumpur",
+    "publication_name": "KL Retail Update H2 2025",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Bahasa Malaysia",
+    "expected_publication_date": "2026-04-18",
+    "team": "Malaysia Research",
+    "notes": "Mall occupancy and consumer spending trends.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ma-johor-industrial-outlook-2026-d77a8b",
+    "country": "Malaysia",
+    "city_state": "Johor",
+    "publication_name": "Johor Industrial Outlook 2026",
+    "asset_class": [
+      "Industrial",
+      "Data Centres"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2026-09-22",
+    "team": "Malaysia Research",
+    "notes": "JS-SEZ momentum and data centre cluster formation.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ma-penang-logistics-briefing-1774eb",
+    "country": "Malaysia",
+    "city_state": "Penang",
+    "publication_name": "Penang Logistics Briefing",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2027-01-14",
+    "team": "Malaysia Research",
+    "notes": "Semiconductor supply chain warehouse demand.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "so-seoul-office-briefing-q4-2025-1c4c18",
+    "country": "South Korea",
+    "city_state": "Seoul",
+    "publication_name": "Seoul Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-02-13",
+    "team": "Korea Research",
+    "notes": "Record-low vacancy in CBD, GBD and YBD.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "so-seoul-logistics-update-h2-2025-297261",
+    "country": "South Korea",
+    "city_state": "Seoul",
+    "publication_name": "Seoul Logistics Update H2 2025",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Korean",
+    "expected_publication_date": "2026-05-25",
+    "team": "Korea Research",
+    "notes": "Cold-storage oversupply and rent correction.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "so-korea-capital-markets-outlook-2026-d05ebf",
+    "country": "South Korea",
+    "city_state": "Seoul",
+    "publication_name": "Korea Capital Markets Outlook 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-08-17",
+    "team": "Korea Research",
+    "notes": "Office trading volumes and overseas allocations.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "so-seoul-data-centres-spotlight-88dd5e",
+    "country": "South Korea",
+    "city_state": "Seoul",
+    "publication_name": "Seoul Data Centres Spotlight",
+    "asset_class": [
+      "Data Centres"
+    ],
+    "publication_type": "White Papers",
+    "language": "English",
+    "expected_publication_date": "2026-12-10",
+    "team": "Korea Research",
+    "notes": "Power constraints in greater Seoul DC market.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ta-taipei-office-briefing-q3-2025-ec578a",
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "Chinese (Traditional)",
+    "expected_publication_date": "2025-12-12",
+    "team": "Taiwan Research",
+    "notes": "Owner-occupier demand and limited prime stock.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ta-taiwan-industrial-update-f84825",
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taiwan Industrial Update",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Chinese (Traditional)",
+    "expected_publication_date": "2026-04-19",
+    "team": "Taiwan Research",
+    "notes": "Semiconductor capex and factory land demand.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "ta-taiwan-capital-markets-briefing-2026-3ba30f",
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taiwan Capital Markets Briefing 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-10-08",
+    "team": "Taiwan Research",
+    "notes": "Insurer and corporate buying activity.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ta-taichung-logistics-blog-b0609d",
+    "country": "Taiwan",
+    "city_state": "Taichung",
+    "publication_name": "Taichung Logistics Blog",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-02-15",
+    "team": "Taiwan Research",
+    "notes": "Central Taiwan distribution hub growth.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "au-sydney-office-briefing-q4-2025-0ff56c",
+    "country": "Australia",
+    "city_state": "Sydney",
+    "publication_name": "Sydney Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-03-14",
+    "team": "Australia Research",
+    "notes": "Prime-secondary rent divergence in the CBD.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "au-melbourne-industrial-update-h2-2025-a84d7a",
+    "country": "Australia",
+    "city_state": "Melbourne",
+    "publication_name": "Melbourne Industrial Update H2 2025",
+    "asset_class": [
+      "Industrial",
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-05-23",
+    "team": "Australia Research",
+    "notes": "Record-low vacancy and rent growth easing.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "au-australia-capital-markets-outlook-2026-0bffef",
+    "country": "Australia",
+    "city_state": "Sydney",
+    "publication_name": "Australia Capital Markets Outlook 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-08-16",
+    "team": "Australia Research",
+    "notes": "Repricing complete; transaction recovery underway.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "au-brisbane-living-sectors-spotlight-842e23",
+    "country": "Australia",
+    "city_state": "Brisbane",
+    "publication_name": "Brisbane Living Sectors Spotlight",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2026-12-09",
+    "team": "Australia Research",
+    "notes": "BTR pipeline ahead of the 2032 Olympics.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "au-perth-office-blog-ef259b",
+    "country": "Australia",
+    "city_state": "Perth",
+    "publication_name": "Perth Office Blog",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-03-12",
+    "team": "Australia Research",
+    "notes": "Resources-led demand and tightening vacancy.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "in-jakarta-office-briefing-q3-2025-b20757",
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "publication_name": "Jakarta Office Briefing Q3 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-01-13",
+    "team": "Indonesia Research",
+    "notes": "CBD oversupply and tenant relocation activity.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-jakarta-retail-update-e45fdd",
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "publication_name": "Jakarta Retail Update",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "Bahasa Indonesia",
+    "expected_publication_date": "2026-04-20",
+    "team": "Indonesia Research",
+    "notes": "Mall expansion and middle-class consumption.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "in-indonesia-logistics-outlook-2026-cf608f",
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "publication_name": "Indonesia Logistics Outlook 2026",
+    "asset_class": [
+      "Logistics",
+      "Industrial"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-09-11",
+    "team": "Indonesia Research",
+    "notes": "Greater Jakarta warehouse demand and Nusantara spillover.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-bali-hotels-spotlight-2026-4ea8c4",
+    "country": "Indonesia",
+    "city_state": "Bali",
+    "publication_name": "Bali Hotels Spotlight 2026",
+    "asset_class": [
+      "Hotels"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "expected_publication_date": "2027-01-18",
+    "team": "Indonesia Research",
+    "notes": "Branded resort investment and tourism arrivals.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-mumbai-office-briefing-q4-2025-71d5dc",
+    "country": "India",
+    "city_state": "Mumbai",
+    "publication_name": "Mumbai Office Briefing Q4 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-02-12",
+    "team": "India Research",
+    "notes": "GCC-led absorption keeps vacancy in check.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-bengaluru-office-update-h2-2025-095ec9",
+    "country": "India",
+    "city_state": "Bengaluru",
+    "publication_name": "Bengaluru Office Update H2 2025",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-05-22",
+    "team": "India Research",
+    "notes": "Tech occupier demand and flex expansion.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "in-india-logistics-outlook-2026-69a521",
+    "country": "India",
+    "city_state": "NCR",
+    "publication_name": "India Logistics Outlook 2026",
+    "asset_class": [
+      "Logistics",
+      "Industrial"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-09-15",
+    "team": "India Research",
+    "notes": "Grade A warehousing demand along DMIC.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-hyderabad-data-centres-briefing-35cead",
+    "country": "India",
+    "city_state": "Hyderabad",
+    "publication_name": "Hyderabad Data Centres Briefing",
+    "asset_class": [
+      "Data Centres"
+    ],
+    "publication_type": "White Papers",
+    "language": "English",
+    "expected_publication_date": "2026-12-09",
+    "team": "India Research",
+    "notes": "Hyperscaler commitments and land aggregation.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "in-india-capital-markets-blog-60cdc9",
+    "country": "India",
+    "city_state": "Mumbai",
+    "publication_name": "India Capital Markets Blog",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Blogs",
+    "language": "English",
+    "expected_publication_date": "2027-03-14",
+    "team": "India Research",
+    "notes": "REIT listings and institutional capital inflows.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "si-singapore-office-briefing-q2-2026-abe777",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "publication_name": "Singapore Office Briefing Q2 2026",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "expected_publication_date": "2026-06-18",
+    "team": "Singapore Research",
+    "notes": "Mid-year CBD Grade A rent and vacancy update.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ho-hong-kong-logistics-spotlight-c0e655",
+    "country": "Hong Kong",
+    "city_state": "Hong Kong",
+    "publication_name": "Hong Kong Logistics Spotlight",
+    "asset_class": [
+      "Logistics",
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-06-23",
+    "team": "HK Research",
+    "notes": "Airport-area warehouse demand and rent trend.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "gl-apac-capital-markets-quarterly-q2-2026-58fa55",
+    "country": "Global Research",
+    "city_state": "APAC",
+    "publication_name": "APAC Capital Markets Quarterly Q2 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "expected_publication_date": "2026-06-26",
+    "team": "APAC Research",
+    "notes": "Q2 cross-border flows and pricing trends across APAC.",
+    "report_scope": "Regional",
+    "status": null
+  },
+  {
+    "id": "ja-tokyo-office-briefing-q2-2026-64b5d8",
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "publication_name": "Tokyo Office Briefing Q2 2026",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "Japanese",
+    "expected_publication_date": "2026-06-30",
+    "team": "Japan Research",
+    "notes": "Central five wards vacancy and rent momentum.",
+    "report_scope": "In-Country",
+    "status": null
+  },
+  {
+    "id": "au-sydney-retail-update-0ee799",
+    "country": "Australia",
+    "city_state": "Sydney",
+    "publication_name": "Sydney Retail Update H1 2026",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "expected_publication_date": "2026-06-16",
+    "team": "Australia Research",
+    "notes": "CBD retail rents and luxury precinct performance.",
+    "report_scope": "Regional",
+    "status": null
+  }
+]
