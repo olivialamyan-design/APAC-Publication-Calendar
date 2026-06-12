@@ -103,8 +103,8 @@ const DataLayer = (() => {
   //   2. Append the new record, re-encode base64, PUT with prior sha.
   //   3. On 409 (sha mismatch) re-fetch + re-apply + retry ONCE.
   //   4. Refresh in-memory dataset from what we committed.
-  // Token is passed in per call and held in-memory only (see app.js). Never
-  // persisted to localStorage/sessionStorage.
+  // Token is passed in per call and held in-memory only (see app.js). It is
+  // never persisted to any browser storage mechanism.
   // ===========================================================================
 
   function apiBase() {
