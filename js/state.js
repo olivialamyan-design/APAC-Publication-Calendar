@@ -82,7 +82,7 @@ const State = (() => {
     const h = new URLSearchParams(location.hash.replace(/^#/, ""));
     if (h.has("view")) {
       const v = h.get("view");
-      if (["calendar", "table", "leadership"].includes(v)) state.view = v;
+      if (["calendar", "table", "quarters", "leadership"].includes(v)) state.view = v;
     }
   }
 

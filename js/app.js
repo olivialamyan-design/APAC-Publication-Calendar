@@ -204,6 +204,9 @@ const App = (() => {
     if (s.view === "table") {
       if (rc) rc.textContent = `${filtered.length} shown`;
       TableView.render(mount, filtered);
+    } else if (s.view === "quarters") {
+      if (rc) rc.textContent = `${filtered.length} in filter`;
+      QuartersView.render(mount, filtered);
     } else if (s.view === "leadership") {
       if (rc) rc.textContent = `${filtered.length} shown`;
       LeadershipView.renderLeadershipView(mount, filtered);

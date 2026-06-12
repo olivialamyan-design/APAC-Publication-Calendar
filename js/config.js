@@ -7,8 +7,8 @@
 window.APP_CONFIG = {
   // ---- GitHub repository that hosts /data/publications.json ----
   // Example for a repo published at https://acme.github.io/apac-pubcal/
-  GITHUB_OWNER:  "your-org",          // <-- e.g. "savills-apac"
-  GITHUB_REPO:   "apac-pubcal",       // <-- repository name
+  GITHUB_OWNER:  "olivialamyan-design", // <-- e.g. "savills-apac"
+  GITHUB_REPO:   "APAC-Publication-Calendar", // <-- repository name
   GITHUB_BRANCH: "main",              // <-- branch GitHub Pages serves from
   DATA_PATH:     "data/publications.json", // path within the repo
 
