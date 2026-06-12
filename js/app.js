@@ -199,14 +199,30 @@ const App = (() => {
     syncTabs();
     const filtered = State.applyFilters(DataLayer.getAll());
 
-    // result count
-    const rc = document.getElementById("resultCount");
-    if (rc) rc.textContent = `${filtered.length} shown`;
-
     const mount = document.getElementById("viewMount");
-    if (s.view === "table") TableView.render(mount, filtered);
-    else if (s.view === "leadership") LeadershipView.renderLeadershipView(mount, filtered);
-    else CalendarView.render(mount, filtered);
+    const rc = document.getElementById("resultCount");
+    if (s.view === "table") {
+      if (rc) rc.textContent = `${filtered.length} shown`;
+      TableView.render(mount, filtered);
+    } else if (s.view === "leadership") {
+      if (rc) rc.textContent = `${filtered.length} shown`;
+      LeadershipView.renderLeadershipView(mount, filtered);
+    } else {
+      // Calendar: clarify count so the month view isn't misread.
+      const cm = s.calendarMonth;
+      const inMonth = (cm && CalendarView.mode() === "month")
+        ? filtered.filter(p => {
+            const d = H.parseISO(p.expected_publication_date);
+            return d.getFullYear() === cm.y && d.getMonth() === cm.m;
+          }).length
+        : null;
+      if (rc) {
+        rc.textContent = (CalendarView.mode() === "month" && inMonth !== null)
+          ? `${inMonth} this month · ${filtered.length} in window`
+          : `${filtered.length} in window`;
+      }
+      CalendarView.render(mount, filtered);
+    }
   }
 
   function refreshFromData() {
@@ -221,6 +237,12 @@ const App = (() => {
   async function boot() {
     if (booted) return; booted = true;
     State.readFromUrl();
+    // initialise the calendar month BEFORE first render so the count label is
+    // accurate on the initial paint.
+    if (!State.get().calendarMonth) {
+      const now = new Date();
+      State.set({ calendarMonth: { y: now.getFullYear(), m: now.getMonth() } }, { silent: true });
+    }
     try {
       await DataLayer.loadAll();
     } catch (err) {

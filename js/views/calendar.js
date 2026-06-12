@@ -184,5 +184,5 @@ const CalendarView = (() => {
     else mount.appendChild(renderMonthGrid(filtered));
   }
 
-  return { render };
+  return { render, mode: () => mode };
 })();
