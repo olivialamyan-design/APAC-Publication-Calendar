@@ -1,1100 +1,6389 @@
 [
   {
-    "id": "gl-apac-investment-quarterly-q1-2026-d99b0c",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Investment Quarterly Q1 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2025-08-12",
-    "team": "APAC Research",
-    "notes": "Cross-border capital flows into APAC; dry powder and cap-rate trajectory.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "gl-apac-logistics-outlook-h2-2026-11eff1",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Logistics Outlook H2 2026",
-    "asset_class": [
-      "Logistics",
-      "Industrial"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2026-10-20",
-    "team": "APAC Research",
-    "notes": "Supply pipeline vs. occupier demand across core APAC logistics hubs.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "gl-apac-data-centres-spotlight-2026-1a1c32",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Data Centres Spotlight 2026",
-    "asset_class": [
-      "Data Centres"
-    ],
-    "publication_type": "White Papers",
-    "language": "English",
-    "expected_publication_date": "2026-08-08",
-    "team": "APAC Research",
-    "notes": "Power availability and hyperscaler demand mapped across APAC submarkets.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "gl-apac-prime-office-index-q3-2026-5e0dcc",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Prime Office Index Q3 2026",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-12-18",
-    "team": "APAC Research",
-    "notes": "Prime rents and incentives across 20 APAC office markets.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "gl-apac-living-sectors-outlook-2027-4bd126",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Living Sectors Outlook 2027",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2027-03-10",
-    "team": "APAC Research",
-    "notes": "Multifamily, BTR and student housing momentum across the region.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ja-tokyo-office-briefing-q4-2025-e29592",
-    "country": "Japan",
-    "city_state": "Tokyo",
-    "publication_name": "Tokyo Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-02-09",
-    "team": "Japan Research",
-    "notes": "Grade A vacancy tightening in the central five wards.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ja-tokyo-retail-market-spotlight-ed7c9b",
-    "country": "Japan",
-    "city_state": "Tokyo",
-    "publication_name": "Tokyo Retail Market Spotlight",
-    "asset_class": [
-      "Retail"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Japanese",
-    "expected_publication_date": "2026-05-22",
-    "team": "Japan Research",
-    "notes": "Ginza and Omotesando prime rents and tourist spend recovery.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ja-osaka-logistics-briefing-h1-2026-b1a102",
-    "country": "Japan",
-    "city_state": "Osaka",
-    "publication_name": "Osaka Logistics Briefing H1 2026",
-    "asset_class": [
-      "Logistics"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-07-14",
-    "team": "Japan Research",
-    "notes": "Kansai logistics supply wave and rent resilience.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ja-japan-capital-markets-outlook-2026-6a3c0b",
-    "country": "Japan",
-    "city_state": "Tokyo",
-    "publication_name": "Japan Capital Markets Outlook 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "Japanese",
-    "expected_publication_date": "2026-09-05",
-    "team": "Japan Research",
-    "notes": "J-REIT activity and inbound investment appetite.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ja-tokyo-hotels-recovery-tracker-65d09b",
-    "country": "Japan",
-    "city_state": "Tokyo",
-    "publication_name": "Tokyo Hotels Recovery Tracker",
-    "asset_class": [
-      "Hotels"
-    ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-01-16",
-    "team": "Japan Research",
-    "notes": "RevPAR vs. pre-pandemic and pipeline of luxury openings.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ch-shanghai-office-briefing-q3-2025-4f2203",
-    "country": "China",
-    "city_state": "Shanghai",
-    "publication_name": "Shanghai Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "Chinese (Simplified)",
-    "expected_publication_date": "2025-12-11",
-    "team": "China Research",
-    "notes": "Decentralisation of demand and rising vacancy in core CBD.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ch-beijing-retail-update-h2-2025-f8843f",
-    "country": "China",
-    "city_state": "Beijing",
-    "publication_name": "Beijing Retail Update H2 2025",
-    "asset_class": [
-      "Retail"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Chinese (Simplified)",
-    "expected_publication_date": "2026-03-19",
-    "team": "China Research",
-    "notes": "Consumption sentiment and prime mall performance.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ch-china-logistics-outlook-2026-ee2129",
-    "country": "China",
-    "city_state": "Shanghai",
-    "publication_name": "China Logistics Outlook 2026",
-    "asset_class": [
-      "Logistics",
-      "Industrial"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-08-07",
-    "team": "China Research",
-    "notes": "E-commerce normalisation and Tier 1 warehouse rents.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ch-shenzhen-capital-markets-spotlight-a1e60b",
-    "country": "China",
-    "city_state": "Shenzhen",
-    "publication_name": "Shenzhen Capital Markets Spotlight",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2026-11-21",
-    "team": "China Research",
-    "notes": "Distressed opportunities and domestic buyer dominance.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ch-guangzhou-mixed-use-briefing-087189",
-    "country": "China",
-    "city_state": "Guangzhou",
-    "publication_name": "Guangzhou Mixed Use Briefing",
-    "asset_class": [
-      "Mixed Use",
-      "Retail"
-    ],
-    "publication_type": "Market Reports",
-    "language": "Chinese (Simplified)",
-    "expected_publication_date": "2027-02-13",
-    "team": "China Research",
-    "notes": "Integrated developments and footfall trends.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "th-bangkok-office-briefing-q4-2025-08c552",
-    "country": "Thailand",
-    "city_state": "Bangkok",
-    "publication_name": "Bangkok Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-01-10",
-    "team": "Thailand Research",
-    "notes": "Flight to quality as new green-certified supply completes.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "th-bangkok-condominium-update-940c35",
-    "country": "Thailand",
-    "city_state": "Bangkok",
-    "publication_name": "Bangkok Condominium Update",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Thai",
-    "expected_publication_date": "2026-04-17",
-    "team": "Thailand Research",
-    "notes": "Foreign demand quota and luxury launch pipeline.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "th-phuket-hotels-spotlight-2026-1b5271",
-    "country": "Thailand",
-    "city_state": "Phuket",
-    "publication_name": "Phuket Hotels Spotlight 2026",
-    "asset_class": [
-      "Hotels"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2026-09-24",
-    "team": "Thailand Research",
-    "notes": "Branded residences and resort investment momentum.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "th-thailand-logistics-briefing-h2-2026-ca2f81",
-    "country": "Thailand",
-    "city_state": "Bangkok",
-    "publication_name": "Thailand Logistics Briefing H2 2026",
-    "asset_class": [
-      "Logistics"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-12-09",
-    "team": "Thailand Research",
-    "notes": "EEC corridor demand and built-to-suit activity.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-office-briefing-q3-2025-31dc64",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2025-11-12",
-    "team": "HK Research",
-    "notes": "Central rents stabilising amid elevated availability.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-retail-spotlight-7675dc",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Retail Spotlight",
-    "asset_class": [
-      "Retail"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Chinese (Traditional)",
-    "expected_publication_date": "2026-05-26",
-    "team": "HK Research",
-    "notes": "Mainland visitor recovery and high-street rent reset.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-capital-markets-outlook-2026-b572a2",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Capital Markets Outlook 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-08-15",
-    "team": "HK Research",
-    "notes": "Repricing of commercial assets and family-office activity.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-office-briefing-q3-2026-7fccb3",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Office Briefing Q3 2026",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-12-12",
-    "team": "HK Research",
-    "notes": "Forward view on Kowloon East absorption.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-living-sectors-blog-e1744d",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Living Sectors Blog",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-03-08",
-    "team": "HK Research",
-    "notes": "Co-living and rental housing demand drivers.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "si-singapore-office-briefing-q4-2025-2f0ee8",
-    "country": "Singapore",
-    "city_state": "Singapore",
-    "publication_name": "Singapore Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-02-14",
-    "team": "Singapore Research",
-    "notes": "CBD Grade A rents and flight-to-green dynamics.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "si-singapore-industrial-update-h2-2025-f6ffe2",
-    "country": "Singapore",
-    "city_state": "Singapore",
-    "publication_name": "Singapore Industrial Update H2 2025",
-    "asset_class": [
-      "Industrial",
-      "Logistics"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "expected_publication_date": "2026-04-20",
-    "team": "Singapore Research",
-    "notes": "Business park demand and prime logistics rents.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "si-singapore-capital-markets-outlook-2026-960ced",
-    "country": "Singapore",
-    "city_state": "Singapore",
-    "publication_name": "Singapore Capital Markets Outlook 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-07-09",
-    "team": "Singapore Research",
-    "notes": "REIT M&A and big-ticket transaction pipeline.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "si-singapore-data-centres-briefing-0ee29b",
-    "country": "Singapore",
-    "city_state": "Singapore",
-    "publication_name": "Singapore Data Centres Briefing",
-    "asset_class": [
-      "Data Centres"
-    ],
-    "publication_type": "White Papers",
-    "language": "English",
-    "expected_publication_date": "2026-11-18",
-    "team": "Singapore Research",
-    "notes": "Moratorium easing and green DC capacity awards.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "si-singapore-residential-spotlight-2026-c4c0c4",
-    "country": "Singapore",
-    "city_state": "Singapore",
-    "publication_name": "Singapore Residential Spotlight 2026",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2027-02-11",
-    "team": "Singapore Research",
-    "notes": "Cooling measures impact and prime non-landed demand.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "vi-hcmc-office-briefing-q3-2025-591087",
-    "country": "Vietnam",
-    "city_state": "Ho Chi Minh City",
-    "publication_name": "HCMC Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2025-12-13",
-    "team": "Vietnam Research",
-    "notes": "Grade A supply surge in Thu Thiem.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "vi-hanoi-residential-update-255115",
-    "country": "Vietnam",
-    "city_state": "Hanoi",
-    "publication_name": "Hanoi Residential Update",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Vietnamese",
-    "expected_publication_date": "2026-05-21",
-    "team": "Vietnam Research",
-    "notes": "Primary launch absorption and pricing.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "vi-vietnam-industrial-outlook-2026-8ee775",
-    "country": "Vietnam",
-    "city_state": "Ho Chi Minh City",
-    "publication_name": "Vietnam Industrial Outlook 2026",
-    "asset_class": [
-      "Industrial",
-      "Logistics"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-09-16",
-    "team": "Vietnam Research",
-    "notes": "FDI-driven factory demand across northern provinces.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "vi-da-nang-hotels-spotlight-02ef7d",
-    "country": "Vietnam",
-    "city_state": "Da Nang",
-    "publication_name": "Da Nang Hotels Spotlight",
-    "asset_class": [
-      "Hotels"
-    ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-01-07",
-    "team": "Vietnam Research",
-    "notes": "Coastal resort pipeline and tourism rebound.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ph-manila-office-briefing-q4-2025-c20026",
-    "country": "Philippines",
-    "city_state": "Manila",
-    "publication_name": "Manila Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-03-12",
-    "team": "Philippines Research",
-    "notes": "BPO and POGO vacancy overhang in Metro Manila.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ph-metro-manila-residential-update-56e9d1",
-    "country": "Philippines",
-    "city_state": "Manila",
-    "publication_name": "Metro Manila Residential Update",
-    "asset_class": [
-      "Residential"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "expected_publication_date": "2026-05-24",
-    "team": "Philippines Research",
-    "notes": "Pre-selling condo demand and end-user shift.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ph-cebu-industrial-briefing-2026-1f3491",
-    "country": "Philippines",
-    "city_state": "Cebu",
-    "publication_name": "Cebu Industrial Briefing 2026",
-    "asset_class": [
-      "Industrial"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-10-15",
-    "team": "Philippines Research",
-    "notes": "Manufacturing and logistics demand in VisMin.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ph-philippines-capital-markets-blog-35bd02",
-    "country": "Philippines",
-    "city_state": "Manila",
-    "publication_name": "Philippines Capital Markets Blog",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-02-09",
-    "team": "Philippines Research",
-    "notes": "Investor appetite for income-producing assets.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ma-kl-office-briefing-q3-2025-47d666",
-    "country": "Malaysia",
-    "city_state": "Kuala Lumpur",
-    "publication_name": "KL Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-01-11",
-    "team": "Malaysia Research",
-    "notes": "Oversupply persists; tenant-favourable conditions.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ma-kl-retail-update-h2-2025-2a87f3",
-    "country": "Malaysia",
-    "city_state": "Kuala Lumpur",
-    "publication_name": "KL Retail Update H2 2025",
-    "asset_class": [
-      "Retail"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Bahasa Malaysia",
-    "expected_publication_date": "2026-04-18",
-    "team": "Malaysia Research",
-    "notes": "Mall occupancy and consumer spending trends.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ma-johor-industrial-outlook-2026-d77a8b",
-    "country": "Malaysia",
-    "city_state": "Johor",
-    "publication_name": "Johor Industrial Outlook 2026",
-    "asset_class": [
-      "Industrial",
-      "Data Centres"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2026-09-22",
-    "team": "Malaysia Research",
-    "notes": "JS-SEZ momentum and data centre cluster formation.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ma-penang-logistics-briefing-1774eb",
-    "country": "Malaysia",
-    "city_state": "Penang",
-    "publication_name": "Penang Logistics Briefing",
-    "asset_class": [
-      "Logistics"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2027-01-14",
-    "team": "Malaysia Research",
-    "notes": "Semiconductor supply chain warehouse demand.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "so-seoul-office-briefing-q4-2025-1c4c18",
-    "country": "South Korea",
-    "city_state": "Seoul",
-    "publication_name": "Seoul Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-02-13",
-    "team": "Korea Research",
-    "notes": "Record-low vacancy in CBD, GBD and YBD.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "so-seoul-logistics-update-h2-2025-297261",
-    "country": "South Korea",
-    "city_state": "Seoul",
-    "publication_name": "Seoul Logistics Update H2 2025",
-    "asset_class": [
-      "Logistics"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Korean",
-    "expected_publication_date": "2026-05-25",
-    "team": "Korea Research",
-    "notes": "Cold-storage oversupply and rent correction.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "so-korea-capital-markets-outlook-2026-d05ebf",
-    "country": "South Korea",
-    "city_state": "Seoul",
-    "publication_name": "Korea Capital Markets Outlook 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-08-17",
-    "team": "Korea Research",
-    "notes": "Office trading volumes and overseas allocations.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "so-seoul-data-centres-spotlight-88dd5e",
-    "country": "South Korea",
-    "city_state": "Seoul",
-    "publication_name": "Seoul Data Centres Spotlight",
-    "asset_class": [
-      "Data Centres"
-    ],
-    "publication_type": "White Papers",
-    "language": "English",
-    "expected_publication_date": "2026-12-10",
-    "team": "Korea Research",
-    "notes": "Power constraints in greater Seoul DC market.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ta-taipei-office-briefing-q3-2025-ec578a",
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "Chinese (Traditional)",
-    "expected_publication_date": "2025-12-12",
-    "team": "Taiwan Research",
-    "notes": "Owner-occupier demand and limited prime stock.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ta-taiwan-industrial-update-f84825",
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taiwan Industrial Update",
-    "asset_class": [
-      "Industrial"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "Chinese (Traditional)",
-    "expected_publication_date": "2026-04-19",
-    "team": "Taiwan Research",
-    "notes": "Semiconductor capex and factory land demand.",
-    "report_scope": "In-Country",
-    "status": null
-  },
-  {
-    "id": "ta-taiwan-capital-markets-briefing-2026-3ba30f",
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taiwan Capital Markets Briefing 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-10-08",
-    "team": "Taiwan Research",
-    "notes": "Insurer and corporate buying activity.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ta-taichung-logistics-blog-b0609d",
-    "country": "Taiwan",
-    "city_state": "Taichung",
-    "publication_name": "Taichung Logistics Blog",
-    "asset_class": [
-      "Logistics"
-    ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-02-15",
-    "team": "Taiwan Research",
-    "notes": "Central Taiwan distribution hub growth.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "au-sydney-office-briefing-q4-2025-0ff56c",
     "country": "Australia",
-    "city_state": "Sydney",
-    "publication_name": "Sydney Office Briefing Q4 2025",
+    "city_state": "National",
     "asset_class": [
-      "Office"
+      "Living"
     ],
     "publication_type": "Market Reports",
     "language": "English",
-    "expected_publication_date": "2026-03-14",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
     "team": "Australia Research",
-    "notes": "Prime-secondary rent divergence in the CBD.",
-    "report_scope": "Regional",
-    "status": null
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Co-Living Spotlight",
+    "id": "australia--australia-co-living-spotlight--r9",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-01-10",
+    "is_tbd": false
   },
   {
-    "id": "au-melbourne-industrial-update-h2-2025-a84d7a",
     "country": "Australia",
     "city_state": "Melbourne",
-    "publication_name": "Melbourne Industrial Update H2 2025",
     "asset_class": [
-      "Industrial",
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Mispriced Melbourne",
+    "id": "australia--australia-mispriced-melbourne--r7",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-03-19",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - 2026–27 Federal Budget: commercial property investment implications",
+    "id": "australia--australia-202627-federal-budget-commercial-property-investme--r10",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-05-27",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Living"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Living Sector Report",
+    "id": "asia-pacific--apac-living-sector-report--r37",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-06-22",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-06",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-06",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Annually",
+    "recurring_months": [
+      6
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Supply",
+    "id": "japan--tokyo-office-supply--r21--2026-06",
+    "parent_id": "japan--tokyo-office-supply--r21",
+    "recurring": true,
+    "expected_publication_date": "2026-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-07",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2026-07",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2026-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-07",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      7,
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Regional Japanese Office Markets",
+    "id": "japan--regional-japanese-office-markets--r16--2026-07",
+    "parent_id": "japan--regional-japanese-office-markets--r16",
+    "recurring": true,
+    "expected_publication_date": "2026-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2026-07",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2026-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Data Centres"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Data Centre Report",
+    "id": "asia-pacific--apac-data-centre-report--r38",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-08-21",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-08",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2026-08",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2026-08",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-08",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2026-08",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2026-08",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Hospitality"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Biannually",
+    "recurring_months": [
+      2,
+      8
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Hospitality",
+    "id": "japan--japan-hospitality--r18--2026-08",
+    "parent_id": "japan--japan-hospitality--r18",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2026-08",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2026-08",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2026-08",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2026-08",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2026-08",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2026-08",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2026-08",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2026-08",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2026-08",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2026-08",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2026-08",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2026-08",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2026-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-09",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-09",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      9
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Office Spotlight",
+    "id": "australia--australian-office-spotlight--r3--2026-09",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2026-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
       "Logistics"
     ],
     "publication_type": "Sector Updates",
     "language": "English",
-    "expected_publication_date": "2026-05-23",
-    "team": "Australia Research",
-    "notes": "Record-low vacancy and rent growth easing.",
+    "frequency": "Biannually",
+    "recurring_months": [
+      3,
+      9
+    ],
+    "team": "Japan Research",
+    "notes": null,
     "report_scope": "In-Country",
-    "status": null
+    "status": null,
+    "publication_name": "Japan Logistics",
+    "id": "japan--japan-logistics--r20--2026-09",
+    "parent_id": "japan--japan-logistics--r20",
+    "recurring": true,
+    "expected_publication_date": "2026-09-30",
+    "is_tbd": false
   },
   {
-    "id": "au-australia-capital-markets-outlook-2026-0bffef",
-    "country": "Australia",
-    "city_state": "Sydney",
-    "publication_name": "Australia Capital Markets Outlook 2026",
+    "country": "Asia Pacific",
+    "city_state": "Region",
     "asset_class": [
       "Capital Markets"
     ],
-    "publication_type": "Quarterly Outlooks",
+    "publication_type": "Newsletter",
     "language": "English",
-    "expected_publication_date": "2026-08-16",
-    "team": "Australia Research",
-    "notes": "Repricing complete; transaction recovery underway.",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
     "report_scope": "Regional",
-    "status": null
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-10",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-10-31",
+    "is_tbd": false
   },
   {
-    "id": "au-brisbane-living-sectors-spotlight-842e23",
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2026-10",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2026-10-31",
+    "is_tbd": false
+  },
+  {
     "country": "Australia",
-    "city_state": "Brisbane",
-    "publication_name": "Brisbane Living Sectors Spotlight",
+    "city_state": "National",
     "asset_class": [
       "Residential"
     ],
-    "publication_type": "Thought Leadership",
+    "publication_type": "Sector Updates",
     "language": "English",
-    "expected_publication_date": "2026-12-09",
-    "team": "Australia Research",
-    "notes": "BTR pipeline ahead of the 2032 Olympics.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "au-perth-office-blog-ef259b",
-    "country": "Australia",
-    "city_state": "Perth",
-    "publication_name": "Perth Office Blog",
-    "asset_class": [
-      "Office"
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
     ],
-    "publication_type": "Blogs",
-    "language": "English",
-    "expected_publication_date": "2027-03-12",
     "team": "Australia Research",
-    "notes": "Resources-led demand and tightening vacancy.",
+    "notes": null,
     "report_scope": "In-Country",
-    "status": null
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-10",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-10-31",
+    "is_tbd": false
   },
   {
-    "id": "in-jakarta-office-briefing-q3-2025-b20757",
-    "country": "Indonesia",
-    "city_state": "Jakarta",
-    "publication_name": "Jakarta Office Briefing Q3 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-01-13",
-    "team": "Indonesia Research",
-    "notes": "CBD oversupply and tenant relocation activity.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-jakarta-retail-update-e45fdd",
-    "country": "Indonesia",
-    "city_state": "Jakarta",
-    "publication_name": "Jakarta Retail Update",
+    "country": "Japan",
+    "city_state": "National",
     "asset_class": [
       "Retail"
     ],
     "publication_type": "Sector Updates",
-    "language": "Bahasa Indonesia",
-    "expected_publication_date": "2026-04-20",
-    "team": "Indonesia Research",
-    "notes": "Mall expansion and middle-class consumption.",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      4,
+      10
+    ],
+    "team": "Japan Research",
+    "notes": null,
     "report_scope": "In-Country",
-    "status": null
+    "status": null,
+    "publication_name": "Japan Retail",
+    "id": "japan--japan-retail--r19--2026-10",
+    "parent_id": "japan--japan-retail--r19",
+    "recurring": true,
+    "expected_publication_date": "2026-10-31",
+    "is_tbd": false
   },
   {
-    "id": "in-indonesia-logistics-outlook-2026-cf608f",
-    "country": "Indonesia",
-    "city_state": "Jakarta",
-    "publication_name": "Indonesia Logistics Outlook 2026",
-    "asset_class": [
-      "Logistics",
-      "Industrial"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-09-11",
-    "team": "Indonesia Research",
-    "notes": "Greater Jakarta warehouse demand and Nusantara spillover.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-bali-hotels-spotlight-2026-4ea8c4",
-    "country": "Indonesia",
-    "city_state": "Bali",
-    "publication_name": "Bali Hotels Spotlight 2026",
-    "asset_class": [
-      "Hotels"
-    ],
-    "publication_type": "Thought Leadership",
-    "language": "English",
-    "expected_publication_date": "2027-01-18",
-    "team": "Indonesia Research",
-    "notes": "Branded resort investment and tourism arrivals.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-mumbai-office-briefing-q4-2025-71d5dc",
-    "country": "India",
-    "city_state": "Mumbai",
-    "publication_name": "Mumbai Office Briefing Q4 2025",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-02-12",
-    "team": "India Research",
-    "notes": "GCC-led absorption keeps vacancy in check.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-bengaluru-office-update-h2-2025-095ec9",
-    "country": "India",
-    "city_state": "Bengaluru",
-    "publication_name": "Bengaluru Office Update H2 2025",
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
     "asset_class": [
       "Office"
     ],
     "publication_type": "Sector Updates",
-    "language": "English",
-    "expected_publication_date": "2026-05-22",
-    "team": "India Research",
-    "notes": "Tech occupier demand and flex expansion.",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
     "report_scope": "In-Country",
-    "status": null
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2026-10",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2026-10-31",
+    "is_tbd": false
   },
   {
-    "id": "in-india-logistics-outlook-2026-69a521",
-    "country": "India",
-    "city_state": "NCR",
-    "publication_name": "India Logistics Outlook 2026",
-    "asset_class": [
-      "Logistics",
-      "Industrial"
-    ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-09-15",
-    "team": "India Research",
-    "notes": "Grade A warehousing demand along DMIC.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-hyderabad-data-centres-briefing-35cead",
-    "country": "India",
-    "city_state": "Hyderabad",
-    "publication_name": "Hyderabad Data Centres Briefing",
-    "asset_class": [
-      "Data Centres"
-    ],
-    "publication_type": "White Papers",
-    "language": "English",
-    "expected_publication_date": "2026-12-09",
-    "team": "India Research",
-    "notes": "Hyperscaler commitments and land aggregation.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "in-india-capital-markets-blog-60cdc9",
-    "country": "India",
-    "city_state": "Mumbai",
-    "publication_name": "India Capital Markets Blog",
+    "country": "Asia Pacific",
+    "city_state": "Region",
     "asset_class": [
       "Capital Markets"
     ],
-    "publication_type": "Blogs",
+    "publication_type": "Newsletter",
     "language": "English",
-    "expected_publication_date": "2027-03-14",
-    "team": "India Research",
-    "notes": "REIT listings and institutional capital inflows.",
-    "report_scope": "In-Country",
-    "status": null
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-11",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
   },
   {
-    "id": "si-singapore-office-briefing-q2-2026-abe777",
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2026-11",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2026-11",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-11",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2026-11",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2026-11",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
     "country": "Singapore",
     "city_state": "Singapore",
-    "publication_name": "Singapore Office Briefing Q2 2026",
     "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "expected_publication_date": "2026-06-18",
-    "team": "Singapore Research",
-    "notes": "Mid-year CBD Grade A rent and vacancy update.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "ho-hong-kong-logistics-spotlight-c0e655",
-    "country": "Hong Kong",
-    "city_state": "Hong Kong",
-    "publication_name": "Hong Kong Logistics Spotlight",
-    "asset_class": [
-      "Logistics",
       "Industrial"
     ],
     "publication_type": "Sector Updates",
     "language": "English",
-    "expected_publication_date": "2026-06-23",
-    "team": "HK Research",
-    "notes": "Airport-area warehouse demand and rent trend.",
-    "report_scope": "Regional",
-    "status": null
-  },
-  {
-    "id": "gl-apac-capital-markets-quarterly-q2-2026-58fa55",
-    "country": "Global Research",
-    "city_state": "APAC",
-    "publication_name": "APAC Capital Markets Quarterly Q2 2026",
-    "asset_class": [
-      "Capital Markets"
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
     ],
-    "publication_type": "Quarterly Outlooks",
-    "language": "English",
-    "expected_publication_date": "2026-06-26",
-    "team": "APAC Research",
-    "notes": "Q2 cross-border flows and pricing trends across APAC.",
-    "report_scope": "Regional",
-    "status": null
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2026-11",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
   },
   {
-    "id": "ja-tokyo-office-briefing-q2-2026-64b5d8",
-    "country": "Japan",
-    "city_state": "Tokyo",
-    "publication_name": "Tokyo Office Briefing Q2 2026",
+    "country": "Singapore",
+    "city_state": "Singapore",
     "asset_class": [
       "Office"
     ],
-    "publication_type": "Market Reports",
-    "language": "Japanese",
-    "expected_publication_date": "2026-06-30",
-    "team": "Japan Research",
-    "notes": "Central five wards vacancy and rent momentum.",
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
     "report_scope": "In-Country",
-    "status": null
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2026-11",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
   },
   {
-    "id": "au-sydney-retail-update-0ee799",
-    "country": "Australia",
-    "city_state": "Sydney",
-    "publication_name": "Sydney Retail Update H1 2026",
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2026-11",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2026-11",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
     "asset_class": [
       "Retail"
     ],
     "publication_type": "Sector Updates",
     "language": "English",
-    "expected_publication_date": "2026-06-16",
-    "team": "Australia Research",
-    "notes": "CBD retail rents and luxury precinct performance.",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2026-11",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2026-11",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2026-11",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2026-11",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2026-11",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2026-11",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2026-11",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2026-11",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2026-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
     "report_scope": "Regional",
-    "status": null
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2026-12",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2026-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2026-12",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2026-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "frequency": "Annually",
+    "recurring_months": [
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Market Review and Prospects",
+    "id": "japan--japan-market-review-and-prospects--r17--2026-12",
+    "parent_id": "japan--japan-market-review-and-prospects--r17",
+    "recurring": true,
+    "expected_publication_date": "2026-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      12
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Residential Market Outlook",
+    "id": "south-korea--korea-residential-market-outlook--r26--2026-12",
+    "parent_id": "south-korea--korea-residential-market-outlook--r26",
+    "recurring": true,
+    "expected_publication_date": "2026-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      7,
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Regional Japanese Office Markets",
+    "id": "japan--regional-japanese-office-markets--r16--2026-12",
+    "parent_id": "japan--regional-japanese-office-markets--r16",
+    "recurring": true,
+    "expected_publication_date": "2026-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-01",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2027-01",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2027-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-01",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-02",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2027-02",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2027-02",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-02",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2027-02",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2027-02",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Hospitality"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Biannually",
+    "recurring_months": [
+      2,
+      8
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Hospitality",
+    "id": "japan--japan-hospitality--r18--2027-02",
+    "parent_id": "japan--japan-hospitality--r18",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2027-02",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2027-02",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2027-02",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2027-02",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2027-02",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2027-02",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2027-02",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2027-02",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2027-02",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2027-02",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2027-02",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2027-02",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2027-02",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2027-02-28",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-03",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-03",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      3,
+      9
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Logistics",
+    "id": "japan--japan-logistics--r20--2027-03",
+    "parent_id": "japan--japan-logistics--r20",
+    "recurring": true,
+    "expected_publication_date": "2027-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      3
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Logistics Market Outlook",
+    "id": "south-korea--korea-logistics-market-outlook--r25--2027-03",
+    "parent_id": "south-korea--korea-logistics-market-outlook--r25",
+    "recurring": true,
+    "expected_publication_date": "2027-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      3
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Office Market Outlook",
+    "id": "south-korea--korea-office-market-outlook--r24--2027-03",
+    "parent_id": "south-korea--korea-office-market-outlook--r24",
+    "recurring": true,
+    "expected_publication_date": "2027-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-04",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2027-04",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2027-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-04",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      4,
+      10
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Retail",
+    "id": "japan--japan-retail--r19--2027-04",
+    "parent_id": "japan--japan-retail--r19",
+    "recurring": true,
+    "expected_publication_date": "2027-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-05",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2027-05",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2027-05",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-05",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2027-05",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      9
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Office Spotlight",
+    "id": "australia--australian-office-spotlight--r3--2027-05",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2027-05",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2027-05",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2027-05",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2027-05",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2027-05",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2027-05",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2027-05",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2027-05",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2027-05",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2027-05",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2027-05",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2027-05",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2027-05",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2027-05",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2027-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-06",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-06",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Annually",
+    "recurring_months": [
+      6
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Supply",
+    "id": "japan--tokyo-office-supply--r21--2027-06",
+    "parent_id": "japan--tokyo-office-supply--r21",
+    "recurring": true,
+    "expected_publication_date": "2027-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-07",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2027-07",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2027-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-07",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      7,
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Regional Japanese Office Markets",
+    "id": "japan--regional-japanese-office-markets--r16--2027-07",
+    "parent_id": "japan--regional-japanese-office-markets--r16",
+    "recurring": true,
+    "expected_publication_date": "2027-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2027-07",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2027-07-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-08",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2027-08",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2027-08",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-08",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2027-08",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2027-08",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Hospitality"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Biannually",
+    "recurring_months": [
+      2,
+      8
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Hospitality",
+    "id": "japan--japan-hospitality--r18--2027-08",
+    "parent_id": "japan--japan-hospitality--r18",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2027-08",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2027-08",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2027-08",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2027-08",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2027-08",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2027-08",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2027-08",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2027-08",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2027-08",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2027-08",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2027-08",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2027-08",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2027-08-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-09",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-09",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      9
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Office Spotlight",
+    "id": "australia--australian-office-spotlight--r3--2027-09",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2027-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      3,
+      9
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Logistics",
+    "id": "japan--japan-logistics--r20--2027-09",
+    "parent_id": "japan--japan-logistics--r20",
+    "recurring": true,
+    "expected_publication_date": "2027-09-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-10",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-10-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2027-10",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2027-10-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-10",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-10-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      4,
+      10
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Retail",
+    "id": "japan--japan-retail--r19--2027-10",
+    "parent_id": "japan--japan-retail--r19",
+    "recurring": true,
+    "expected_publication_date": "2027-10-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2027-10",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2027-10-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-11",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2027-11",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2027-11",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-11",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2027-11",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2027-11",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2027-11",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2027-11",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2027-11",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2027-11",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2027-11",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2027-11",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2027-11",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2027-11",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2027-11",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2027-11",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2027-11",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2027-11",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2027-11-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2027-12",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2027-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2027-12",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2027-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English",
+    "frequency": "Annually",
+    "recurring_months": [
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Market Review and Prospects",
+    "id": "japan--japan-market-review-and-prospects--r17--2027-12",
+    "parent_id": "japan--japan-market-review-and-prospects--r17",
+    "recurring": true,
+    "expected_publication_date": "2027-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      12
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Residential Market Outlook",
+    "id": "south-korea--korea-residential-market-outlook--r26--2027-12",
+    "parent_id": "south-korea--korea-residential-market-outlook--r26",
+    "recurring": true,
+    "expected_publication_date": "2027-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      7,
+      12
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Regional Japanese Office Markets",
+    "id": "japan--regional-japanese-office-markets--r16--2027-12",
+    "parent_id": "japan--regional-japanese-office-markets--r16",
+    "recurring": true,
+    "expected_publication_date": "2027-12-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-01",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2028-01",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2028-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-01",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-01-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-02",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2028-02",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2028-02",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-02",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2028-02",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2028-02",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Hospitality"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Biannually",
+    "recurring_months": [
+      2,
+      8
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Hospitality",
+    "id": "japan--japan-hospitality--r18--2028-02",
+    "parent_id": "japan--japan-hospitality--r18",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2028-02",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2028-02",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2028-02",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2028-02",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2028-02",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2028-02",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2028-02",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2028-02",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2028-02",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2028-02",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2028-02",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2028-02",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2028-02",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2028-02-29",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-03",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-03",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      3,
+      9
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Logistics",
+    "id": "japan--japan-logistics--r20--2028-03",
+    "parent_id": "japan--japan-logistics--r20",
+    "recurring": true,
+    "expected_publication_date": "2028-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Logistics"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      3
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Logistics Market Outlook",
+    "id": "south-korea--korea-logistics-market-outlook--r25--2028-03",
+    "parent_id": "south-korea--korea-logistics-market-outlook--r25",
+    "recurring": true,
+    "expected_publication_date": "2028-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Quarterly Outlooks",
+    "language": "English; Korean",
+    "frequency": "Annually",
+    "recurring_months": [
+      3
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Korea Office Market Outlook",
+    "id": "south-korea--korea-office-market-outlook--r24--2028-03",
+    "parent_id": "south-korea--korea-office-market-outlook--r24",
+    "recurring": true,
+    "expected_publication_date": "2028-03-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-04",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "Asia Pacific Capital Market Report",
+    "id": "asia-pacific--asia-pacific-capital-market-report--r35--2028-04",
+    "parent_id": "asia-pacific--asia-pacific-capital-market-report--r35",
+    "recurring": true,
+    "expected_publication_date": "2028-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-04",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      4,
+      10
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Retail",
+    "id": "japan--japan-retail--r19--2028-04",
+    "parent_id": "japan--japan-retail--r19",
+    "recurring": true,
+    "expected_publication_date": "2028-04-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-05",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Occupier Market Report",
+    "id": "asia-pacific--apac-occupier-market-report--r40--2028-05",
+    "parent_id": "asia-pacific--apac-occupier-market-report--r40",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Retail Investment - Market in Minutes",
+    "id": "australia--australia-retail-investment-market-in-minutes--r6--2028-05",
+    "parent_id": "australia--australia-retail-investment-market-in-minutes--r6",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-05",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Industrial Spotlight",
+    "id": "australia--australian-industrial-spotlight--r5--2028-05",
+    "parent_id": "australia--australian-industrial-spotlight--r5",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      9
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australian Office Spotlight",
+    "id": "australia--australian-office-spotlight--r3--2028-05",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Indonesia",
+    "city_state": "Jakarta",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Indonesia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Jakarta - Property Markets",
+    "id": "indonesia--jakarta-property-markets--r13--2028-05",
+    "parent_id": "indonesia--jakarta-property-markets--r13",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "South Korea",
+    "city_state": "Seoul Metropolitan Area",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Korean",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      7,
+      10
+    ],
+    "team": "Korea Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Seoul Prime Office",
+    "id": "south-korea--seoul-prime-office--r23--2028-05",
+    "parent_id": "south-korea--seoul-prime-office--r23",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Industrial Briefing",
+    "id": "singapore--singapore-industrial-briefing--r27--2028-05",
+    "parent_id": "singapore--singapore-industrial-briefing--r27",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Office Briefing",
+    "id": "singapore--singapore-office-briefing--r32--2028-05",
+    "parent_id": "singapore--singapore-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Leasing Briefing",
+    "id": "singapore--singapore-residential-leasing-briefing--r28--2028-05",
+    "parent_id": "singapore--singapore-residential-leasing-briefing--r28",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Residential Sales Briefing",
+    "id": "singapore--singapore-residential-sales-briefing--r29--2028-05",
+    "parent_id": "singapore--singapore-residential-sales-briefing--r29",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Retail"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Retail Briefing",
+    "id": "singapore--singapore-retail-briefing--r30--2028-05",
+    "parent_id": "singapore--singapore-retail-briefing--r30",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Singapore",
+    "city_state": "Singapore",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Singapore Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Singapore Sales & Investment Briefing",
+    "id": "singapore--singapore-sales-investment-briefing--r31--2028-05",
+    "parent_id": "singapore--singapore-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r32--2028-05",
+    "parent_id": "taiwan--taipei-office-briefing--r32",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Office Briefing",
+    "id": "taiwan--taipei-office-briefing--r34--2028-05",
+    "parent_id": "taiwan--taipei-office-briefing--r34",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r31--2028-05",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r31",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Taiwan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Taipei Sales & Investment Briefing",
+    "id": "taiwan--taipei-sales-investment-briefing--r33--2028-05",
+    "parent_id": "taiwan--taipei-sales-investment-briefing--r33",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Leasing",
+    "id": "japan--tokyo-office-leasing--r14--2028-05",
+    "parent_id": "japan--tokyo-office-leasing--r14",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Japanese",
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Residential Leasing",
+    "id": "japan--tokyo-residential-leasing--r15--2028-05",
+    "parent_id": "japan--tokyo-residential-leasing--r15",
+    "recurring": true,
+    "expected_publication_date": "2028-05-31",
+    "is_tbd": false
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Newsletter",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "APAC Research",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "publication_name": "APAC Capital Markets Newsletter",
+    "id": "asia-pacific--apac-capital-markets-newsletter--r39--2028-06",
+    "parent_id": "asia-pacific--apac-capital-markets-newsletter--r39",
+    "recurring": true,
+    "expected_publication_date": "2028-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Residential"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "frequency": "Monthly",
+    "recurring_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - The Residential Review",
+    "id": "australia--australia-the-residential-review--r8--2028-06",
+    "parent_id": "australia--australia-the-residential-review--r8",
+    "recurring": true,
+    "expected_publication_date": "2028-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Japan",
+    "city_state": "Tokyo",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Annually",
+    "recurring_months": [
+      6
+    ],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Tokyo Office Supply",
+    "id": "japan--tokyo-office-supply--r21--2028-06",
+    "parent_id": "japan--tokyo-office-supply--r21",
+    "recurring": true,
+    "expected_publication_date": "2028-06-30",
+    "is_tbd": false
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Building scale amid headwinds",
+    "id": "australia--australia-building-scale-amid-headwinds--r11",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": null,
+    "is_tbd": true
+  },
+  {
+    "country": "Australia",
+    "city_state": "National",
+    "asset_class": [
+      "Industrial"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia - Industrial - The Transmission Channel",
+    "id": "australia--australia-industrial-the-transmission-channel--r12",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": null,
+    "is_tbd": true
+  },
+  {
+    "country": "Australia",
+    "city_state": "Australia",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Thought Leadership",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "APAC Research",
+    "notes": "Done but on hold at the moment",
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Australia Office Replacement Cost",
+    "id": "australia--australia-office-replacement-cost--r36",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": null,
+    "is_tbd": true
+  },
+  {
+    "country": "Japan",
+    "city_state": "TBD",
+    "asset_class": [
+      "TBD"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English; Japanese",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Japan Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Japan Special One-time Report (TBD)",
+    "id": "japan--japan-special-one-time-report-tbd--r22",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": null,
+    "is_tbd": true
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "team": "Australia Research",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "publication_name": "Sydney - Savills Prime Full Floor Availability Report",
+    "id": "australia--sydney-savills-prime-full-floor-availability-report--r4",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": null,
+    "is_tbd": true
   }
 ]

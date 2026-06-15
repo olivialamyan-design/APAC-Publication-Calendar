@@ -607,3 +607,354 @@ html[data-theme="dark"] .cal-more:hover { color: var(--yellow); }
 
 /* Strip month header was navy text on cream — invert tones */
 html[data-theme="dark"] .strip-head { color: var(--text); background: rgba(255,255,255,0.04); }
+
+/* =============================================================================
+ * v2 ADDITIONS (2026-06-15) — Scope-based colours, recurring style, TBD panel,
+ * collapsed/expanded Quarters cards, custom scrollbars matching reference.
+ * =========================================================================== */
+
+/* ---- Scope legend swatches (replaces per-market dots) ---- */
+.legend-swatch {
+  display: inline-block; width: 14px; height: 14px; border-radius: 3px;
+  border: 1px solid var(--hairline); margin-right: 6px;
+  vertical-align: -2px;
+}
+.legend-swatch-rec {
+  background: transparent;
+  border: 1.5px dashed var(--text-2);
+}
+.legend-label { font-weight: 500; }
+.legend-item.legend-static { cursor: default; }
+.legend-item.legend-static:hover { background: transparent; }
+
+/* ---- Recurring publication styling (dotted/dashed borders) ---- */
+.cal-evt.is-recurring {
+  /* dashed outline ABOVE the solid background fill; doubles as the legend cue */
+  box-shadow: inset 0 0 0 1.5px rgba(37,39,58,0.55);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.0) 0px,
+    rgba(255,255,255,0.0) 5px,
+    rgba(255,255,255,0.22) 5px,
+    rgba(255,255,255,0.22) 6px
+  );
+}
+html[data-theme="dark"] .cal-evt.is-recurring {
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.45);
+}
+.cal-evt-rec, .strip-rec {
+  display: inline-block; font-weight: 700;
+  margin-right: 2px; font-size: 0.95em;
+  opacity: 0.85;
+}
+.strip-evt.is-recurring {
+  border-left-style: dashed !important;
+  border-left-width: 3px;
+}
+.strip-evt.is-recurring .strip-name { font-style: italic; }
+
+/* ---- Quarters card: scope variable + collapsed/expanded states ---- */
+.qk-card {
+  /* Reset legacy --mkt usage in favour of --scope (set inline) */
+  border-left: 3px solid var(--scope, var(--steel));
+}
+.qk-card:hover {
+  border-left-color: var(--scope, var(--steel));
+}
+.qk-card.is-recurring {
+  border-left-style: dashed;
+}
+
+.qk-card.collapsed { padding: 8px 10px; }
+.qk-card.collapsed .qk-card-body { display: none; }
+.qk-card.expanded { padding: 10px 11px; }
+
+.qk-card-title-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--text); line-height: 1.3;
+}
+.qk-card-date {
+  flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 22px; padding: 0 5px;
+  background: var(--scope, var(--steel));
+  color: var(--scope-text, #fff);
+  border-radius: 4px;
+  font-size: 11px; font-weight: 700;
+}
+.qk-card-title {
+  flex: 1; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis;
+  /* allow 2-line wrap when expanded */
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+.qk-rec { color: var(--text-2); font-weight: 700; margin-right: 3px; }
+.qk-card-caret {
+  flex: none; color: var(--text-3); font-size: 12px;
+  transition: transform .12s ease;
+}
+.qk-card.expanded .qk-card-caret { transform: rotate(180deg); }
+
+.qk-card-body { margin-top: 10px; }
+.qk-card-body .qk-head { margin-bottom: 6px; }
+.qk-city { color: var(--text-3); font-weight: 400; }
+
+.qk-freq {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+  background: var(--steel-15); color: var(--text-2);
+  border-radius: 3px; padding: 1px 6px; font-weight: 600;
+}
+
+.qk-card-open {
+  margin-top: 10px;
+  background: transparent; border: 1px solid var(--hairline);
+  color: var(--text-2); font-size: 11.5px; font-weight: 600;
+  padding: 5px 10px; border-radius: var(--radius-sm); cursor: pointer;
+  transition: background .12s, color .12s, border-color .12s;
+}
+.qk-card-open:hover {
+  background: var(--steel-10); color: var(--navy); border-color: var(--steel-40);
+}
+html[data-theme="dark"] .qk-card-open:hover { color: var(--yellow); }
+
+/* TBD column: dashed border to differentiate */
+.qk-col-tbd { border-style: dashed; border-color: var(--steel-40); }
+.qk-col-tbd .qk-col-head {
+  background: repeating-linear-gradient(45deg,
+    var(--navy) 0, var(--navy) 8px,
+    rgba(255,255,255,0.06) 8px, rgba(255,255,255,0.06) 12px);
+  border-bottom: 2px dashed var(--steel-40);
+}
+html[data-theme="dark"] .qk-col-tbd .qk-col-head {
+  background: repeating-linear-gradient(45deg,
+    #2A2D40 0, #2A2D40 8px,
+    rgba(255,255,255,0.05) 8px, rgba(255,255,255,0.05) 12px);
+}
+
+/* ---- Custom scrollbars (slim, rounded thumb on dark track) ----
+   Matches the reference image: thin (8px), light-grey thumb with a subtle
+   gradient on a deeper track. WebKit + Firefox. Applied to scrollable
+   surfaces inside the planning views. */
+.qk-board,
+.qk-col-body,
+.tbl-scroll,
+.tbd-body,
+.side-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(165,175,190,0.55) rgba(37,39,58,0.12);
+}
+.qk-board::-webkit-scrollbar,
+.qk-col-body::-webkit-scrollbar,
+.tbl-scroll::-webkit-scrollbar,
+.tbd-body::-webkit-scrollbar,
+.side-panel::-webkit-scrollbar {
+  width: 8px; height: 8px;
+}
+.qk-board::-webkit-scrollbar-track,
+.qk-col-body::-webkit-scrollbar-track,
+.tbl-scroll::-webkit-scrollbar-track,
+.tbd-body::-webkit-scrollbar-track,
+.side-panel::-webkit-scrollbar-track {
+  background: rgba(37,39,58,0.08);
+  border-radius: 999px;
+}
+.qk-board::-webkit-scrollbar-thumb,
+.qk-col-body::-webkit-scrollbar-thumb,
+.tbl-scroll::-webkit-scrollbar-thumb,
+.tbd-body::-webkit-scrollbar-thumb,
+.side-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+    rgba(165,175,190,0.85) 0%,
+    rgba(140,150,165,0.65) 100%);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.qk-board::-webkit-scrollbar-thumb:hover,
+.qk-col-body::-webkit-scrollbar-thumb:hover,
+.tbl-scroll::-webkit-scrollbar-thumb:hover,
+.tbd-body::-webkit-scrollbar-thumb:hover,
+.side-panel::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+    rgba(185,195,210,0.95) 0%,
+    rgba(160,170,185,0.85) 100%);
+  background-clip: padding-box;
+}
+/* Dark: lighter thumb on a deeper track per reference image */
+html[data-theme="dark"] .qk-board,
+html[data-theme="dark"] .qk-col-body,
+html[data-theme="dark"] .tbl-scroll,
+html[data-theme="dark"] .tbd-body,
+html[data-theme="dark"] .side-panel {
+  scrollbar-color: rgba(200,210,225,0.50) rgba(255,255,255,0.05);
+}
+html[data-theme="dark"] .qk-board::-webkit-scrollbar-track,
+html[data-theme="dark"] .qk-col-body::-webkit-scrollbar-track,
+html[data-theme="dark"] .tbl-scroll::-webkit-scrollbar-track,
+html[data-theme="dark"] .tbd-body::-webkit-scrollbar-track,
+html[data-theme="dark"] .side-panel::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+}
+html[data-theme="dark"] .qk-board::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .qk-col-body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .tbl-scroll::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .tbd-body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .side-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+    rgba(210,218,232,0.75) 0%,
+    rgba(170,180,200,0.45) 100%);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+/* ---- TBD floating toggle (right edge) ---- */
+.tbd-toggle {
+  position: fixed; right: 0; top: 50%;
+  transform: translate(0, -50%) rotate(0deg);
+  z-index: 80;
+  background: var(--navy); color: var(--white);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
+  padding: 10px 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
+  box-shadow: -3px 0 14px rgba(0,0,0,0.18);
+  transition: right .25s cubic-bezier(.22,.61,.36,1), background .15s;
+  cursor: pointer;
+}
+.tbd-toggle:hover { background: var(--navy-90); }
+.tbd-toggle-num {
+  display: inline-block; min-width: 22px;
+  padding: 1px 6px;
+  background: var(--yellow); color: var(--ink);
+  border-radius: 999px; font-weight: 800;
+  font-size: 11px;
+}
+body.tbd-open .tbd-toggle { right: 360px; }
+
+/* ---- TBD panel (right-edge drawer) ---- */
+.tbd-panel {
+  position: fixed; top: 0; right: 0; height: 100vh;
+  width: 360px; max-width: 90vw;
+  background: var(--surface);
+  border-left: 1px solid var(--hairline);
+  box-shadow: var(--shadow-panel);
+  z-index: 85;
+  transform: translateX(100%);
+  transition: transform .25s cubic-bezier(.22,.61,.36,1);
+  display: flex; flex-direction: column;
+}
+.tbd-panel.open { transform: translateX(0); }
+.tbd-head {
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+  background: var(--surface);
+}
+.tbd-title {
+  font-size: 14px; font-weight: 700; color: var(--text);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+.tbd-count {
+  background: var(--steel-15); color: var(--text-2);
+  font-size: 11px; padding: 1px 8px; border-radius: 999px;
+  font-weight: 700;
+}
+.tbd-sub { font-size: 11.5px; color: var(--text-3); margin-top: 4px; line-height: 1.4; }
+.tbd-close {
+  position: absolute; top: 12px; right: 12px;
+  background: transparent; border: none; color: var(--text-2);
+  font-size: 16px; line-height: 1; padding: 4px 6px; border-radius: 4px;
+}
+.tbd-close:hover { background: var(--steel-10); color: var(--text); }
+
+.tbd-body {
+  flex: 1; overflow-y: auto;
+  padding: 12px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.tbd-empty {
+  padding: 28px 12px; text-align: center;
+  color: var(--text-3); font-size: 12.5px; font-style: italic;
+}
+.tbd-card {
+  background: var(--surface-2);
+  border: 1px dashed var(--steel-40);
+  border-left: 3px solid var(--scope, var(--steel));
+  border-radius: var(--radius-sm);
+  padding: 9px 11px;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, transform .05s ease;
+}
+.tbd-card:hover {
+  background: var(--steel-10);
+  border-color: var(--steel-40);
+}
+.tbd-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--yellow);
+}
+.tbd-card-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  margin-bottom: 6px;
+}
+.tbd-card-tag {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--text-3); font-weight: 700;
+}
+.tbd-card-title {
+  margin: 0 0 4px; font-size: 12.5px; font-weight: 600; color: var(--text);
+  line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tbd-card-meta { font-size: 11px; color: var(--text-2); margin-bottom: 4px; }
+.tbd-card-notes {
+  font-size: 11px; color: var(--text-3); font-style: italic;
+  border-top: 1px dashed var(--hairline); padding-top: 4px; margin-top: 4px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ---- Detail panel: new field flavours ---- */
+.dp-tbd-banner {
+  margin: 8px 18px 4px;
+  background: repeating-linear-gradient(45deg,
+    rgba(255,223,0,0.18) 0, rgba(255,223,0,0.18) 8px,
+    rgba(255,223,0,0.08) 8px, rgba(255,223,0,0.08) 12px);
+  border-left: 3px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  padding: 9px 11px;
+  font-size: 12px; color: var(--text);
+}
+html[data-theme="dark"] .dp-tbd-banner { color: var(--text); }
+.dp-muted { color: var(--text-3); font-style: italic; }
+.dp-chip-rec {
+  background: transparent; border: 1.5px dashed var(--text-2); color: var(--text-2);
+  font-weight: 700; padding: 1px 7px; font-size: 12px;
+}
+html[data-theme="dark"] .dp-chip-rec { color: var(--text); border-color: var(--text); }
+.dp-series-id {
+  font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--text-2);
+  word-break: break-all;
+}
+.dp-list-rec {
+  color: var(--text-2); font-weight: 700; font-size: 11px;
+}
+.badge-freq { background: var(--steel-15); color: var(--text); font-weight: 600; }
+.badge-rec {
+  background: transparent; border: 1.5px dashed var(--text-2);
+  color: var(--text-2); font-weight: 700;
+}
+html[data-theme="dark"] .badge-rec { color: var(--text); border-color: var(--text); }
+
+/* ---- Market chip on yellow: always use dark navy text (contrast) ---- */
+.mkt-chip { color: var(--scope-text, #FFFFFF); }
+
+/* Mobile adjustments */
+@media (max-width: 760px) {
+  .tbd-panel { width: 100vw; }
+  body.tbd-open .tbd-toggle { right: auto; left: 50%; transform: translate(-50%, 0); top: auto; bottom: 12px; }
+}

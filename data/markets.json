@@ -1,5 +1,5 @@
 {
-  "_comment": "14 markets, equal weight. Colours derived strictly from the Savills palette (Navy #25273A, Steel Grey #79828C, Red #CE181E, Yellow #FFDF00) via disciplined tints/shades. Each market has a chip fill and an auto-contrast text colour. All pairs verified WCAG AA (>= 4.5:1). Global Research is treated as a country-like option with no special weighting.",
+  "_comment": "Two-tone scheme by report scope (not by country). Regional reports use Savills Yellow #FFDF00 with black text. In-Country reports use Savills Steel Grey #79828C with white text. Per-market colour assignment has been retired per user direction (2026-06-15) — see Quarters/Calendar/Detail views.",
   "palette_bases": {
     "navy": "#25273A",
     "steel": "#79828C",
@@ -9,20 +9,13 @@
     "white": "#FFFFFF",
     "black": "#000000"
   },
-  "markets": [
-    { "name": "Japan",           "family": "navy",   "fill": "#212334", "text": "#FFFFFF", "contrast": 15.50 },
-    { "name": "China",           "family": "navy",   "fill": "#25273A", "text": "#FFFFFF", "contrast": 14.69 },
-    { "name": "Hong Kong",       "family": "navy",   "fill": "#424757", "text": "#FFFFFF", "contrast": 9.25 },
-    { "name": "Singapore",       "family": "navy",   "fill": "#666875", "text": "#FFFFFF", "contrast": 5.52 },
-    { "name": "South Korea",     "family": "steel",  "fill": "#5B6269", "text": "#FFFFFF", "contrast": 6.18 },
-    { "name": "Taiwan",          "family": "steel",  "fill": "#79828C", "text": "#000000", "contrast": 5.38 },
-    { "name": "Australia",       "family": "steel",  "fill": "#969EA5", "text": "#000000", "contrast": 7.73 },
-    { "name": "India",           "family": "steel",  "fill": "#535967", "text": "#FFFFFF", "contrast": 7.02 },
-    { "name": "Thailand",        "family": "red",    "fill": "#A91419", "text": "#FFFFFF", "contrast": 7.50 },
-    { "name": "Vietnam",         "family": "red",    "fill": "#CE181E", "text": "#FFFFFF", "contrast": 5.56 },
-    { "name": "Indonesia",       "family": "red",    "fill": "#DC595D", "text": "#000000", "contrast": 5.63 },
-    { "name": "Malaysia",        "family": "yellow", "fill": "#F0A309", "text": "#000000", "contrast": 9.95 },
-    { "name": "Philippines",     "family": "yellow", "fill": "#D7C32A", "text": "#000000", "contrast": 11.73 },
-    { "name": "Global Research", "family": "yellow", "fill": "#E0C400", "text": "#000000", "contrast": 12.07 }
+  "scope_colors": {
+    "Regional":   { "fill": "#FFDF00", "text": "#25273A", "name": "Savills Yellow" },
+    "In-Country": { "fill": "#79828C", "text": "#FFFFFF", "name": "Savills Steel Grey" }
+  },
+  "_markets_known": [
+    "Japan", "China", "Hong Kong", "Singapore", "South Korea", "Taiwan",
+    "Australia", "India", "Thailand", "Vietnam", "Indonesia", "Malaysia",
+    "Philippines", "Global", "Asia Pacific"
   ]
 }

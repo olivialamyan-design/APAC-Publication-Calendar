@@ -137,21 +137,112 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // Market legend (visible from both views)
+  // Scope legend (two-tone). The colour system is now scope-based, not
+  // per-market — yellow = Regional, steel grey = In-Country.
   // ===========================================================================
   function buildLegend() {
     const box = document.getElementById("legend");
     box.innerHTML = "";
-    DataLayer.getMarkets().forEach(m => {
-      const item = H.el("button", { class: "legend-item", title: `Filter to ${m.name}` });
-      item.innerHTML = `<span class="mkt-dot" style="background:${m.fill}"></span>${H.esc(m.name)}`;
-      item.addEventListener("click", () => {
-        const s = State.get();
-        const has = s.markets.includes(m.name);
-        State.set({ markets: has ? s.markets.filter(x => x !== m.name) : s.markets.concat([m.name]) });
+    const items = [
+      { scope: "Regional",   label: "Regional reports",   c: { fill: "#FFDF00", text: "#25273A" } },
+      { scope: "In-Country", label: "In-Country reports", c: { fill: "#79828C", text: "#FFFFFF" } }
+    ];
+    items.forEach(it => {
+      const item = H.el("button", {
+        class: "legend-item",
+        title: `Filter to ${it.label}`
       });
+      item.innerHTML =
+        `<span class="legend-swatch" style="background:${it.c.fill}"></span>` +
+        `<span class="legend-label">${H.esc(it.label)}</span>`;
+      item.addEventListener("click", () => State.set({ scope: it.scope }));
       box.appendChild(item);
     });
+    // dotted swatch = recurring instance
+    const rec = H.el("span", { class: "legend-item legend-static", title: "Recurring instance" });
+    rec.innerHTML =
+      `<span class="legend-swatch legend-swatch-rec" aria-hidden="true"></span>` +
+      `<span class="legend-label">↻ Recurring instance</span>`;
+    box.appendChild(rec);
+  }
+
+  // ===========================================================================
+  // TBD side panel (collapsible right-edge drawer). Shows publications whose
+  // date is unknown so they don't disappear off the calendar. Available on
+  // every tab.
+  // ===========================================================================
+  function buildTbdPanel() {
+    let panel = document.getElementById("tbdPanel");
+    if (!panel) {
+      panel = H.el("aside", { id: "tbdPanel", class: "tbd-panel",
+        "aria-label": "TBD publications" });
+      document.body.appendChild(panel);
+      // floating toggle button (lives outside the panel so it stays visible)
+      const tog = H.el("button", {
+        id: "tbdToggle", class: "tbd-toggle",
+        title: "Show publications with no date (TBD)",
+        "aria-controls": "tbdPanel", "aria-expanded": "false"
+      });
+      tog.innerHTML = `<span class="tbd-toggle-num tnum">0</span> TBD`;
+      document.body.appendChild(tog);
+      tog.addEventListener("click", () => {
+        const open = panel.classList.toggle("open");
+        tog.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.classList.toggle("tbd-open", open);
+      });
+    }
+    const tbd = DataLayer.getTBD();
+    document.getElementById("tbdToggle")
+      .querySelector(".tbd-toggle-num").textContent = String(tbd.length);
+
+    panel.innerHTML = "";
+    const head = H.el("div", { class: "tbd-head" });
+    head.innerHTML =
+      `<div class="tbd-title">TBD <span class="tbd-count tnum">${tbd.length}</span></div>` +
+      `<div class="tbd-sub">Publications without a confirmed date. Click any to open detail and set a date.</div>`;
+    const close = H.el("button", { class: "btn-icon tbd-close", title: "Close" }, "✕");
+    close.addEventListener("click", () => {
+      panel.classList.remove("open");
+      document.body.classList.remove("tbd-open");
+      const t = document.getElementById("tbdToggle");
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
+    head.appendChild(close);
+    panel.appendChild(head);
+
+    const body = H.el("div", { class: "tbd-body" });
+    if (!tbd.length) {
+      body.appendChild(H.el("div", { class: "tbd-empty" },
+        "No TBD publications. Everything has a date."));
+    } else {
+      tbd.forEach(p => {
+        const c = DataLayer.colourFor(p);
+        const card = H.el("article", {
+          class: "tbd-card",
+          style: `--scope:${c.fill};`,
+          tabindex: "0",
+          role: "button",
+          title: "Open detail"
+        });
+        const tags = [p.country, p.publication_type, p.frequency]
+          .filter(Boolean).join(" · ");
+        card.innerHTML =
+          `<div class="tbd-card-head">` +
+            `<span class="chip mkt-chip" style="background:${c.fill};color:${c.text};">${H.esc(p.country)}</span>` +
+            `<span class="tbd-card-tag">${H.esc(p.frequency || "Ad Hoc")}</span>` +
+          `</div>` +
+          `<h4 class="tbd-card-title">${H.esc(p.publication_name)}</h4>` +
+          `<div class="tbd-card-meta">${H.esc(tags)}</div>` +
+          (p.notes ? `<div class="tbd-card-notes">${H.esc(p.notes)}</div>` : "");
+        const open = () => Detail.open(p.id);
+        card.addEventListener("click", open);
+        card.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+        });
+        body.appendChild(card);
+      });
+    }
+    panel.appendChild(body);
   }
 
   // ===========================================================================
@@ -231,6 +322,7 @@ const App = (() => {
   function refreshFromData() {
     buildFilterBar();
     buildLegend();
+    buildTbdPanel();
     rerender();
   }
 
@@ -258,6 +350,7 @@ const App = (() => {
     buildTabs();
     buildFilterBar();
     buildLegend();
+    buildTbdPanel();
 
     document.getElementById("btnAdd").addEventListener("click", () => Form.open(null));
     document.getElementById("btnCsv").addEventListener("click", exportCsv);

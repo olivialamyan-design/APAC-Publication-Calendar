@@ -116,6 +116,9 @@ const State = (() => {
     const city = s.cityState.trim().toLowerCase();
 
     return all.filter(p => {
+      // TBD rows never appear in the main calendar/table/quarters streams.
+      // They surface only in the dedicated TBD panel/column.
+      if (p.is_tbd) return false;
       // market
       if (s.markets.length && !s.markets.includes(p.country)) return false;
       // scope (Both => no filter)

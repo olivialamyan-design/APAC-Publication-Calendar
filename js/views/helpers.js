@@ -34,18 +34,27 @@ const H = (() => {
   };
   const isPast = iso => iso && iso < State.todayISO();
 
-  // market chip element
-  const marketChip = country => {
-    const m = DataLayer.getMarket(country);
+  // Scope-based chip (Regional = yellow, In-Country = steel grey).
+  // The first arg may be a publication object OR a market name (legacy callers).
+  // When given just a name we default to In-Country styling.
+  const _resolve = arg => {
+    if (arg && typeof arg === "object" && "report_scope" in arg) {
+      return { c: DataLayer.colourFor(arg), label: arg.country };
+    }
+    // legacy: just a country string
+    return { c: DataLayer.colourFor({ report_scope: "In-Country" }), label: String(arg || "") };
+  };
+  const marketChip = arg => {
+    const { c, label } = _resolve(arg);
     return el("span", {
       class: "chip mkt-chip",
-      style: `background:${m.fill};color:${m.text};`,
-      title: country
-    }, esc(country));
+      style: `background:${c.fill};color:${c.text};`,
+      title: label
+    }, esc(label));
   };
-  const marketDot = country => {
-    const m = DataLayer.getMarket(country);
-    return `<span class="mkt-dot" style="background:${m.fill}"></span>`;
+  const marketDot = arg => {
+    const { c } = _resolve(arg);
+    return `<span class="mkt-dot" style="background:${c.fill}"></span>`;
   };
 
   // small badge (asset classes etc.)

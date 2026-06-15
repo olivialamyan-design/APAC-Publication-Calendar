@@ -7,8 +7,12 @@
 
 const DataLayer = (() => {
   let _publications = [];   // in-memory dataset (source of truth at runtime)
-  let _markets = [];        // from markets.json
-  let _marketIndex = {};    // name -> {fill, text}
+  let _markets = [];        // from markets.json (kept for compatibility; not used for colours)
+  let _marketIndex = {};    // name -> {fill, text}  (legacy per-market index)
+  let _scopeColors = {      // canonical fallback if markets.json fails to load
+    "Regional":   { fill: "#FFDF00", text: "#25273A" },
+    "In-Country": { fill: "#79828C", text: "#FFFFFF" }
+  };
   let _schema = null;
 
   // ---- generate a RFC4122-ish UUID without external deps ----
@@ -33,12 +37,15 @@ const DataLayer = (() => {
     _markets = mkts.markets || [];
     _marketIndex = {};
     _markets.forEach(m => { _marketIndex[m.name] = m; });
+    if (mkts.scope_colors) _scopeColors = mkts.scope_colors;
     _schema = schema;
     return { publications: _publications, markets: _markets };
   }
 
   // ---- tolerate missing/null fields (esp. status, notes, city_state) ----
   function normalize(r) {
+    const expected = r.expected_publication_date || "";
+    const isTbd = r.is_tbd === true || (!r.recurring && !expected);
     return {
       id: r.id || uuid(),
       country: r.country || "",
@@ -47,10 +54,16 @@ const DataLayer = (() => {
       asset_class: Array.isArray(r.asset_class) ? r.asset_class : [],
       publication_type: r.publication_type || "",
       language: r.language || "",
-      expected_publication_date: r.expected_publication_date || "",
+      expected_publication_date: expected,
       team: r.team || "",
       notes: r.notes || "",
       report_scope: r.report_scope || "Regional",
+      // recurring metadata (new, 2026-06-15)
+      frequency: r.frequency || "Ad Hoc",
+      recurring_months: Array.isArray(r.recurring_months) ? r.recurring_months : [],
+      recurring: r.recurring === true,
+      parent_id: r.parent_id || null,
+      is_tbd: isTbd,
       // FUTURE-EXTENSIBLE: status is nullable in v1; UI must tolerate null/missing.
       status: (r.status === undefined ? null : r.status)
     };
@@ -82,10 +95,38 @@ const DataLayer = (() => {
 
   // ---- accessors ----
   const getAll = () => _publications.slice();
-  const getMarkets = () => _markets.slice();
+  // Derive the market list from publications themselves so legend/filter stay in
+  // sync with the data. Returns [{name, fill, text}] using scope-based colours.
+  const getMarkets = () => {
+    const seen = new Set();
+    _publications.forEach(p => { if (p.country) seen.add(p.country); });
+    // Preferred order: Asia Pacific & Global first (regional), then countries A-Z
+    const arr = Array.from(seen).sort((a, b) => {
+      const ra = /^(Asia Pacific|Global)$/.test(a) ? 0 : 1;
+      const rb = /^(Asia Pacific|Global)$/.test(b) ? 0 : 1;
+      if (ra !== rb) return ra - rb;
+      return a.localeCompare(b);
+    });
+    return arr.map(name => {
+      // pick a representative scope colour for the chip by inspecting first match
+      const sample = _publications.find(p => p.country === name);
+      const c = colourFor(sample || {});
+      return { name, fill: c.fill, text: c.text };
+    });
+  };
+  // LEGACY: kept so any old call site still works. New code should call colourFor(p).
   const getMarket = name => _marketIndex[name] || { fill: "#79828C", text: "#FFFFFF" };
+  // NEW canonical colour resolver: yellow for Regional, steel grey for In-Country.
+  const colourFor = p => {
+    const scope = (p && p.report_scope) === "Regional" ? "Regional" : "In-Country";
+    return _scopeColors[scope] || { fill: "#79828C", text: "#FFFFFF" };
+  };
   const getById = id => _publications.find(p => p.id === id) || null;
   const getSchema = () => _schema;
+
+  // ---- TBD-aware accessors ----
+  const getScheduled = () => _publications.filter(p => !p.is_tbd);
+  const getTBD = () => _publications.filter(p => p.is_tbd);
 
   // ---- in-memory add (used after a successful GitHub write OR offline) ----
   function addLocal(rec) {
@@ -200,7 +241,9 @@ const DataLayer = (() => {
 
   return {
     loadAll, validate, uuid,
-    getAll, getMarkets, getMarket, getById, getSchema,
+    getAll, getScheduled, getTBD,
+    getMarkets, getMarket, colourFor,
+    getById, getSchema,
     addLocal, replaceAll,
     commitNewPublication, buildDownloadBlob
   };

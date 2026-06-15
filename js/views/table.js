@@ -13,7 +13,7 @@ const TableView = (() => {
     { key: "expected_publication_date", label: "Date", cls: "tnum",
       render: p => H.fmtLong(p.expected_publication_date) },
     { key: "country", label: "Market",
-      render: p => H.marketDot(p.country) + H.esc(p.country) },
+      render: p => H.marketDot(p) + H.esc(p.country) },
     { key: "publication_name", label: "Publication", cls: "col-name",
       render: p => H.esc(p.publication_name) },
     { key: "city_state", label: "City / State", render: p => H.esc(p.city_state) },
