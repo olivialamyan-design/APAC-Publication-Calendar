@@ -1,0 +1,59 @@
+name: Refresh APAC holidays (every 6 months)
+
+# WHAT THIS DOES
+# --------------
+# Regenerates data/holidays.json for the 14 APAC markets the calendar covers,
+# using the Python `holidays` library (national / country-level public
+# holidays only, English names). It mirrors tools/gen_holidays.py exactly, so
+# the file committed here is identical in shape to the local seed.
+#
+# WHY the `holidays` library (not Nager.Date / OpenHolidays): those public
+# APIs lack reliable coverage for several required markets (India, Malaysia,
+# Pakistan, Taiwan, Thailand). The `holidays` package covers all 14.
+#
+# SCOPE: country-level only (no subdivisions) => national public holidays,
+# per requirement. Years = current year + next year, refreshed twice a year so
+# the calendar always shows at least the next ~12 months of holidays.
+
+on:
+  schedule:
+    # Jan 2 and Jul 2 each year, 03:00 UTC.
+    - cron: "0 3 2 1,7 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-holidays
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install holidays library
+        run: pip install --upgrade "holidays>=0.50"
+
+      - name: Generate data/holidays.json
+        run: python3 tools/gen_holidays.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/holidays.json; then
+            echo "No holiday changes to commit."
+          else
+            git add data/holidays.json
+            git commit -m "chore(holidays): semi-annual refresh of APAC public holidays [skip ci]"
+            git push
+          fi
