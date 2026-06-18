@@ -1,0 +1,124 @@
+name: Usage snapshot (page-open counts)
+
+# WHAT THIS DOES
+# --------------
+# Snapshots GitHub's own "Pages traffic / views" statistics for this repo and
+# accumulates them into data/usage.json. The Usage tab in the app reads that
+# committed file. This is the SHARED, cross-user, server-side source of truth
+# for "how many times the platform was opened over time" — a static page on
+# GitHub Pages cannot count visits across users on its own.
+#
+# WHY ACCUMULATE: the GitHub Pages views API only returns the LAST ~14 days,
+# so each run MERGES the fresh window into the historical series already in
+# data/usage.json (existing days keep their value; only newly-seen / higher
+# counts are written). Nothing is ever lost.
+#
+# REQUIREMENTS
+#   * GitHub Pages must be enabled for the repo (Settings -> Pages).
+#   * The Pages traffic API needs admin access to the repo. The default
+#     GITHUB_TOKEN works because we request `administration: read` below and
+#     the workflow runs in this repo. If your org restricts that, create a
+#     fine-grained PAT with "Administration: Read" + "Contents: Read & write"
+#     and store it as secret USAGE_TOKEN (the step prefers it if present).
+#   * Visit counts are unique-per-15-min as GitHub defines them — i.e. page
+#     opens, not clickstream events. No third-party analytics, no user identity.
+
+on:
+  schedule:
+    - cron: "17 1 * * *"   # daily at 01:17 UTC
+  workflow_dispatch: {}     # allow manual run from the Actions tab
+
+permissions:
+  contents: write           # commit data/usage.json
+  administration: read      # read Pages traffic stats
+
+concurrency:
+  group: usage-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Pages views and merge into data/usage.json
+        env:
+          # Prefer a user-supplied PAT if set, else fall back to GITHUB_TOKEN.
+          GH_TOKEN: ${{ secrets.USAGE_TOKEN || secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, datetime
+
+          owner = os.environ["OWNER"]
+          repo  = os.environ["REPO"]
+          token = os.environ["GH_TOKEN"]
+          api = f"https://api.github.com/repos/{owner}/{repo}/pages/views?per=day"
+
+          req = urllib.request.Request(api, headers={
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "apac-usage-snapshot",
+          })
+
+          fresh = {}
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  payload = json.load(r)
+              for v in payload.get("views", []):
+                  # timestamp like "2026-06-17T00:00:00Z" -> date
+                  day = v["timestamp"][:10]
+                  fresh[day] = int(v.get("count", 0))
+              print(f"Fetched {len(fresh)} day(s) of Pages views.")
+          except Exception as e:
+              # Don't fail the whole job (e.g. Pages not yet enabled or no
+              # admin scope) — just keep the existing file untouched.
+              print(f"::warning::Could not fetch Pages views: {e}")
+              sys.exit(0)
+
+          path = "data/usage.json"
+          try:
+              with open(path, encoding="utf-8") as f:
+                  doc = json.load(f)
+          except Exception:
+              doc = {}
+
+          # Build a date->count map from whatever history we already have.
+          hist = {}
+          for d in doc.get("daily", []):
+              if d and d.get("date"):
+                  hist[d["date"]] = int(d.get("count", 0))
+
+          # Merge: take the max so re-counts within the 14-day window never
+          # shrink an established day; new days are added.
+          for day, cnt in fresh.items():
+              hist[day] = max(hist.get(day, 0), cnt)
+
+          daily = [{"date": d, "count": hist[d]} for d in sorted(hist)]
+          out = {
+              "source": "github-pages-views",
+              "updated_at": datetime.datetime.now(datetime.UTC).date().isoformat(),
+              "note": "Daily page-open counts from GitHub Pages traffic stats, "
+                      "accumulated by .github/workflows/usage-snapshot.yml.",
+              "daily": daily,
+          }
+          with open(path, "w", encoding="utf-8") as f:
+              json.dump(out, f, ensure_ascii=False, indent=2)
+          print(f"Wrote {len(daily)} day(s) to {path}.")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/usage.json; then
+            echo "No usage changes to commit."
+          else
+            git add data/usage.json
+            git commit -m "chore(usage): daily page-open snapshot [skip ci]"
+            git push
+          fi

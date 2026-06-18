@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Savills APAC Research Publication",
+  "description": "Single record in /data/publications.json. The array of these records is the canonical source of truth for the publication calendar.",
+  "type": "object",
+  "required": [
+    "id",
+    "country",
+    "publication_name",
+    "asset_class",
+    "publication_type",
+    "language",
+    "expected_publication_date",
+    "report_scope"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "UUID or slug. Stable unique identifier; generated client-side on add."
+    },
+    "country": {
+      "type": "string",
+      "description": "One of the 14 markets (Global Research treated as a country-like option).",
+      "enum": [
+        "Japan", "China", "Thailand", "Hong Kong", "Singapore", "Vietnam",
+        "Philippines", "Malaysia", "South Korea", "Taiwan", "Australia",
+        "Indonesia", "India", "Global Research"
+      ]
+    },
+    "city_state": {
+      "type": "string",
+      "description": "Free-text city or state/region within the market. May equal the country for city-states."
+    },
+    "publication_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset_class": {
+      "type": "array",
+      "description": "Multi-select taxonomy.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Office", "Logistics", "Residential", "Retail", "Hotels",
+          "Industrial", "Capital Markets", "Data Centres", "Mixed Use"
+        ]
+      }
+    },
+    "publication_type": {
+      "type": "string",
+      "description": "Single-select.",
+      "enum": [
+        "Market Reports", "Blogs", "White Papers",
+        "Thought Leadership", "Quarterly Outlooks", "Sector Updates"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
+        "Korean", "Thai", "Vietnamese", "Bahasa Indonesia", "Bahasa Malaysia"
+      ]
+    },
+    "expected_publication_date": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date (YYYY-MM-DD)."
+    },
+    "team": {
+      "type": "string",
+      "description": "Owning research team, e.g. 'HK Research'."
+    },
+    "lead_author": {
+      "type": ["string", "null"],
+      "description": "OPTIONAL (added 2026-06-18). The named individual who owns/authors the publication, distinct from the broader team. UI tolerates null/missing."
+    },
+    "start_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "OPTIONAL (added 2026-06-18). For recurring series: the ISO date (YYYY-MM-DD) the series begins. Future instances are projected on/after this date. Null = project from the upload/build date as before."
+    },
+    "notes": {
+      "type": "string"
+    },
+    "report_scope": {
+      "type": "string",
+      "description": "Regional reports are the default landing view. In-Country reports are local-market only.",
+      "enum": ["Regional", "In-Country"]
+    },
+    "status": {
+      "description": "FUTURE-EXTENSIBLE. NOT required in v1. UI tolerates null/missing. Planned future values: idea, drafting, review, sign off, published, delayed.",
+      "type": ["string", "null"],
+      "enum": ["idea", "drafting", "review", "sign off", "published", "delayed", null]
+    }
+  }
+}
