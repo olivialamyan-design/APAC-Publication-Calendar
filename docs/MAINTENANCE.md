@@ -125,6 +125,38 @@ No code change is required — the market list is data-driven.
 
 ---
 
+## Recurring date model (build-time expansion)
+
+Recurring rows are pre-expanded into `data/publications.json` by
+`tools/build_publications.py` — the browser never computes dates. Regenerate
+after any change:
+
+```
+python3 tools/build_publications.py --xlsx APAC-Publication-Calendar-Master-5.xlsx --out data/publications.json
+```
+
+Date for each generated occurrence is resolved in priority order:
+
+1. **Exact next-occurrence override** — `Expected Publication Date` on a
+   recurring row is used for the next upcoming occurrence only
+   (`date_confidence = "Confirmed"`); later instances revert to the estimate.
+2. **Recurring Timing Window** — `Early month`→5, `Mid-month`→15,
+   `Late month`→25, snapped to a business day via `adjust_to_business_day()`
+   (weekend → previous business day, kept in the same month). `Estimated`.
+3. **Fallback** — no window / `TBD` → `last_business_day_of_month()`
+   (Mon–Fri; public holidays ignored). `Estimated`.
+
+`date_confidence` is inferred when blank (exact→Confirmed, window/fallback→
+Estimated, neither→TBD); an owner value overrides. `Start Date` gates the first
+generated instance and is backend-only. Two fields are emitted per record:
+`recurring_timing_window` and `date_confidence` (both surfaced by
+`js/data.js → normalize()`; `detail.js` renders the Date Confidence row).
+
+Existing rows with no window keep `null` and use the fallback — windows are
+never auto-assigned by publication type.
+
+---
+
 ## Common tasks
 
 - **Change the landing defaults** (scope / window): `js/config.js → DEFAULT_SCOPE`

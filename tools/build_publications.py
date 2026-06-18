@@ -3,13 +3,30 @@
 
 Design goals (per Olivia's working rules):
   * Map columns by HEADER NAME, not position — robust to column reorder.
-  * Support the new `Lead Author` and `Start Date` fields.
-  * Expand recurring series exactly the way the live app expects:
+  * Support `Lead Author`, `Start Date`, `Recurring Timing Window`, `Date Confidence`.
+  * Expand recurring series with the ESTIMATED-DATE planning model (v4):
       - one record per occurrence,
-      - dates land on the LAST day of each recurring month,
+      - the date of each occurrence is chosen by this precedence:
+          1. Expected Publication Date  -> applies to the NEXT occurrence only,
+             then later occurrences revert to estimated timing.
+          2. Recurring Timing Window    -> placeholder date for the month:
+               Early month -> 5th  (adjusted to a business day, same month)
+               Mid-month   -> 15th (adjusted to a business day, same month)
+               Late month  -> 25th (adjusted to a business day, same month)
+               TBD / blank -> fall through to the fallback rule below.
+          3. Fallback (no timing rule) -> LAST BUSINESS DAY of the month
+             (weekdays only; public holidays are ignored for this logic).
       - projected forward over a fixed window (generation month .. +24 months),
-      - occurrences before a series `Start Date` are skipped.
-  * Output record shape matches the existing publications.json exactly.
+      - occurrences before a series `Start Date` are skipped; if Start Date is
+        blank, projection begins from the generation/upload date.
+  * Date Confidence is owner-overridable; if blank it is auto-inferred:
+        exact next-occurrence date -> Confirmed (that instance only)
+        timing window present       -> Estimated
+        neither                     -> TBD
+  * Business day = weekday (Mon–Fri). Weekend dates move to the PREVIOUS
+    business day, kept within the same month.
+  * Output record shape is a superset of the existing publications.json
+    (adds recurring_timing_window + date_confidence); all prior fields kept.
 
 This script is intentionally dependency-light (openpyxl + stdlib) so it runs
 the same locally and in CI.
@@ -51,11 +68,34 @@ HEADER_ALIASES = {
     "recurring_months":          ["recurring months"],
     "expected_publication_date": ["expected publication date"],
     "start_date":                ["start date"],
+    "recurring_timing_window":   ["recurring timing window", "timing window"],
+    "date_confidence":           ["date confidence"],
     "team":                      ["team"],
     "lead_author":               ["lead author"],
     "notes":                     ["notes"],
     "report_scope":              ["report scope"],
     "status":                    ["status (future)", "status"],
+}
+
+# Recurring Timing Window -> anchor day-of-month for the placeholder date.
+# Each anchor is then adjusted to the previous business day within the month.
+TIMING_WINDOW_ANCHOR = {
+    "early month": 5,
+    "mid-month":   15,
+    "mid month":   15,
+    "late month":  25,
+}
+TIMING_WINDOW_CANON = {
+    "early month": "Early month",
+    "mid-month":   "Mid-month",
+    "mid month":   "Mid-month",
+    "late month":  "Late month",
+    "tbd":         "TBD",
+}
+DATE_CONFIDENCE_CANON = {
+    "confirmed": "Confirmed",
+    "estimated": "Estimated",
+    "tbd":       "TBD",
 }
 
 MONTH_LOOKUP = {
@@ -85,6 +125,57 @@ def norm_header(text):
 
 def last_day_of_month(year, month):
     return calendar.monthrange(year, month)[1]
+
+
+def is_business_day(d):
+    """Business day = weekday (Mon–Fri). Public holidays are intentionally
+    ignored for recurring-date generation (per the v4 business rules)."""
+    return d.weekday() < 5  # Mon=0 .. Fri=4
+
+
+def adjust_to_business_day(year, month, day):
+    """Return a date for (year, month, day) snapped to a business day, kept
+    INSIDE the same month. If the anchor lands on a weekend, step BACKWARD to
+    the previous business day. If stepping back would leave the month (e.g. the
+    1st falls on a weekend), step FORWARD instead to the nearest business day
+    within the month — i.e. the closest in-month business day."""
+    day = max(1, min(day, last_day_of_month(year, month)))
+    d = datetime.date(year, month, day)
+    # Prefer the previous business day, but never cross out of the month.
+    back = d
+    while not is_business_day(back):
+        prev = back - datetime.timedelta(days=1)
+        if prev.month != month:
+            break
+        back = prev
+    if is_business_day(back) and back.month == month:
+        return back
+    # Couldn't go back within the month -> step forward to the closest in-month
+    # business day instead.
+    fwd = d
+    while not is_business_day(fwd) and fwd.month == month:
+        fwd = fwd + datetime.timedelta(days=1)
+    return fwd if (is_business_day(fwd) and fwd.month == month) else d
+
+
+def last_business_day_of_month(year, month):
+    """Fallback timing: last weekday of the month (was last CALENDAR day)."""
+    d = datetime.date(year, month, last_day_of_month(year, month))
+    while not is_business_day(d):
+        d -= datetime.timedelta(days=1)
+    return d
+
+
+def placeholder_date_for_window(year, month, window_canon):
+    """Map a canonical timing window to a business-day-adjusted date in the
+    month, or None if the window does not provide a timing rule (TBD/blank)."""
+    if not window_canon:
+        return None
+    key = window_canon.strip().lower()
+    anchor = TIMING_WINDOW_ANCHOR.get(key)
+    if anchor is None:
+        return None  # 'TBD' (or unknown) -> no timing rule; caller uses fallback
+    return adjust_to_business_day(year, month, anchor)
 
 
 def add_months(year, month, n):
@@ -162,6 +253,38 @@ def clean_text(value):
     return s or None
 
 
+def canon_timing_window(value, where=""):
+    """Normalise a Recurring Timing Window cell to one of the four canonical
+    values (Early month / Mid-month / Late month / TBD) or None if blank.
+    Unknown non-blank values are reported and treated as None (fallback)."""
+    s = clean_text(value)
+    if not s:
+        return None
+    key = s.lower()
+    canon = TIMING_WINDOW_CANON.get(key)
+    if canon is None:
+        print(f"  ! {where}: unrecognised Recurring Timing Window {s!r} "
+              f"(use Early month / Mid-month / Late month / TBD) — using fallback",
+              file=sys.stderr)
+        return None
+    return canon
+
+
+def canon_date_confidence(value, where=""):
+    """Normalise a Date Confidence cell to Confirmed / Estimated / TBD, or None
+    if blank (None signals 'auto-infer'). Unknown values are reported."""
+    s = clean_text(value)
+    if not s:
+        return None
+    canon = DATE_CONFIDENCE_CANON.get(s.lower())
+    if canon is None:
+        print(f"  ! {where}: unrecognised Date Confidence {s!r} "
+              f"(use Confirmed / Estimated / TBD) — will auto-infer",
+              file=sys.stderr)
+        return None
+    return canon
+
+
 # ---------------------------------------------------------------------------
 # Core build
 # ---------------------------------------------------------------------------
@@ -183,24 +306,51 @@ def build_header_map(ws):
     return found
 
 
-def occurrences_in_window(recurring_months, gen_year, gen_month, start_date):
-    """Yield date objects (last-day-of-month) for every recurring occurrence
-    inside [gen month .. gen month + FORWARD_MONTHS], honouring start_date."""
-    win_start = datetime.date(gen_year, gen_month, 1)
+def occurrences_in_window(recurring_months, gen_year, gen_month, start_date,
+                          timing_window):
+    """Compute every recurring occurrence inside
+    [gen month .. gen month + FORWARD_MONTHS], honouring start_date.
+
+    Each occurrence's ESTIMATED date is chosen by the timing window when one is
+    given, else by the last-business-day fallback. Returns a list of dicts:
+        {"year", "month", "date": date, "source": "timing"|"fallback"}
+    sorted chronologically. The Expected-Publication-Date override for the NEXT
+    occurrence is applied later by the caller.
+
+    Eligibility uses the MONTH (not the placeholder day) so that an estimated
+    date earlier in the month doesn't drop an otherwise-valid current-month
+    occurrence.
+    """
     end_year, end_month = add_months(gen_year, gen_month, FORWARD_MONTHS)
-    win_end = datetime.date(end_year, end_month, last_day_of_month(end_year, end_month))
+    win_end_month = datetime.date(end_year, end_month, 1)
+
+    start_year_month = None
+    if start_date is not None:
+        start_year_month = datetime.date(start_date.year, start_date.month, 1)
 
     out = []
-    # Walk every month in the window; emit if month is a recurring month.
     y, m = gen_year, gen_month
     cur = datetime.date(y, m, 1)
-    while cur <= win_end:
+    while cur <= win_end_month:
         if m in recurring_months:
-            d = datetime.date(y, m, last_day_of_month(y, m))
-            if d >= win_start and (start_date is None or d >= start_date):
-                out.append(d)
+            # Skip months strictly before the series Start Date's month.
+            if start_year_month is None or cur >= start_year_month:
+                est = placeholder_date_for_window(y, m, timing_window)
+                if est is not None:
+                    source = "timing"
+                else:
+                    est = last_business_day_of_month(y, m)
+                    source = "fallback"
+                # If Start Date is mid-month, only keep the start month when the
+                # estimated date still falls on/after the Start Date itself.
+                if start_date is not None and cur == start_year_month \
+                        and est < start_date:
+                    pass  # estimated slot already passed this month -> skip
+                else:
+                    out.append({"year": y, "month": m, "date": est, "source": source})
         y, m = add_months(y, m, 1)
         cur = datetime.date(y, m, 1)
+    out.sort(key=lambda o: o["date"])
     return out
 
 
@@ -226,6 +376,10 @@ def build_records(ws, hmap, gen_date):
         recurring_months = parse_recurring_months(cell(row, "recurring_months"),
                                                    where=f"row {row} ({name})")
         start_date = parse_date(cell(row, "start_date"))
+        timing_window = canon_timing_window(cell(row, "recurring_timing_window"),
+                                            where=f"row {row} ({name})")
+        owner_confidence = canon_date_confidence(cell(row, "date_confidence"),
+                                                 where=f"row {row} ({name})")
 
         exp_raw = cell(row, "expected_publication_date")
         exp_date = parse_date(exp_raw)
@@ -245,7 +399,9 @@ def build_records(ws, hmap, gen_date):
             "report_scope": clean_text(cell(row, "report_scope")) or "",
             "status": clean_text(cell(row, "status")),
             "publication_name": name,
+            # start_date is backend-only logic (not surfaced in the detail panel).
             "start_date": start_date.isoformat() if start_date else None,
+            "recurring_timing_window": timing_window,  # canonical or None
         }
 
         # Stable id seed: r{spreadsheet row} keeps ids unique & deterministic.
@@ -254,16 +410,41 @@ def build_records(ws, hmap, gen_date):
         is_recurring = bool(recurring_months) and frequency.lower() not in ("ad hoc", "one-off", "")
 
         if is_recurring:
-            dates = occurrences_in_window(recurring_months, gen_year, gen_month, start_date)
-            for d in dates:
+            occ = occurrences_in_window(recurring_months, gen_year, gen_month,
+                                        start_date, timing_window)
+            # ---- Exact next-occurrence override --------------------------------
+            # Expected Publication Date, when given on a recurring row, replaces
+            # the estimated date of the NEXT (earliest future) occurrence only.
+            # Later occurrences keep their estimated timing.
+            if exp_date is not None and occ:
+                next_idx = None
+                for i, o in enumerate(occ):
+                    if o["date"] >= gen_date:
+                        next_idx = i
+                        break
+                if next_idx is None:
+                    next_idx = 0  # all within window are past -> use earliest
+                occ[next_idx]["date"] = exp_date
+                occ[next_idx]["source"] = "confirmed"
+                occ.sort(key=lambda o: o["date"])
+
+            for o in occ:
+                d = o["date"]
                 rec = dict(base)
                 rec["id"] = f"{seed}--{d.strftime('%Y-%m')}"
                 rec["parent_id"] = seed
                 rec["recurring"] = True
                 rec["expected_publication_date"] = d.isoformat()
                 rec["is_tbd"] = False
+                # ---- Date Confidence: owner override else auto-infer ----------
+                if owner_confidence is not None:
+                    rec["date_confidence"] = owner_confidence
+                elif o["source"] == "confirmed":
+                    rec["date_confidence"] = "Confirmed"
+                else:  # 'timing' or 'fallback' -> estimated planning date
+                    rec["date_confidence"] = "Estimated"
                 records.append(rec)
-            if not dates:
+            if not occ:
                 print(f"  · row {row}: recurring series '{name}' produced 0 occurrences "
                       f"(check Start Date / Recurring Months)", file=sys.stderr)
         else:
@@ -273,6 +454,13 @@ def build_records(ws, hmap, gen_date):
             rec["recurring"] = False
             rec["expected_publication_date"] = exp_date.isoformat() if exp_date else None
             rec["is_tbd"] = bool(tbd)
+            # Ad Hoc / one-off: confirmed if a date is set, else TBD (owner wins).
+            if owner_confidence is not None:
+                rec["date_confidence"] = owner_confidence
+            elif exp_date is not None:
+                rec["date_confidence"] = "Confirmed"
+            else:
+                rec["date_confidence"] = "TBD"
             records.append(rec)
 
     return records

@@ -65,7 +65,12 @@ const DataLayer = (() => {
       recurring_months: Array.isArray(r.recurring_months) ? r.recurring_months : [],
       recurring: r.recurring === true,
       // start_date (new, 2026-06-18): recurring series begins from this date.
+      // Backend-only logic; not surfaced in the detail panel.
       start_date: r.start_date || null,
+      // recurring_timing_window / date_confidence (new, 2026-06-18, v4):
+      // estimated-date planning model for recurring rows. Tolerates null.
+      recurring_timing_window: r.recurring_timing_window || null,
+      date_confidence: r.date_confidence || null,
       parent_id: r.parent_id || null,
       is_tbd: isTbd,
       // FUTURE-EXTENSIBLE: status is nullable in v1; UI must tolerate null/missing.

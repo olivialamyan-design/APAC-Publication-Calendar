@@ -77,7 +77,17 @@
     "start_date": {
       "type": ["string", "null"],
       "format": "date",
-      "description": "OPTIONAL (added 2026-06-18). For recurring series: the ISO date (YYYY-MM-DD) the series begins. Future instances are projected on/after this date. Null = project from the upload/build date as before."
+      "description": "OPTIONAL in JSON, REQUIRED in the master sheet for recurring rows (added 2026-06-18). For recurring series: the ISO date (YYYY-MM-DD) the series begins. Future instances are projected on/after this date. Null = project from the upload/build date. Backend-only: not surfaced in the detail panel."
+    },
+    "recurring_timing_window": {
+      "type": ["string", "null"],
+      "description": "OPTIONAL (added 2026-06-18, v4). For recurring rows whose exact date is not yet known: the within-month timing band used to estimate a placeholder date (Early month -> 5th, Mid-month -> 15th, Late month -> 25th, each snapped to a business day). 'TBD' or null falls back to the last business day of the month.",
+      "enum": ["Early month", "Mid-month", "Late month", "TBD", null]
+    },
+    "date_confidence": {
+      "type": ["string", "null"],
+      "description": "Per-instance confidence in the publication date (added 2026-06-18, v4). Owner-set value in the master sheet overrides platform inference; if blank the platform infers it: a confirmed Expected Publication Date -> 'Confirmed' (next occurrence only); a timing window or fallback estimate -> 'Estimated'; no date and no timing -> 'TBD'. Shown in the detail panel.",
+      "enum": ["Confirmed", "Estimated", "TBD", null]
     },
     "notes": {
       "type": "string"

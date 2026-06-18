@@ -1052,25 +1052,39 @@ html[data-theme="dark"] .cal-month-cap { color: var(--text); background: rgba(25
 .cal-cell-top { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
 .cal-hols { display: flex; flex-direction: column; gap: 2px; margin-top: auto; }
 .cal-hol-row {
-  /* Pale holiday card — brand-requested #EEE8E3, full width of the cell. */
-  background: #EEE8E3;
-  color: #4A4540;                 /* dark warm ink for AA contrast on #EEE8E3 */
+  /* Pale holiday card — brand cream #EEE8E3 rendered at ~30% opacity so the
+     row reads as a faint tint over the day cell. Because the fill is now
+     translucent the underlying cell colour shows through, so text colour is
+     set per-theme below for readability (light: dark warm ink; dark: near-white). */
+  background: rgba(238, 232, 227, 0.3);
+  color: #4A4540;                 /* dark warm ink — readable over the pale tint on white cells */
   font-size: 9.5px; font-weight: 600; line-height: 1.2;
   border-radius: 3px; padding: 2px 5px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .cal-hol-more { font-weight: 700; opacity: .85; }
-/* Dark mode: keep the SAME pale #EEE8E3 background, darken text for contrast. */
+/* Dark mode: keep the SAME 30%-opacity cream tint; lift text to near-white so
+   it stays readable over the dark cell showing through the translucent fill. */
 html[data-theme="dark"] .cal-hol-row {
-  background: #EEE8E3;
-  color: #2A2620;
+  background: rgba(238, 232, 227, 0.3);
+  color: var(--text);             /* #E8E9EE — readable on the dark cell beneath the tint */
 }
 .cal-month-compact .cal-hol-row { font-size: 9px; padding: 1px 4px; }
 .legend-swatch-hol {
   display: inline-block; width: 14px; height: 14px; border-radius: 3px;
-  background: #EEE8E3; border: 1px solid rgba(74,69,64,0.35);
+  background: rgba(238, 232, 227, 0.3); border: 1px solid rgba(74,69,64,0.35);
   margin-right: 6px; vertical-align: -2px;
 }
+html[data-theme="dark"] .legend-swatch-hol { border-color: rgba(232,233,238,0.35); }
+
+/* ---- Date Confidence badge (detail panel) ---- */
+.dp-conf { font-weight: 600; }
+.dp-conf-confirmed { color: var(--text); }
+.dp-conf-estimated { color: var(--text-2); }
+.dp-conf-tbd { color: var(--text-3); }
+html[data-theme="dark"] .dp-conf-confirmed { color: var(--text); }
+html[data-theme="dark"] .dp-conf-estimated { color: var(--text-2); }
+html[data-theme="dark"] .dp-conf-tbd { color: var(--text-3); }
 
 /* holiday on/off + market selector chips already use .chip-seg / .ms-*; nothing new */
 

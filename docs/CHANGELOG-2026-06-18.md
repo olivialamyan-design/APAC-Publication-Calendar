@@ -122,3 +122,71 @@ are worth correcting so the data reads cleanly and the market-in-name rule holds
 
 (The `un` → `Jun` typo in Recurring Months for two rows was already corrected so
 no June instances are lost.)
+
+---
+
+# APAC Publication Calendar — Change Log addendum (v4, 2026-06-18 PM)
+
+This round adds an **estimated recurring date model** and a small holiday-row
+styling tweak. As before: no rebuild — additive, reversible, same design
+language and information architecture, still static GitHub Pages.
+
+## Estimated recurring date model
+
+Recurring rows whose exact date is unknown now resolve to an **estimated** date
+instead of always landing on the calendar month-end. Date resolution priority,
+per generated occurrence (all in `tools/build_publications.py`):
+
+1. **Exact next-occurrence override** — if `Expected Publication Date` is set on
+   a recurring row, it is used for the **next upcoming occurrence only**
+   (Date Confidence = `Confirmed` for that instance). Later instances revert to
+   the estimate.
+2. **Recurring Timing Window** — `Early month` → 5th, `Mid-month` → 15th,
+   `Late month` → 25th, each snapped to a **business day** (weekend → previous
+   business day, same month). Date Confidence = `Estimated`.
+3. **Fallback** — no window (or `TBD`) → **last business day of the month**
+   (changed from last *calendar* day). Public holidays are ignored for this
+   calculation; business day = Mon–Fri. Date Confidence = `Estimated`.
+
+**Date Confidence** is auto-inferred when the owner leaves it blank
+(exact date → `Confirmed`; window/fallback → `Estimated`; neither → `TBD`); an
+owner-entered value always overrides inference. `Start Date` is now **required**
+for recurring rows (projected from upload date if blank) and remains
+backend-only (never shown in the detail panel).
+
+**Retroactive:** existing rows with no timing window keep `recurring_timing_window
+= null` and use the last-business-day fallback — windows are **not**
+auto-assigned by publication type. The build now emits two new per-record
+fields: `recurring_timing_window` and `date_confidence`.
+
+- **`tools/build_publications.py`** — business-day helpers, timing-window anchor
+  mapping, last-business-day fallback, next-occurrence override, confidence
+  inference. Recurring expansion still happens at **build time**.
+- **`data/schema.json`** — added `recurring_timing_window` and `date_confidence`
+  enums; clarified `start_date` (required-in-sheet for recurring, backend-only).
+- **`js/data.js`** — `normalize()` surfaces the two new fields.
+- **`js/views/detail.js`** — renders a **Date Confidence** row when present
+  (e.g. just `Date Confidence: Estimated`, no extra copy).
+
+## Holiday rows — paler tint
+
+- **`css/styles.css`** — calendar holiday-row background is now
+  `rgba(238, 232, 227, 0.3)` (cream `#EEE8E3` at ~30% opacity). Text colour kept
+  readable in **both** light and dark mode; the legend swatch matches. Holiday
+  *logic* is unchanged — styling only.
+
+## Spreadsheet (`APAC-Publication-Calendar-Master-5.xlsx`)
+
+- New columns after `Start Date`: **Recurring Timing Window** (L, dropdown:
+  Early month / Mid-month / Late month / TBD) and **Date Confidence** (M,
+  dropdown: Confirmed / Estimated / TBD). Team / Lead Author / Notes / Report
+  Scope / Status shift right to N–R.
+- Reference Lists gains the two dropdown sources; all data validations and
+  inline prompts rebuilt at the new positions.
+- New conditional-format **inconsistency flags**: Confirmed-but-no-Expected-Date,
+  recurring-with-no-Start-Date, Estimated-on-non-recurring-with-no-window
+  (red); timing-window-on-Ad-Hoc and TBD cells (amber).
+- Instructions sheet updated to **v4** (new fields, business-day fallback,
+  next-occurrence override, confidence inference, inconsistency-flags section).
+- Parser maps columns by **header name**, so the inserted columns don't break
+  the build.

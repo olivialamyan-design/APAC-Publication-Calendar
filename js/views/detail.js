@@ -62,6 +62,12 @@ const Detail = (() => {
       ? field("Recurring months", H.esc(fmtMonths(p.recurring_months)))
       : "";
 
+    // Date Confidence (2026-06-18, v4) — always shown when known. Per spec the
+    // value is shown plainly (e.g. "Estimated") with no extra explanatory copy.
+    const dateConfidenceRow = p.date_confidence
+      ? field("Date Confidence", `<span class="dp-conf dp-conf-${p.date_confidence.toLowerCase()}">${H.esc(p.date_confidence)}</span>`)
+      : "";
+
     // TBD banner — only for TBD rows
     const tbdBanner = p.is_tbd
       ? `<div class="dp-tbd-banner">No publication date set yet — this row is in the TBD queue. Click Edit to set a date.</div>`
@@ -82,6 +88,7 @@ const Detail = (() => {
       ${tbdBanner}
       <div class="dp-body">
         ${field("Expected publication", `<span class="tnum">${p.expected_publication_date ? H.fmtLong(p.expected_publication_date) : '<em class="dp-muted">TBD</em>'}</span>`)}
+        ${dateConfidenceRow}
         ${field("Country", H.esc(p.country) || "—")}
         ${field("City / State", H.esc(p.city_state) || "—")}
         ${field("Asset class", assets)}
