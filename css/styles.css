@@ -223,7 +223,7 @@ code { font-family: "SFMono-Regular", ui-monospace, monospace; font-size: 0.92em
 .strip-body { padding: 5px; display: flex; flex-direction: column; gap: 3px; }
 .strip-empty { color: var(--steel-40); padding: 6px 8px; font-size: 12px; }
 .strip-evt { display: flex; align-items: center; gap: 8px; text-align: left; background: transparent;
-  border: none; border-left: 3px solid var(--steel); border-radius: 0 3px 3px 0; padding: 4px 6px; width: 100%; }
+  color: var(--text); border: none; border-left: 3px solid var(--steel); border-radius: 0 3px 3px 0; padding: 4px 6px; width: 100%; }
 .strip-evt:hover { background: var(--steel-10); }
 .strip-date { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--text-2); width: 18px; flex: none; }
 .strip-name { font-size: 11.5px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -1030,20 +1030,45 @@ html[data-theme="dark"] .cal-month-cap { color: var(--text); background: rgba(25
  * allows; min-height is the floor so a busy cell never collapses. All cells in
  * a month share the same width (1fr columns) and the same height (the grid row
  * stretches every cell to the tallest in its row). */
-.cal-dual .cal-cell,
-.cal-single .cal-cell {
+.cal-dual .cal-cell {
   aspect-ratio: 1 / 1;
   min-height: 0;
   height: auto;
   overflow: hidden;
 }
-.cal-dual .cal-grid,
-.cal-single .cal-grid { grid-auto-rows: 1fr; }   /* equal row heights */
+.cal-dual .cal-grid { grid-auto-rows: 1fr; }   /* equal row heights */
 .cal-month-compact .cal-cell { padding: 4px 5px; }
 .cal-month-compact .cal-daynum { font-size: 11px; }
 .cal-month-compact .cal-evt { font-size: 10px; padding: 1px 5px; line-height: 1.25; }
 .cal-month-compact .cal-weekhead span { font-size: 10px; padding: 3px 0; }
-.cal-single { max-width: 980px; }
+
+/* ---- Single-month ("Month") view: fill the usable viewport below the
+ *      header/nav, filter bar and calendar toolbar. The month card grows to
+ *      occupy the remaining height; its 6 week-rows share that height equally
+ *      (grid-auto-rows: 1fr) so the whole month is visible without internal
+ *      scrolling. Density is unchanged (maxPerCell stays 4); cells simply use
+ *      the extra space. Panels/filters/toolbar are untouched and stay visible.
+ *      --cal-chrome ≈ topbar (53) + filter bar (~46) + toolbar (~44) +
+ *      view-mount vertical padding (14 top + a little breathing room). */
+.cal-single {
+  --cal-chrome: 176px;
+  display: flex;
+}
+.cal-single .cal-month {
+  flex: 1 1 auto;
+  display: flex; flex-direction: column;
+  min-height: 460px;
+  height: calc(100vh - var(--cal-chrome));
+}
+.cal-single .cal-grid {
+  flex: 1 1 auto;
+  grid-auto-rows: 1fr;            /* equal week-row heights fill the card */
+}
+.cal-single .cal-cell {
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+}
 
 /* swipe affordance dots (tablet/mobile only) */
 .cal-swipe-hint { display: none; }
@@ -1149,6 +1174,10 @@ html[data-theme="dark"] .ucl-shared { background: #6E76A8; }
   .cal-dual-pane:last-child { margin-right: 0; }
   /* equal-height fallback on small screens (exact squares may be impossible) */
   .cal-dual .cal-cell, .cal-single .cal-cell { aspect-ratio: auto; min-height: 84px; }
+  /* Month view: don't force a viewport-tall grid on small screens — let the
+     month grow naturally and the page scroll, so cells stay tall enough. */
+  .cal-single .cal-month { height: auto; min-height: 0; }
+  .cal-single .cal-grid { grid-auto-rows: minmax(84px, auto); }
   .cal-swipe-hint { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
   .cal-swipe-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--steel-25); }
   .cal-swipe-dot.on { background: var(--navy); }
