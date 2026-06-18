@@ -70,6 +70,15 @@
       "type": "string",
       "description": "Owning research team, e.g. 'HK Research'."
     },
+    "lead_author": {
+      "type": ["string", "null"],
+      "description": "OPTIONAL (added 2026-06-18). The named individual who owns/authors the publication, distinct from the broader team. UI tolerates null/missing."
+    },
+    "start_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "OPTIONAL (added 2026-06-18). For recurring series: the ISO date (YYYY-MM-DD) the series begins. Future instances are projected on/after this date. Null = project from the upload/build date as before."
+    },
     "notes": {
       "type": "string"
     },

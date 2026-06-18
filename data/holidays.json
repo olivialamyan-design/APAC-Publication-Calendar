@@ -1,0 +1,1942 @@
+{
+  "generated_at": "2026-06-18T07:44:12.880120+00:00",
+  "source": "Python `holidays` library — national (country-level) public holidays, English names",
+  "years": [
+    2026,
+    2027
+  ],
+  "markets": {
+    "HK": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "The second day of Chinese New Year"
+      },
+      {
+        "date": "2026-02-19",
+        "name": "The third day of Chinese New Year"
+      },
+      {
+        "date": "2026-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2026-04-06",
+        "name": "Easter Monday"
+      },
+      {
+        "date": "2026-04-07",
+        "name": "Tomb-Sweeping Day (observed)"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-24",
+        "name": "The Buddha's Birthday"
+      },
+      {
+        "date": "2026-05-25",
+        "name": "The Buddha's Birthday (observed)"
+      },
+      {
+        "date": "2026-06-19",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2026-07-01",
+        "name": "Hong Kong S.A.R. Establishment Day"
+      },
+      {
+        "date": "2026-09-26",
+        "name": "The Day following Mid-Autumn Festival"
+      },
+      {
+        "date": "2026-10-01",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-10-18",
+        "name": "Double Ninth Festival"
+      },
+      {
+        "date": "2026-10-19",
+        "name": "Double Ninth Festival (observed)"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2026-12-26",
+        "name": "The first weekday after Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "The third day of Chinese New Year"
+      },
+      {
+        "date": "2027-02-09",
+        "name": "The fourth day of Chinese New Year"
+      },
+      {
+        "date": "2027-03-29",
+        "name": "Easter Monday"
+      },
+      {
+        "date": "2027-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-13",
+        "name": "The Buddha's Birthday"
+      },
+      {
+        "date": "2027-06-09",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2027-07-01",
+        "name": "Hong Kong S.A.R. Establishment Day"
+      },
+      {
+        "date": "2027-09-16",
+        "name": "The Day following Mid-Autumn Festival"
+      },
+      {
+        "date": "2027-10-01",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-08",
+        "name": "Double Ninth Festival"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-12-26",
+        "name": "The first weekday after Christmas Day"
+      },
+      {
+        "date": "2027-12-27",
+        "name": "The first weekday after Christmas Day (observed)"
+      }
+    ],
+    "AU": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-26",
+        "name": "Australia Day"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-04-06",
+        "name": "Easter Monday"
+      },
+      {
+        "date": "2026-04-25",
+        "name": "ANZAC Day"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2026-12-26",
+        "name": "Boxing Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-26",
+        "name": "Australia Day"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-03-29",
+        "name": "Easter Monday"
+      },
+      {
+        "date": "2027-04-25",
+        "name": "ANZAC Day"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-12-26",
+        "name": "Boxing Day"
+      }
+    ],
+    "CN": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-02",
+        "name": "Day off (substituted from 01/04/2026)"
+      },
+      {
+        "date": "2026-02-16",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2026-02-19",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2026-02-20",
+        "name": "Day off (substituted from 02/14/2026)"
+      },
+      {
+        "date": "2026-02-23",
+        "name": "Day off (substituted from 02/28/2026)"
+      },
+      {
+        "date": "2026-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2026-04-06",
+        "name": "Tomb-Sweeping Day (observed)"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-02",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-04",
+        "name": "Labor Day (observed)"
+      },
+      {
+        "date": "2026-05-05",
+        "name": "Day off (substituted from 05/09/2026)"
+      },
+      {
+        "date": "2026-06-19",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2026-09-25",
+        "name": "Mid-Autumn Festival"
+      },
+      {
+        "date": "2026-10-01",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-10-02",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-10-03",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-10-05",
+        "name": "National Day (observed)"
+      },
+      {
+        "date": "2026-10-06",
+        "name": "Day off (substituted from 09/20/2026)"
+      },
+      {
+        "date": "2026-10-07",
+        "name": "Day off (substituted from 10/10/2026)"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-05",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "Chinese New Year (Spring Festival)"
+      },
+      {
+        "date": "2027-02-09",
+        "name": "Chinese New Year (Spring Festival) (observed)"
+      },
+      {
+        "date": "2027-02-10",
+        "name": "Chinese New Year (Spring Festival) (observed)"
+      },
+      {
+        "date": "2027-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-02",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-03",
+        "name": "Labor Day (observed)"
+      },
+      {
+        "date": "2027-05-04",
+        "name": "Labor Day (observed)"
+      },
+      {
+        "date": "2027-06-09",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2027-09-15",
+        "name": "Mid-Autumn Festival"
+      },
+      {
+        "date": "2027-10-01",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-02",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-03",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-04",
+        "name": "National Day (observed)"
+      },
+      {
+        "date": "2027-10-05",
+        "name": "National Day (observed)"
+      }
+    ],
+    "KR": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-02-16",
+        "name": "The day preceding Korean New Year"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Korean New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "The second day of Korean New Year"
+      },
+      {
+        "date": "2026-03-01",
+        "name": "Independence Movement Day"
+      },
+      {
+        "date": "2026-03-02",
+        "name": "Alternative holiday for Independence Movement Day"
+      },
+      {
+        "date": "2026-05-05",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2026-05-24",
+        "name": "Buddha's Birthday"
+      },
+      {
+        "date": "2026-05-25",
+        "name": "Alternative holiday for Buddha's Birthday"
+      },
+      {
+        "date": "2026-06-03",
+        "name": "Local Election Day"
+      },
+      {
+        "date": "2026-06-06",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2026-07-17",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2026-08-15",
+        "name": "Liberation Day"
+      },
+      {
+        "date": "2026-08-17",
+        "name": "Alternative holiday for Liberation Day"
+      },
+      {
+        "date": "2026-09-24",
+        "name": "The day preceding Chuseok"
+      },
+      {
+        "date": "2026-09-25",
+        "name": "Chuseok"
+      },
+      {
+        "date": "2026-09-26",
+        "name": "The second day of Chuseok"
+      },
+      {
+        "date": "2026-10-03",
+        "name": "National Foundation Day"
+      },
+      {
+        "date": "2026-10-05",
+        "name": "Alternative holiday for National Foundation Day"
+      },
+      {
+        "date": "2026-10-09",
+        "name": "Hangul Day"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "The day preceding Korean New Year"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Korean New Year"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "The second day of Korean New Year"
+      },
+      {
+        "date": "2027-02-09",
+        "name": "Alternative holiday for Korean New Year"
+      },
+      {
+        "date": "2027-03-01",
+        "name": "Independence Movement Day"
+      },
+      {
+        "date": "2027-05-05",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2027-05-13",
+        "name": "Buddha's Birthday"
+      },
+      {
+        "date": "2027-06-06",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2027-07-17",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2027-08-15",
+        "name": "Liberation Day"
+      },
+      {
+        "date": "2027-08-16",
+        "name": "Alternative holiday for Liberation Day"
+      },
+      {
+        "date": "2027-09-14",
+        "name": "The day preceding Chuseok"
+      },
+      {
+        "date": "2027-09-15",
+        "name": "Chuseok"
+      },
+      {
+        "date": "2027-09-16",
+        "name": "The second day of Chuseok"
+      },
+      {
+        "date": "2027-10-03",
+        "name": "National Foundation Day"
+      },
+      {
+        "date": "2027-10-04",
+        "name": "Alternative holiday for National Foundation Day"
+      },
+      {
+        "date": "2027-10-09",
+        "name": "Hangul Day"
+      },
+      {
+        "date": "2027-10-11",
+        "name": "Alternative holiday for Hangul Day"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-12-27",
+        "name": "Alternative holiday for Christmas Day"
+      }
+    ],
+    "JP": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-12",
+        "name": "Coming of Age Day"
+      },
+      {
+        "date": "2026-02-11",
+        "name": "Foundation Day"
+      },
+      {
+        "date": "2026-02-23",
+        "name": "Emperor's Birthday"
+      },
+      {
+        "date": "2026-03-20",
+        "name": "Vernal Equinox Day"
+      },
+      {
+        "date": "2026-04-29",
+        "name": "Showa Day"
+      },
+      {
+        "date": "2026-05-03",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2026-05-04",
+        "name": "Greenery Day"
+      },
+      {
+        "date": "2026-05-05",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2026-05-06",
+        "name": "Substitute Holiday"
+      },
+      {
+        "date": "2026-07-20",
+        "name": "Marine Day"
+      },
+      {
+        "date": "2026-08-11",
+        "name": "Mountain Day"
+      },
+      {
+        "date": "2026-09-21",
+        "name": "Respect for the Aged Day"
+      },
+      {
+        "date": "2026-09-22",
+        "name": "National Holiday"
+      },
+      {
+        "date": "2026-09-23",
+        "name": "Autumnal Equinox Day"
+      },
+      {
+        "date": "2026-10-12",
+        "name": "Sports Day"
+      },
+      {
+        "date": "2026-11-03",
+        "name": "Culture Day"
+      },
+      {
+        "date": "2026-11-23",
+        "name": "Labor Thanksgiving Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-11",
+        "name": "Coming of Age Day"
+      },
+      {
+        "date": "2027-02-11",
+        "name": "Foundation Day"
+      },
+      {
+        "date": "2027-02-23",
+        "name": "Emperor's Birthday"
+      },
+      {
+        "date": "2027-03-21",
+        "name": "Vernal Equinox Day"
+      },
+      {
+        "date": "2027-03-22",
+        "name": "Substitute Holiday"
+      },
+      {
+        "date": "2027-04-29",
+        "name": "Showa Day"
+      },
+      {
+        "date": "2027-05-03",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2027-05-04",
+        "name": "Greenery Day"
+      },
+      {
+        "date": "2027-05-05",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2027-07-19",
+        "name": "Marine Day"
+      },
+      {
+        "date": "2027-08-11",
+        "name": "Mountain Day"
+      },
+      {
+        "date": "2027-09-20",
+        "name": "Respect for the Aged Day"
+      },
+      {
+        "date": "2027-09-23",
+        "name": "Autumnal Equinox Day"
+      },
+      {
+        "date": "2027-10-11",
+        "name": "Sports Day"
+      },
+      {
+        "date": "2027-11-03",
+        "name": "Culture Day"
+      },
+      {
+        "date": "2027-11-23",
+        "name": "Labor Thanksgiving Day"
+      }
+    ],
+    "IN": [
+      {
+        "date": "2026-01-26",
+        "name": "Republic Day"
+      },
+      {
+        "date": "2026-02-15",
+        "name": "Maha Shivaratri"
+      },
+      {
+        "date": "2026-03-21",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2026-03-31",
+        "name": "Mahavir Jayanti"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Buddha Purnima"
+      },
+      {
+        "date": "2026-05-28",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2026-06-26",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2026-08-15",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2026-08-26",
+        "name": "Prophet's Birthday (estimated)"
+      },
+      {
+        "date": "2026-09-04",
+        "name": "Janmashtami"
+      },
+      {
+        "date": "2026-10-02",
+        "name": "Gandhi Jayanti"
+      },
+      {
+        "date": "2026-10-20",
+        "name": "Dussehra"
+      },
+      {
+        "date": "2026-11-08",
+        "name": "Diwali"
+      },
+      {
+        "date": "2026-11-24",
+        "name": "Guru Nanak Jayanti"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas"
+      },
+      {
+        "date": "2027-01-26",
+        "name": "Republic Day"
+      },
+      {
+        "date": "2027-03-06",
+        "name": "Maha Shivaratri"
+      },
+      {
+        "date": "2027-03-10",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-04-18",
+        "name": "Mahavir Jayanti"
+      },
+      {
+        "date": "2027-05-17",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-20",
+        "name": "Buddha Purnima"
+      },
+      {
+        "date": "2027-06-16",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2027-08-15",
+        "name": "Independence Day; Prophet's Birthday (estimated)"
+      },
+      {
+        "date": "2027-08-25",
+        "name": "Janmashtami"
+      },
+      {
+        "date": "2027-10-02",
+        "name": "Gandhi Jayanti"
+      },
+      {
+        "date": "2027-10-09",
+        "name": "Dussehra"
+      },
+      {
+        "date": "2027-10-29",
+        "name": "Diwali"
+      },
+      {
+        "date": "2027-11-14",
+        "name": "Guru Nanak Jayanti"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas"
+      }
+    ],
+    "ID": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-16",
+        "name": "Isra' and Mi'raj"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Lunar New Year"
+      },
+      {
+        "date": "2026-03-19",
+        "name": "Day of Silence"
+      },
+      {
+        "date": "2026-03-21",
+        "name": "Eid al-Fitr"
+      },
+      {
+        "date": "2026-03-22",
+        "name": "Eid al-Fitr Second Day"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-04-05",
+        "name": "Easter Sunday"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "International Labor Day"
+      },
+      {
+        "date": "2026-05-14",
+        "name": "Ascension Day"
+      },
+      {
+        "date": "2026-05-27",
+        "name": "Eid al-Adha"
+      },
+      {
+        "date": "2026-05-31",
+        "name": "Vesak Day"
+      },
+      {
+        "date": "2026-06-01",
+        "name": "Pancasila Day"
+      },
+      {
+        "date": "2026-06-16",
+        "name": "Islamic New Year"
+      },
+      {
+        "date": "2026-08-17",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2026-08-25",
+        "name": "Prophet's Birthday"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-05",
+        "name": "Isra' and Mi'raj (estimated)"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Lunar New Year (estimated)"
+      },
+      {
+        "date": "2027-03-08",
+        "name": "Day of Silence"
+      },
+      {
+        "date": "2027-03-09",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-10",
+        "name": "Eid al-Fitr Second Day (estimated)"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-03-28",
+        "name": "Easter Sunday"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "International Labor Day"
+      },
+      {
+        "date": "2027-05-06",
+        "name": "Ascension Day"
+      },
+      {
+        "date": "2027-05-16",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-20",
+        "name": "Vesak Day (estimated)"
+      },
+      {
+        "date": "2027-06-01",
+        "name": "Pancasila Day"
+      },
+      {
+        "date": "2027-06-06",
+        "name": "Islamic New Year (estimated)"
+      },
+      {
+        "date": "2027-08-14",
+        "name": "Prophet's Birthday (estimated)"
+      },
+      {
+        "date": "2027-08-17",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day; Isra' and Mi'raj (estimated)"
+      }
+    ],
+    "MY": [
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "Chinese New Year (Second Day)"
+      },
+      {
+        "date": "2026-03-21",
+        "name": "Eid al-Fitr"
+      },
+      {
+        "date": "2026-03-22",
+        "name": "Eid al-Fitr (Second Day)"
+      },
+      {
+        "date": "2026-03-23",
+        "name": "Eid al-Fitr (Second Day) (observed)"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-27",
+        "name": "Eid al-Adha"
+      },
+      {
+        "date": "2026-05-31",
+        "name": "Vesak Day"
+      },
+      {
+        "date": "2026-06-01",
+        "name": "Birthday of HM Yang di-Pertuan Agong"
+      },
+      {
+        "date": "2026-06-02",
+        "name": "Vesak Day (observed)"
+      },
+      {
+        "date": "2026-06-17",
+        "name": "Islamic New Year"
+      },
+      {
+        "date": "2026-08-25",
+        "name": "Prophet Muhammad's Birthday"
+      },
+      {
+        "date": "2026-08-31",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-09-16",
+        "name": "Malaysia Day"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year (estimated)"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Chinese New Year (Second Day) (estimated)"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "Chinese New Year (Second Day) (observed, estimated)"
+      },
+      {
+        "date": "2027-03-09",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-10",
+        "name": "Eid al-Fitr (Second Day) (estimated)"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-16",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-17",
+        "name": "Eid al-Adha (observed, estimated)"
+      },
+      {
+        "date": "2027-05-20",
+        "name": "Vesak Day (estimated)"
+      },
+      {
+        "date": "2027-06-06",
+        "name": "Islamic New Year (estimated)"
+      },
+      {
+        "date": "2027-06-07",
+        "name": "Birthday of HM Yang di-Pertuan Agong"
+      },
+      {
+        "date": "2027-08-14",
+        "name": "Prophet Muhammad's Birthday (estimated)"
+      },
+      {
+        "date": "2027-08-31",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-09-16",
+        "name": "Malaysia Day"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      }
+    ],
+    "PK": [
+      {
+        "date": "2026-02-05",
+        "name": "Kashmir Solidarity Day"
+      },
+      {
+        "date": "2026-03-20",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2026-03-21",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2026-03-22",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2026-03-23",
+        "name": "Pakistan Day"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-27",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2026-05-28",
+        "name": "Eid al-Adha (estimated); Youm-e-Takbeer"
+      },
+      {
+        "date": "2026-05-29",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2026-06-24",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2026-06-25",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2026-08-14",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2026-08-25",
+        "name": "Prophet's Birthday (estimated)"
+      },
+      {
+        "date": "2026-11-09",
+        "name": "Iqbal Day"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Quaid-e-Azam Day"
+      },
+      {
+        "date": "2027-02-05",
+        "name": "Kashmir Solidarity Day"
+      },
+      {
+        "date": "2027-03-09",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-10",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-11",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-23",
+        "name": "Pakistan Day"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-16",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-17",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-18",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-28",
+        "name": "Youm-e-Takbeer"
+      },
+      {
+        "date": "2027-06-14",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2027-06-15",
+        "name": "Ashura (estimated)"
+      },
+      {
+        "date": "2027-08-14",
+        "name": "Independence Day; Prophet's Birthday (estimated)"
+      },
+      {
+        "date": "2027-11-09",
+        "name": "Iqbal Day"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Quaid-e-Azam Day"
+      }
+    ],
+    "SG": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-03-21",
+        "name": "Eid al-Fitr"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-27",
+        "name": "Eid al-Adha"
+      },
+      {
+        "date": "2026-05-31",
+        "name": "Vesak Day"
+      },
+      {
+        "date": "2026-06-01",
+        "name": "Vesak Day (observed)"
+      },
+      {
+        "date": "2026-08-09",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-08-10",
+        "name": "National Day (observed)"
+      },
+      {
+        "date": "2026-11-08",
+        "name": "Deepavali"
+      },
+      {
+        "date": "2026-11-09",
+        "name": "Deepavali (observed)"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year (estimated)"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Chinese New Year (estimated)"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "Chinese New Year (observed, estimated)"
+      },
+      {
+        "date": "2027-03-09",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-16",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-05-17",
+        "name": "Eid al-Adha (observed, estimated)"
+      },
+      {
+        "date": "2027-05-20",
+        "name": "Vesak Day (estimated)"
+      },
+      {
+        "date": "2027-08-09",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-28",
+        "name": "Deepavali"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      }
+    ],
+    "TW": [
+      {
+        "date": "2026-01-01",
+        "name": "Founding Day of the Republic of China"
+      },
+      {
+        "date": "2026-02-15",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2026-02-16",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-19",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-02-20",
+        "name": "Chinese New Year's Eve (observed)"
+      },
+      {
+        "date": "2026-02-27",
+        "name": "Peace Memorial Day (observed)"
+      },
+      {
+        "date": "2026-02-28",
+        "name": "Peace Memorial Day"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Children's Day (observed)"
+      },
+      {
+        "date": "2026-04-04",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2026-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2026-04-06",
+        "name": "Tomb-Sweeping Day (observed)"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-06-19",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2026-09-25",
+        "name": "Mid-Autumn Festival"
+      },
+      {
+        "date": "2026-09-28",
+        "name": "Confucius' Birthday"
+      },
+      {
+        "date": "2026-10-09",
+        "name": "National Day (observed)"
+      },
+      {
+        "date": "2026-10-10",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-10-25",
+        "name": "Taiwan Restoration and Guningtou Victory Memorial Day"
+      },
+      {
+        "date": "2026-10-26",
+        "name": "Taiwan Restoration and Guningtou Victory Memorial Day (observed)"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "Founding Day of the Republic of China"
+      },
+      {
+        "date": "2027-02-04",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2027-02-05",
+        "name": "Chinese New Year's Eve"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2027-02-09",
+        "name": "Chinese New Year (observed)"
+      },
+      {
+        "date": "2027-02-10",
+        "name": "Chinese New Year (observed)"
+      },
+      {
+        "date": "2027-02-28",
+        "name": "Peace Memorial Day"
+      },
+      {
+        "date": "2027-03-01",
+        "name": "Peace Memorial Day (observed)"
+      },
+      {
+        "date": "2027-04-04",
+        "name": "Children's Day"
+      },
+      {
+        "date": "2027-04-05",
+        "name": "Tomb-Sweeping Day"
+      },
+      {
+        "date": "2027-04-06",
+        "name": "Children's Day (observed)"
+      },
+      {
+        "date": "2027-04-30",
+        "name": "Labor Day (observed)"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-06-09",
+        "name": "Dragon Boat Festival"
+      },
+      {
+        "date": "2027-09-15",
+        "name": "Mid-Autumn Festival"
+      },
+      {
+        "date": "2027-09-28",
+        "name": "Confucius' Birthday"
+      },
+      {
+        "date": "2027-10-10",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-10-11",
+        "name": "National Day (observed)"
+      },
+      {
+        "date": "2027-10-25",
+        "name": "Taiwan Restoration and Guningtou Victory Memorial Day"
+      },
+      {
+        "date": "2027-12-24",
+        "name": "Constitution Day (observed)"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2027-12-31",
+        "name": "Founding Day of the Republic of China (observed)"
+      }
+    ],
+    "TH": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-02",
+        "name": "Bridge Public Holiday"
+      },
+      {
+        "date": "2026-01-10",
+        "name": "National Children's Day"
+      },
+      {
+        "date": "2026-03-03",
+        "name": "Makha Bucha"
+      },
+      {
+        "date": "2026-04-06",
+        "name": "Chakri Memorial Day"
+      },
+      {
+        "date": "2026-04-13",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2026-04-14",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2026-04-15",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "National Labor Day"
+      },
+      {
+        "date": "2026-05-04",
+        "name": "Coronation Day"
+      },
+      {
+        "date": "2026-05-31",
+        "name": "Visakha Bucha"
+      },
+      {
+        "date": "2026-06-01",
+        "name": "Visakha Bucha (in lieu)"
+      },
+      {
+        "date": "2026-06-03",
+        "name": "HM Queen Suthida's Birthday"
+      },
+      {
+        "date": "2026-07-28",
+        "name": "HM King Maha Vajiralongkorn's Birthday"
+      },
+      {
+        "date": "2026-07-29",
+        "name": "Asarnha Bucha"
+      },
+      {
+        "date": "2026-07-30",
+        "name": "Buddhist Lent Day"
+      },
+      {
+        "date": "2026-08-12",
+        "name": "HM Queen Sirikit The Queen Mother's Birthday; National Mother's Day"
+      },
+      {
+        "date": "2026-10-13",
+        "name": "HM King Bhumibol Adulyadej Memorial Day"
+      },
+      {
+        "date": "2026-10-23",
+        "name": "HM King Chulalongkorn Memorial Day"
+      },
+      {
+        "date": "2026-12-05",
+        "name": "HM King Bhumibol Adulyadej the Great's Birthday; National Day; National Father's Day"
+      },
+      {
+        "date": "2026-12-07",
+        "name": "HM King Bhumibol Adulyadej the Great's Birthday (in lieu); National Day (in lieu); National Father's Day (in lieu)"
+      },
+      {
+        "date": "2026-12-10",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2026-12-31",
+        "name": "New Year's Eve"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-09",
+        "name": "National Children's Day"
+      },
+      {
+        "date": "2027-02-21",
+        "name": "Makha Bucha"
+      },
+      {
+        "date": "2027-02-22",
+        "name": "Makha Bucha (in lieu)"
+      },
+      {
+        "date": "2027-04-06",
+        "name": "Chakri Memorial Day"
+      },
+      {
+        "date": "2027-04-13",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2027-04-14",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2027-04-15",
+        "name": "Songkran Festival"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "National Labor Day"
+      },
+      {
+        "date": "2027-05-03",
+        "name": "National Labor Day (in lieu)"
+      },
+      {
+        "date": "2027-05-04",
+        "name": "Coronation Day"
+      },
+      {
+        "date": "2027-05-20",
+        "name": "Visakha Bucha"
+      },
+      {
+        "date": "2027-06-03",
+        "name": "HM Queen Suthida's Birthday"
+      },
+      {
+        "date": "2027-07-18",
+        "name": "Asarnha Bucha"
+      },
+      {
+        "date": "2027-07-19",
+        "name": "Buddhist Lent Day"
+      },
+      {
+        "date": "2027-07-20",
+        "name": "Asarnha Bucha (in lieu)"
+      },
+      {
+        "date": "2027-07-28",
+        "name": "HM King Maha Vajiralongkorn's Birthday"
+      },
+      {
+        "date": "2027-08-12",
+        "name": "HM Queen Sirikit The Queen Mother's Birthday; National Mother's Day"
+      },
+      {
+        "date": "2027-10-13",
+        "name": "HM King Bhumibol Adulyadej Memorial Day"
+      },
+      {
+        "date": "2027-10-23",
+        "name": "HM King Chulalongkorn Memorial Day"
+      },
+      {
+        "date": "2027-10-25",
+        "name": "HM King Chulalongkorn Memorial Day (in lieu)"
+      },
+      {
+        "date": "2027-12-05",
+        "name": "HM King Bhumibol Adulyadej the Great's Birthday; National Day; National Father's Day"
+      },
+      {
+        "date": "2027-12-06",
+        "name": "HM King Bhumibol Adulyadej the Great's Birthday (in lieu); National Day (in lieu); National Father's Day (in lieu)"
+      },
+      {
+        "date": "2027-12-10",
+        "name": "Constitution Day"
+      },
+      {
+        "date": "2027-12-31",
+        "name": "New Year's Eve"
+      }
+    ],
+    "VN": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-02-16",
+        "name": "Lunar New Year's Eve"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Lunar New Year"
+      },
+      {
+        "date": "2026-02-18",
+        "name": "Second Day of Lunar New Year"
+      },
+      {
+        "date": "2026-02-19",
+        "name": "Third Day of Lunar New Year"
+      },
+      {
+        "date": "2026-02-20",
+        "name": "Fourth Day of Lunar New Year"
+      },
+      {
+        "date": "2026-04-26",
+        "name": "Hung Kings' Commemoration Day"
+      },
+      {
+        "date": "2026-04-27",
+        "name": "Hung Kings' Commemoration Day (observed)"
+      },
+      {
+        "date": "2026-04-30",
+        "name": "Liberation Day/Reunification Day"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "International Labor Day"
+      },
+      {
+        "date": "2026-09-01",
+        "name": "National Day"
+      },
+      {
+        "date": "2026-09-02",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-04",
+        "name": "29 of Lunar New Year"
+      },
+      {
+        "date": "2027-02-05",
+        "name": "Lunar New Year's Eve"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Lunar New Year"
+      },
+      {
+        "date": "2027-02-07",
+        "name": "Second Day of Lunar New Year"
+      },
+      {
+        "date": "2027-02-08",
+        "name": "Third Day of Lunar New Year"
+      },
+      {
+        "date": "2027-02-09",
+        "name": "Fourth Day of Lunar New Year"
+      },
+      {
+        "date": "2027-02-10",
+        "name": "Fifth Day of Lunar New Year"
+      },
+      {
+        "date": "2027-04-16",
+        "name": "Hung Kings' Commemoration Day"
+      },
+      {
+        "date": "2027-04-30",
+        "name": "Liberation Day/Reunification Day"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "International Labor Day"
+      },
+      {
+        "date": "2027-05-03",
+        "name": "International Labor Day (observed)"
+      },
+      {
+        "date": "2027-09-02",
+        "name": "National Day"
+      },
+      {
+        "date": "2027-09-03",
+        "name": "National Day"
+      }
+    ],
+    "PH": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-02-17",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2026-03-20",
+        "name": "Eid al-Fitr"
+      },
+      {
+        "date": "2026-04-02",
+        "name": "Maundy Thursday"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-04-04",
+        "name": "Black Saturday"
+      },
+      {
+        "date": "2026-04-09",
+        "name": "Day of Valor"
+      },
+      {
+        "date": "2026-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-05-27",
+        "name": "Eid al-Adha"
+      },
+      {
+        "date": "2026-06-12",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2026-08-21",
+        "name": "Ninoy Aquino Day"
+      },
+      {
+        "date": "2026-08-31",
+        "name": "National Heroes Day"
+      },
+      {
+        "date": "2026-11-01",
+        "name": "All Saints' Day"
+      },
+      {
+        "date": "2026-11-02",
+        "name": "All Souls' Day"
+      },
+      {
+        "date": "2026-11-30",
+        "name": "Bonifacio Day"
+      },
+      {
+        "date": "2026-12-08",
+        "name": "Immaculate Conception"
+      },
+      {
+        "date": "2026-12-24",
+        "name": "Christmas Eve"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2026-12-30",
+        "name": "Rizal Day"
+      },
+      {
+        "date": "2026-12-31",
+        "name": "New Year's Eve"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-02-06",
+        "name": "Chinese New Year"
+      },
+      {
+        "date": "2027-03-09",
+        "name": "Eid al-Fitr (estimated)"
+      },
+      {
+        "date": "2027-03-25",
+        "name": "Maundy Thursday"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-03-27",
+        "name": "Black Saturday"
+      },
+      {
+        "date": "2027-04-09",
+        "name": "Day of Valor"
+      },
+      {
+        "date": "2027-05-01",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-05-16",
+        "name": "Eid al-Adha (estimated)"
+      },
+      {
+        "date": "2027-06-12",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2027-08-21",
+        "name": "Ninoy Aquino Day"
+      },
+      {
+        "date": "2027-08-30",
+        "name": "National Heroes Day"
+      },
+      {
+        "date": "2027-11-01",
+        "name": "All Saints' Day"
+      },
+      {
+        "date": "2027-11-30",
+        "name": "Bonifacio Day"
+      },
+      {
+        "date": "2027-12-08",
+        "name": "Immaculate Conception"
+      },
+      {
+        "date": "2027-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-12-30",
+        "name": "Rizal Day"
+      },
+      {
+        "date": "2027-12-31",
+        "name": "New Year's Eve"
+      }
+    ]
+  }
+}
