@@ -56,12 +56,16 @@ const DataLayer = (() => {
       language: r.language || "",
       expected_publication_date: expected,
       team: r.team || "",
+      // lead_author (new, 2026-06-18): the named owner, distinct from team.
+      lead_author: r.lead_author || "",
       notes: r.notes || "",
       report_scope: r.report_scope || "Regional",
       // recurring metadata (new, 2026-06-15)
       frequency: r.frequency || "Ad Hoc",
       recurring_months: Array.isArray(r.recurring_months) ? r.recurring_months : [],
       recurring: r.recurring === true,
+      // start_date (new, 2026-06-18): recurring series begins from this date.
+      start_date: r.start_date || null,
       parent_id: r.parent_id || null,
       is_tbd: isTbd,
       // FUTURE-EXTENSIBLE: status is nullable in v1; UI must tolerate null/missing.
@@ -123,6 +127,32 @@ const DataLayer = (() => {
   };
   const getById = id => _publications.find(p => p.id === id) || null;
   const getSchema = () => _schema;
+
+  // ===========================================================================
+  // DYNAMIC FILTER VOCABULARIES (2026-06-18)
+  // Derive Asset Class / Type / Language options from the actual dataset so the
+  // filter bar never goes stale relative to the master spreadsheet. The config
+  // lists act only as an ordering hint: known values keep their curated order,
+  // any new value found in the data is appended afterwards (alphabetically).
+  // ---------------------------------------------------------------------------
+  function _orderedDistinct(values, hint) {
+    const present = new Set(values.filter(Boolean).map(v => String(v).trim()).filter(Boolean));
+    const ordered = [];
+    (hint || []).forEach(h => { if (present.has(h)) { ordered.push(h); present.delete(h); } });
+    Array.from(present).sort((a, b) => a.localeCompare(b)).forEach(v => ordered.push(v));
+    return ordered;
+  }
+  // asset_class is an array per record; flatten it.
+  const distinctAssetClasses = () => _orderedDistinct(
+    _publications.flatMap(p => p.asset_class || []),
+    (window.APP_CONFIG.ASSET_CLASSES || []));
+  const distinctPubTypes = () => _orderedDistinct(
+    _publications.map(p => p.publication_type),
+    (window.APP_CONFIG.PUBLICATION_TYPES || []));
+  // language may be a single value or a "; "-separated multi-language string.
+  const distinctLanguages = () => _orderedDistinct(
+    _publications.flatMap(p => String(p.language || "").split(";").map(s => s.trim())),
+    (window.APP_CONFIG.LANGUAGES || []));
 
   // ---- TBD-aware accessors ----
   const getScheduled = () => _publications.filter(p => !p.is_tbd);
@@ -244,6 +274,7 @@ const DataLayer = (() => {
     getAll, getScheduled, getTBD,
     getMarkets, getMarket, colourFor,
     getById, getSchema,
+    distinctAssetClasses, distinctPubTypes, distinctLanguages,
     addLocal, replaceAll,
     commitNewPublication, buildDownloadBlob
   };

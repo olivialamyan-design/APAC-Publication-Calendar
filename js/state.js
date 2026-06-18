@@ -11,7 +11,7 @@ const State = (() => {
 
   // ---- the canonical filter state object ----
   const state = {
-    view: "calendar",                 // calendar | table | leadership(reserved)
+    view: "calendar",                 // calendar | quarters | table | usage | leadership(reserved)
     markets: [],                      // [] = all
     scope: cfg.DEFAULT_SCOPE,         // Regional | In-Country | Both
     cityState: "",                    // substring chip
@@ -23,6 +23,9 @@ const State = (() => {
     dateTo: "",                       // YYYY-MM-DD
     range: cfg.DEFAULT_RANGE,         // all | history | forward12
     search: "",                       // free-text
+    // ---- Public holiday display layer (2026-06-18) ----
+    holidaysOn: true,                 // shown by default on first load
+    holidayMarkets: [],               // [] = all configured holiday markets
     // ---------------------------------------------------------------------
     // FUTURE STATUS FILTER GOES HERE:
     //   statuses: [],  // [] = all; values from cfg.STATUS_VALUES
@@ -57,6 +60,9 @@ const State = (() => {
     if (state.dateTo) q.set("to", state.dateTo);
     if (state.range !== cfg.DEFAULT_RANGE) q.set("range", state.range);
     if (state.search) q.set("q", state.search);
+    // holidays default ON; only record when explicitly turned off
+    if (state.holidaysOn === false) q.set("hol", "0");
+    if (state.holidayMarkets.length) q.set("holmkt", state.holidayMarkets.join(","));
 
     const qs = q.toString();
     const hash = `#view=${state.view}`;
@@ -78,11 +84,13 @@ const State = (() => {
     if (q.has("to")) state.dateTo = q.get("to");
     if (q.has("range")) state.range = q.get("range");
     if (q.has("q")) state.search = q.get("q");
+    if (q.has("hol")) state.holidaysOn = q.get("hol") !== "0";
+    if (q.has("holmkt")) state.holidayMarkets = splitList(q.get("holmkt"));
 
     const h = new URLSearchParams(location.hash.replace(/^#/, ""));
     if (h.has("view")) {
       const v = h.get("view");
-      if (["calendar", "table", "quarters", "leadership"].includes(v)) state.view = v;
+      if (["calendar", "table", "quarters", "usage", "leadership"].includes(v)) state.view = v;
     }
   }
 

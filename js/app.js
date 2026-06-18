@@ -58,20 +58,11 @@ const App = (() => {
     const bar = document.getElementById("filterBar");
     bar.innerHTML = "";
 
-    // Row 1: search + scope + range
+    // Row 1: scope + range + holiday controls.
+    // (Search now lives next to the view tabs in the topbar — see wireTopSearch.)
     const row1 = H.el("div", { class: "fb-row" });
 
-    const search = H.el("input", { class: "fb-search", type: "search",
-      placeholder: "Search name, notes, city, team…", value: s.search });
-    let st;
-    search.addEventListener("input", e => {
-      clearTimeout(st);
-      const v = e.target.value;
-      st = setTimeout(() => State.set({ search: v }), 180);
-    });
-    row1.appendChild(search);
-
-    // scope chips (default Regional)
+    // scope chips (default Both)
     const scopeGrp = H.el("div", { class: "chip-group", title: "Report scope" });
     ["Regional", "In-Country", "Both"].forEach(v =>
       scopeGrp.appendChild(segChip(v, v, s.scope, val => State.set({ scope: val }))));
@@ -83,14 +74,30 @@ const App = (() => {
       rangeGrp.appendChild(segChip(l, v, s.range, val => State.set({ range: val }))));
     row1.appendChild(labeled("Window", rangeGrp));
 
+    // ---- Holiday controls (2026-06-18): toggle + market selector ----
+    // Holidays are a secondary layer; shown by default on first load.
+    const holToggleGrp = H.el("div", { class: "chip-group", title: "Show / hide public holidays" });
+    [["On", true], ["Off", false]].forEach(([lbl, val]) =>
+      holToggleGrp.appendChild(
+        segChip(lbl, val, s.holidaysOn, v => State.set({ holidaysOn: v }))));
+    row1.appendChild(labeled("Holidays", holToggleGrp));
+
+    if (s.holidaysOn && typeof Holidays !== "undefined") {
+      const hMarkets = Holidays.marketList();
+      row1.appendChild(labeled("Holiday markets",
+        multiSelect("Markets", "holidayMarkets", hMarkets, s.holidayMarkets)));
+    }
+
     bar.appendChild(row1);
 
     // Row 2: multi-selects + city + dates
     const row2 = H.el("div", { class: "fb-row fb-row2" });
+    // Filter options are derived dynamically from the loaded dataset so they
+    // always reflect the master spreadsheet (cfg lists are ordering hints only).
     row2.appendChild(multiSelect("Market", "markets", DataLayer.getMarkets().map(m => m.name), s.markets));
-    row2.appendChild(multiSelect("Asset class", "assetClasses", cfg.ASSET_CLASSES, s.assetClasses));
-    row2.appendChild(multiSelect("Type", "pubTypes", cfg.PUBLICATION_TYPES, s.pubTypes));
-    row2.appendChild(multiSelect("Language", "languages", cfg.LANGUAGES, s.languages));
+    row2.appendChild(multiSelect("Asset class", "assetClasses", DataLayer.distinctAssetClasses(), s.assetClasses));
+    row2.appendChild(multiSelect("Type", "pubTypes", DataLayer.distinctPubTypes(), s.pubTypes));
+    row2.appendChild(multiSelect("Language", "languages", DataLayer.distinctLanguages(), s.languages));
     row2.appendChild(multiSelect("Team", "teams", State.distinctTeams(all), s.teams));
 
     // ---- FUTURE STATUS MULTI-SELECT GOES HERE: ----
@@ -133,6 +140,23 @@ const App = (() => {
       markets: [], scope: cfg.DEFAULT_SCOPE, cityState: "", assetClasses: [],
       pubTypes: [], languages: [], teams: [], dateFrom: "", dateTo: "",
       range: cfg.DEFAULT_RANGE, search: ""
+      // Note: holiday on/off + holiday markets are intentionally NOT reset by
+      // the publication Clear button — they are a separate display layer.
+    });
+    const ts = document.getElementById("topSearch");
+    if (ts) ts.value = "";
+  }
+
+  // ---- Shared topbar search wiring (persistent input, not rebuilt) ----
+  function wireTopSearch() {
+    const input = document.getElementById("topSearch");
+    if (!input) return;
+    input.value = State.get().search || "";
+    let t;
+    input.addEventListener("input", e => {
+      clearTimeout(t);
+      const v = e.target.value;
+      t = setTimeout(() => State.set({ search: v }), 180);
     });
   }
 
@@ -141,7 +165,10 @@ const App = (() => {
   // per-market — yellow = Regional, steel grey = In-Country.
   // ===========================================================================
   function buildLegend() {
-    const box = document.getElementById("legend");
+    // Legend is now a click-to-open tooltip popover anchored to the Legend
+    // button (2026-06-18). Same content, rendered into #legendTip.
+    const box = document.getElementById("legendTip");
+    if (!box) return;
     box.innerHTML = "";
     const items = [
       { scope: "Regional",   label: "Regional reports",   c: { fill: "#FFDF00", text: "#25273A" } },
@@ -155,7 +182,7 @@ const App = (() => {
       item.innerHTML =
         `<span class="legend-swatch" style="background:${it.c.fill}"></span>` +
         `<span class="legend-label">${H.esc(it.label)}</span>`;
-      item.addEventListener("click", () => State.set({ scope: it.scope }));
+      item.addEventListener("click", () => { State.set({ scope: it.scope }); closeLegend(); });
       box.appendChild(item);
     });
     // dotted swatch = recurring instance
@@ -164,6 +191,33 @@ const App = (() => {
       `<span class="legend-swatch legend-swatch-rec" aria-hidden="true"></span>` +
       `<span class="legend-label">↻ Recurring instance</span>`;
     box.appendChild(rec);
+    // holiday swatch = public holiday day (shaded cell)
+    const hol = H.el("span", { class: "legend-item legend-static", title: "Public holiday" });
+    hol.innerHTML =
+      `<span class="legend-swatch legend-swatch-hol" aria-hidden="true"></span>` +
+      `<span class="legend-label">Public holiday (shaded day)</span>`;
+    box.appendChild(hol);
+  }
+
+  function openLegend() {
+    const tip = document.getElementById("legendTip");
+    const btn = document.getElementById("btnLegend");
+    if (!tip) return;
+    tip.classList.add("open");
+    tip.setAttribute("aria-hidden", "false");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
+  function closeLegend() {
+    const tip = document.getElementById("legendTip");
+    const btn = document.getElementById("btnLegend");
+    if (!tip) return;
+    tip.classList.remove("open");
+    tip.setAttribute("aria-hidden", "true");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+  function toggleLegend() {
+    const tip = document.getElementById("legendTip");
+    if (tip && tip.classList.contains("open")) closeLegend(); else openLegend();
   }
 
   // ===========================================================================
@@ -292,7 +346,10 @@ const App = (() => {
 
     const mount = document.getElementById("viewMount");
     const rc = document.getElementById("resultCount");
-    if (s.view === "table") {
+    if (s.view === "usage") {
+      if (rc) rc.textContent = "";
+      UsageView.render(mount);
+    } else if (s.view === "table") {
       if (rc) rc.textContent = `${filtered.length} shown`;
       TableView.render(mount, filtered);
     } else if (s.view === "quarters") {
@@ -354,8 +411,22 @@ const App = (() => {
 
     document.getElementById("btnAdd").addEventListener("click", () => Form.open(null));
     document.getElementById("btnCsv").addEventListener("click", exportCsv);
-    document.getElementById("btnLegend").addEventListener("click", () =>
-      document.getElementById("legend").classList.toggle("open"));
+    document.getElementById("btnLegend").addEventListener("click", e => {
+      e.stopPropagation();
+      toggleLegend();
+    });
+
+    // ---- Shared topbar search (drives State.search for every view) ----
+    wireTopSearch();
+
+    // ---- Load holiday data (non-blocking; calendar reads it when ready) ----
+    if (typeof Holidays !== "undefined") {
+      Holidays.load().then(() => { if (State.get().view === "calendar") rerender(); })
+        .catch(() => {/* holidays optional; app still works without them */});
+    }
+
+    // ---- Record this page-open for usage tracking (best-effort) ----
+    if (typeof Usage !== "undefined") Usage.recordOpen();
 
     // ---- Theme toggle (light <-> dark). Dark is default; preference is
     // persisted via localStorage when the host allows it. -----------------
@@ -383,23 +454,33 @@ const App = (() => {
       document.getElementById("filterBar").classList.toggle("drawer-open"));
 
     // close popovers on outside click + Esc closes panels
-    document.addEventListener("click", () =>
-      document.querySelectorAll(".ms-pop.open").forEach(p => p.classList.remove("open")));
+    document.addEventListener("click", e => {
+      document.querySelectorAll(".ms-pop.open").forEach(p => p.classList.remove("open"));
+      // close the legend tooltip when clicking outside it / its button
+      const lw = e.target.closest && e.target.closest(".legend-wrap");
+      if (!lw) closeLegend();
+    });
     document.addEventListener("keydown", e => {
-      if (e.key === "Escape") { Detail.close(); Form.close(); }
+      if (e.key === "Escape") { Detail.close(); Form.close(); closeLegend(); }
     });
 
     // Rebuild the filter bar on state change so chip active-states reflect,
     // but preserve focus/caret on the text inputs the user is typing into.
     State.subscribe(() => {
+      // The topbar search input is persistent (not rebuilt) so it never loses
+      // focus. Only the in-bar City/State field is rebuilt; preserve its caret.
       const active = document.activeElement;
-      const reFocus = active && (active.classList.contains("fb-search") || active.classList.contains("fb-city"));
-      const cls = reFocus ? (active.classList.contains("fb-search") ? "fb-search" : "fb-city") : null;
+      const reFocus = active && active.classList.contains("fb-city");
       const caret = reFocus ? active.selectionStart : null;
       buildFilterBar();
-      if (cls) {
-        const next = document.querySelector("." + cls);
+      if (reFocus) {
+        const next = document.querySelector(".fb-city");
         if (next) { next.focus(); try { next.setSelectionRange(caret, caret); } catch (e) {} }
+      }
+      // keep the persistent topbar search box in sync if state.search changed
+      const ts = document.getElementById("topSearch");
+      if (ts && ts !== active && ts.value !== (State.get().search || "")) {
+        ts.value = State.get().search || "";
       }
       rerender();
     });

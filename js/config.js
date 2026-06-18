@@ -18,17 +18,25 @@ window.APP_CONFIG = {
   SCHEMA_URL:       "data/schema.json",
 
   // ---- Default landing state ----
-  DEFAULT_SCOPE: "Regional",        // Regional | In-Country | Both
-  DEFAULT_RANGE: "forward12",       // all | history | forward12
+  // 2026-06-18: default scope -> Both, default window -> All (per request D).
+  DEFAULT_SCOPE: "Both",            // Regional | In-Country | Both
+  DEFAULT_RANGE: "all",            // all | history | forward12
 
-  // ---- Taxonomies (kept here so the form + filters share one source) ----
+  // ---- Taxonomies ----
+  // NOTE (2026-06-18): These lists are now ORDERING HINTS / FALLBACKS only.
+  // The filter bar derives its actual options dynamically from the loaded
+  // publications.json (see DataLayer.distinctAssetClasses / distinctPubTypes /
+  // distinctLanguages). The form + validation still reference these as the
+  // canonical vocabulary. Values found in data that aren't listed here are
+  // appended after the known ones (alphabetically) so the filter never goes
+  // stale relative to the master spreadsheet.
   ASSET_CLASSES: [
-    "Office", "Logistics", "Residential", "Retail", "Hotels",
-    "Industrial", "Capital Markets", "Data Centres", "Mixed Use"
+    "All", "Office", "Retail", "Logistics", "Industrial", "Residential",
+    "Hospitality", "Data Centres", "Capital Markets", "Living", "Mixed Use"
   ],
   PUBLICATION_TYPES: [
-    "Market Reports", "Blogs", "White Papers",
-    "Thought Leadership", "Quarterly Outlooks", "Sector Updates"
+    "Market Reports", "Newsletter", "Quarterly Outlooks", "Sector Updates",
+    "Thought Leadership", "White Papers", "Blogs"
   ],
   LANGUAGES: [
     "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
