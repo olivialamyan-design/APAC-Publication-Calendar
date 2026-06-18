@@ -549,8 +549,17 @@ html[data-theme="dark"] .qk-col-head { background: #2A2D40; }
 html[data-theme="dark"] .cal-title,
 html[data-theme="dark"] .qk-title,
 html[data-theme="dark"] .qk-empty-state h3,
-html[data-theme="dark"] .dp-name,
+html[data-theme="dark"] .dp-title,
 html[data-theme="dark"] .frm-title { color: var(--text); }
+
+/* Detail panel: ensure all body text + metadata render near-white on dark.
+   Title/value use --text; labels stay slightly muted but readable; stacked
+   list items (+N more / openList states) and ID also lifted. */
+html[data-theme="dark"] .dp-value,
+html[data-theme="dark"] .dp-listitem { color: var(--text); }
+html[data-theme="dark"] .dp-label,
+html[data-theme="dark"] .dp-id { color: var(--text-2); }
+html[data-theme="dark"] .dp-listitem em { color: var(--text-3); }
 
 /* Date inputs render their native picker icon dark — invert on dark */
 html[data-theme="dark"] input[type="date"],
@@ -962,7 +971,7 @@ html[data-theme="dark"] .badge-rec { color: var(--text); border-color: var(--tex
 /* =============================================================================
  * v3 ADDITIONS (2026-06-18)
  * D. UI/UX fixes — dark-mode City/State input, top-bar search, legend tooltip
- * B. 3-month calendar (triple grid desktop / swipe mobile)
+ * B. 2-month calendar (dual grid desktop / single-month swipe mobile)
  * C. APAC holidays — shaded day-cell layer + legend swatch
  * A. Usage tab — KPI cards + bar chart
  * Appended block; no existing rules removed. Reversible by deleting this block.
@@ -1001,52 +1010,65 @@ html[data-theme="dark"] .top-search:focus { background: rgba(255,255,255,0.10); 
 }
 .legend-tip .legend-section-h:first-child { margin-top: 0; }
 
-/* ---- B. Calendar: triple (3-month) view ---- */
-.cal-triple {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+/* ---- B. Calendar: dual (2-month) view ---- */
+.cal-dual {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
   align-items: start;
 }
-.cal-triple-pane {
+.cal-dual-pane {
   background: var(--surface); border: 1px solid var(--hairline);
   border-radius: var(--radius); overflow: hidden; min-width: 0;
 }
 .cal-month-cap {
-  font-size: 12.5px; font-weight: 700; color: var(--navy);
+  font-size: 13px; font-weight: 700; color: var(--navy);
   padding: 8px 10px; border-bottom: 1px solid var(--hairline);
   background: var(--surface-3); letter-spacing: .02em;
 }
 html[data-theme="dark"] .cal-month-cap { color: var(--text); background: rgba(255,255,255,0.04); }
-.cal-month-compact .cal-cell { min-height: 64px; padding: 3px 4px; }
-.cal-month-compact .cal-daynum { font-size: 10.5px; }
-.cal-month-compact .cal-evt { font-size: 9.5px; padding: 1px 4px; line-height: 1.25; }
-.cal-month-compact .cal-weekhead span { font-size: 9.5px; padding: 3px 0; }
+
+/* Equal, square-ish day cells. aspect-ratio keeps width==height where space
+ * allows; min-height is the floor so a busy cell never collapses. All cells in
+ * a month share the same width (1fr columns) and the same height (the grid row
+ * stretches every cell to the tallest in its row). */
+.cal-dual .cal-cell,
+.cal-single .cal-cell {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+}
+.cal-dual .cal-grid,
+.cal-single .cal-grid { grid-auto-rows: 1fr; }   /* equal row heights */
+.cal-month-compact .cal-cell { padding: 4px 5px; }
+.cal-month-compact .cal-daynum { font-size: 11px; }
+.cal-month-compact .cal-evt { font-size: 10px; padding: 1px 5px; line-height: 1.25; }
+.cal-month-compact .cal-weekhead span { font-size: 10px; padding: 3px 0; }
 .cal-single { max-width: 980px; }
 
-/* swipe affordance dots (mobile only, populated by JS optional) */
+/* swipe affordance dots (tablet/mobile only) */
 .cal-swipe-hint { display: none; }
 
-/* ---- C. Holiday layer ---- */
+/* ---- C. Holiday rows (full-width pale rows inside the day cell) ---- */
 .cal-cell-top { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
-.cal-cell.is-holiday { background: rgba(206,24,30,0.055); }
-.cal-cell.is-holiday.out { background: rgba(206,24,30,0.03); }
-html[data-theme="dark"] .cal-cell.is-holiday { background: rgba(225,90,95,0.10); }
-.cal-hol-flag { font-size: 10px; line-height: 1; opacity: .9; cursor: default; }
-.cal-hol-n {
-  font-size: 9px; font-weight: 700; color: var(--red);
-  background: rgba(206,24,30,0.10); border-radius: 8px; padding: 0 5px; line-height: 14px;
+.cal-hols { display: flex; flex-direction: column; gap: 2px; margin-top: auto; }
+.cal-hol-row {
+  /* Pale holiday card — brand-requested #EEE8E3, full width of the cell. */
+  background: #EEE8E3;
+  color: #4A4540;                 /* dark warm ink for AA contrast on #EEE8E3 */
+  font-size: 9.5px; font-weight: 600; line-height: 1.2;
+  border-radius: 3px; padding: 2px 5px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-html[data-theme="dark"] .cal-hol-n { color: #F2A0A3; background: rgba(225,90,95,0.18); }
-.cal-hol-label {
-  font-size: 9.5px; color: var(--red); font-weight: 600;
-  margin-top: 1px; line-height: 1.25;
-  overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
-  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+.cal-hol-more { font-weight: 700; opacity: .85; }
+/* Dark mode: keep the SAME pale #EEE8E3 background, darken text for contrast. */
+html[data-theme="dark"] .cal-hol-row {
+  background: #EEE8E3;
+  color: #2A2620;
 }
-html[data-theme="dark"] .cal-hol-label { color: #E89497; }
-.cal-hol-label-sm { font-size: 8.5px; -webkit-line-clamp: 1; }
+.cal-month-compact .cal-hol-row { font-size: 9px; padding: 1px 4px; }
 .legend-swatch-hol {
   display: inline-block; width: 14px; height: 14px; border-radius: 3px;
-  background: rgba(206,24,30,0.18); border: 1px solid rgba(206,24,30,0.4);
+  background: #EEE8E3; border: 1px solid rgba(74,69,64,0.35);
   margin-right: 6px; vertical-align: -2px;
 }
 
@@ -1097,23 +1119,22 @@ html[data-theme="dark"] .ucl-shared { background: #6E76A8; }
 }
 .usage-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* ---- Responsive: triple → swipe carousel on small screens ---- */
-@media (max-width: 1024px) {
-  .cal-triple { grid-template-columns: 1fr 1fr; }
-}
+/* ---- Responsive: dual (2-month) → single-month swipe carousel on small screens ---- */
 @media (max-width: 760px) {
   .topbar-search { order: 5; flex-basis: 100%; max-width: none; }
-  /* horizontal swipe: panes become full-width snap targets */
-  .cal-triple {
+  /* horizontal swipe: each month pane is a full-width snap target (1 month at a time) */
+  .cal-dual {
     display: flex; grid-template-columns: none; gap: 0;
     overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; scroll-padding: 0;
     margin: 0 -10px; padding: 0 10px;
   }
-  .cal-triple-pane {
-    flex: 0 0 88%; scroll-snap-align: center; margin-right: 10px;
+  .cal-dual-pane {
+    flex: 0 0 92%; scroll-snap-align: center; margin-right: 10px;
   }
-  .cal-triple-pane:last-child { margin-right: 0; }
+  .cal-dual-pane:last-child { margin-right: 0; }
+  /* equal-height fallback on small screens (exact squares may be impossible) */
+  .cal-dual .cal-cell, .cal-single .cal-cell { aspect-ratio: auto; min-height: 84px; }
   .cal-swipe-hint { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
   .cal-swipe-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--steel-25); }
   .cal-swipe-dot.on { background: var(--navy); }
@@ -1122,5 +1143,5 @@ html[data-theme="dark"] .ucl-shared { background: #6E76A8; }
   .legend-tip { right: auto; left: 0; }
 }
 @media (max-width: 420px) {
-  .cal-triple-pane { flex-basis: 92%; }
+  .cal-dual-pane { flex-basis: 94%; }
 }

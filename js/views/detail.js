@@ -88,7 +88,7 @@ const Detail = (() => {
         ${field("Publication type", H.esc(p.publication_type) || "—")}
         ${field("Language", H.esc(p.language) || "—")}
         ${field("Team", H.esc(p.team) || "—")}
-        ${p.lead_author ? field("Lead author", H.esc(p.lead_author)) : ""}
+        ${field("Lead author", p.lead_author ? H.esc(p.lead_author) : "—")}
         ${field("Report scope", `<span class="scope-tag scope-${p.report_scope==="Regional"?"reg":"loc"}">${H.esc(p.report_scope)}</span>`)}
         ${field("Frequency", freqBadge)}
         ${recMonthsRow}

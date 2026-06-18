@@ -1,17 +1,19 @@
 /* =============================================================================
  * views/calendar.js — CALENDAR VIEW
  * Modes:
- *   - "triple" (DEFAULT, 2026-06-18): three months side by side on desktop,
- *     horizontal swipe between months on mobile. Shows current + next 2 months.
+ *   - "dual" (DEFAULT, 2026-06-19): TWO months side by side on desktop,
+ *     one month at a time with horizontal swipe on tablet/mobile. Default
+ *     range = current month + next month.
  *   - "month": classic single-month grid (still available via the toggle).
  *   - "strip": forward-12-month list.
- * Publications coloured by report scope. Public holidays render as a SEPARATE
- * secondary layer: a faint shaded day-cell background + small flag marker.
+ * Publications coloured by report scope. Public holidays render as full-width
+ * pale rows (#EEE8E3) INSIDE the day cell, BELOW the publication items, in the
+ * format "Market - Holiday Name".
  * Click an event -> detail panel.
  * =========================================================================== */
 const CalendarView = (() => {
   let mountEl = null;
-  let mode = "triple";   // triple | month | strip
+  let mode = "dual";   // dual | month | strip
 
   function ensureMonth() {
     const s = State.get();
@@ -52,15 +54,15 @@ const CalendarView = (() => {
   }
 
   // -------- build ONE month block (weekday header + day grid) --------
-  // Shared by the single-month and triple-month layouts.
-  // maxPerCell controls density (triple view is denser, so show fewer pills).
+  // Shared by the single-month and dual-month layouts.
+  // maxPerCell controls density (dual view is denser, so show fewer pills).
   function buildMonthBlock(y, m, evts, opts = {}) {
     const today = State.todayISO();
     const maxPerCell = opts.maxPerCell || 4;
 
     const block = H.el("div", { class: "cal-month" + (opts.compact ? " cal-month-compact" : "") });
 
-    // month caption (used in triple view; single view has its own toolbar title)
+    // month caption (used in dual view; single view has its own toolbar title)
     if (opts.showCaption) {
       block.appendChild(H.el("div", { class: "cal-month-cap" }, `${H.MONTHS[m]} ${y}`));
     }
@@ -92,37 +94,17 @@ const CalendarView = (() => {
       const isToday = iso === today;
       if (isToday) cell.classList.add("today");
 
-      // ---- holiday layer (secondary): shade the cell + flag marker ----
+      // ---- resolve holidays (rendered as full-width rows below items) ----
       const hols = c.out ? [] : holidaysFor(iso);
-      if (hols.length) {
-        cell.classList.add("is-holiday");
-        const names = hols.map(h => `${h.market}: ${h.name}`).join("\n");
-        cell.setAttribute("title", names);
-      }
+      if (hols.length) cell.classList.add("has-holiday");
 
       const top = H.el("div", { class: "cal-cell-top" });
       const dnum = H.el("div", { class: "cal-daynum" }, String(c.day));
       if (isToday) dnum.classList.add("is-today");
       top.appendChild(dnum);
-      if (hols.length) {
-        const flag = H.el("span", { class: "cal-hol-flag", title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
-          `⚑${hols.length > 1 ? `<span class="cal-hol-n">${hols.length}</span>` : ""}`);
-        top.appendChild(flag);
-      }
       cell.appendChild(top);
 
-      // holiday name label (only on in-month days, kept subdued + separate)
-      if (hols.length && !opts.compact) {
-        const hl = H.el("div", { class: "cal-hol-label", title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
-          H.esc(hols[0].name) + (hols.length > 1 ? ` +${hols.length - 1}` : ""));
-        cell.appendChild(hl);
-      } else if (hols.length && opts.compact) {
-        const hl = H.el("div", { class: "cal-hol-label cal-hol-label-sm",
-          title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
-          H.esc(hols.length > 1 ? `${hols.length} holidays` : hols[0].name));
-        cell.appendChild(hl);
-      }
-
+      // ---- publication items first: show only 1-2, then "+N more" ----
       const dayEvts = evts[iso] || [];
       const list = H.el("div", { class: "cal-evts" });
       dayEvts.slice(0, maxPerCell).forEach(p => list.appendChild(eventPill(p)));
@@ -132,6 +114,25 @@ const CalendarView = (() => {
         list.appendChild(more);
       }
       cell.appendChild(list);
+
+      // ---- holidays AFTER publications: full-width pale rows in the cell ----
+      // Each row reads "Market - Holiday Name"; click opens the day list.
+      if (hols.length) {
+        const holWrap = H.el("div", { class: "cal-hols" });
+        const maxHol = opts.compact ? 1 : 2;
+        hols.slice(0, maxHol).forEach(h => {
+          holWrap.appendChild(H.el("div", { class: "cal-hol-row",
+            title: `${h.market} - ${h.name}` },
+            `${H.esc(h.market)} - ${H.esc(h.name)}`));
+        });
+        if (hols.length > maxHol) {
+          holWrap.appendChild(H.el("div", { class: "cal-hol-row cal-hol-more",
+            title: hols.map(h => `${h.market} - ${h.name}`).join("\n") },
+            `+${hols.length - maxHol} more holiday${hols.length - maxHol > 1 ? "s" : ""}`));
+        }
+        cell.appendChild(holWrap);
+      }
+
       grid.appendChild(cell);
     });
     block.appendChild(grid);
@@ -148,17 +149,17 @@ const CalendarView = (() => {
     return wrap;
   }
 
-  // -------- triple-month (3-up desktop / swipe mobile) --------
-  function renderTriple(filtered) {
+  // -------- dual-month (2-up desktop / 1-month swipe on tablet+mobile) --------
+  function renderDual(filtered) {
     const s = State.get();
-    const base = s.calendarMonth;            // anchor = first of the three months
+    const base = s.calendarMonth;            // anchor = first of the two months
     const evts = eventsByDate(filtered);
-    const wrap = H.el("div", { class: "cal-triple", role: "group", "aria-label": "Three-month calendar" });
-    for (let i = 0; i < 3; i++) {
+    const wrap = H.el("div", { class: "cal-dual", role: "group", "aria-label": "Two-month calendar" });
+    for (let i = 0; i < 2; i++) {
       const d = new Date(base.y, base.m + i, 1);
-      const pane = H.el("div", { class: "cal-triple-pane" });
+      const pane = H.el("div", { class: "cal-dual-pane" });
       pane.appendChild(buildMonthBlock(d.getFullYear(), d.getMonth(), evts,
-        { compact: true, showCaption: true, maxPerCell: 3 }));
+        { compact: true, showCaption: true, maxPerCell: 2 }));
       wrap.appendChild(pane);
     }
     return wrap;
@@ -205,7 +206,7 @@ const CalendarView = (() => {
     const bar = H.el("div", { class: "cal-toolbar" });
 
     const left = H.el("div", { class: "cal-tb-left" });
-    const prev = H.el("button", { class: "btn-icon", title: mode === "triple" ? "Previous month" : "Previous month" }, "‹");
+    const prev = H.el("button", { class: "btn-icon", title: "Previous month" }, "‹");
     const next = H.el("button", { class: "btn-icon", title: "Next month" }, "›");
     const todayBtn = H.el("button", { class: "btn-ghost" }, "Today");
     prev.addEventListener("click", () => stepMonth(-1));
@@ -222,10 +223,10 @@ const CalendarView = (() => {
       State.set({ calendarMonth: { y: yy, m: mm - 1 } });
     });
 
-    // Title: triple view spans 3 months, so show a range.
+    // Title: dual view spans 2 months, so show a range.
     let titleTxt;
-    if (mode === "triple") {
-      const end = new Date(y, m + 2, 1);
+    if (mode === "dual") {
+      const end = new Date(y, m + 1, 1);
       titleTxt = `${H.MONTHS_SHORT[m]} – ${H.MONTHS_SHORT[end.getMonth()]} ${end.getFullYear()}`;
     } else {
       titleTxt = `${H.MONTHS[m]} ${y}`;
@@ -235,13 +236,13 @@ const CalendarView = (() => {
 
     const right = H.el("div", { class: "cal-tb-right" });
     const grp = H.el("div", { class: "seg-group" });
-    const tripleBtn = H.el("button", { class: "seg" + (mode==="triple"?" on":""), title: "Three months" }, "3 Months");
+    const dualBtn = H.el("button", { class: "seg" + (mode==="dual"?" on":""), title: "Two months" }, "2 Months");
     const monthBtn = H.el("button", { class: "seg" + (mode==="month"?" on":"") }, "Month");
     const stripBtn = H.el("button", { class: "seg" + (mode==="strip"?" on":""), title: "Forward 12 months" }, "Forward 12-mo");
-    tripleBtn.addEventListener("click", () => { mode = "triple"; App.rerender(); });
+    dualBtn.addEventListener("click", () => { mode = "dual"; App.rerender(); });
     monthBtn.addEventListener("click", () => { mode = "month"; App.rerender(); });
     stripBtn.addEventListener("click", () => { mode = "strip"; App.rerender(); });
-    grp.append(tripleBtn, monthBtn, stripBtn);
+    grp.append(dualBtn, monthBtn, stripBtn);
     right.append(grp);
 
     bar.append(left, right);
@@ -261,7 +262,7 @@ const CalendarView = (() => {
     mount.appendChild(toolbar());
     if (mode === "strip") mount.appendChild(renderStrip(filtered));
     else if (mode === "month") mount.appendChild(renderMonthGrid(filtered));
-    else mount.appendChild(renderTriple(filtered));
+    else mount.appendChild(renderDual(filtered));
   }
 
   return { render, mode: () => mode };
