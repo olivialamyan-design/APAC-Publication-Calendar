@@ -958,3 +958,169 @@ html[data-theme="dark"] .badge-rec { color: var(--text); border-color: var(--tex
   .tbd-panel { width: 100vw; }
   body.tbd-open .tbd-toggle { right: auto; left: 50%; transform: translate(-50%, 0); top: auto; bottom: 12px; }
 }
+
+/* =============================================================================
+ * v3 ADDITIONS (2026-06-18)
+ * D. UI/UX fixes — dark-mode City/State input, top-bar search, legend tooltip
+ * B. 3-month calendar (triple grid desktop / swipe mobile)
+ * C. APAC holidays — shaded day-cell layer + legend swatch
+ * A. Usage tab — KPI cards + bar chart
+ * Appended block; no existing rules removed. Reversible by deleting this block.
+ * =========================================================================== */
+
+/* ---- D1. City/State filter input: was missing an explicit colour, so in
+ *      dark mode the dark surface kept default (near-black) text. Pin it. ---- */
+.fb-city { color: var(--text); }
+.fb-city::placeholder { color: var(--text-3); }
+
+/* ---- D2. Shared search moved into the top bar, beside the view tabs ---- */
+.topbar-search { flex: 1 1 240px; min-width: 160px; max-width: 380px; display: flex; }
+.top-search {
+  width: 100%; border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  padding: 7px 11px; font-size: 12.5px; background: rgba(255,255,255,0.10);
+  color: #fff; transition: background .12s, border-color .12s;
+}
+.top-search::placeholder { color: rgba(255,255,255,0.55); }
+.top-search:focus { outline: none; background: rgba(255,255,255,0.16); border-color: var(--yellow); }
+html[data-theme="dark"] .top-search { background: rgba(255,255,255,0.06); }
+html[data-theme="dark"] .top-search:focus { background: rgba(255,255,255,0.10); }
+
+/* ---- D3. Legend tooltip popover (replaces inline expanding panel) ---- */
+.legend-wrap { position: relative; display: inline-flex; }
+.legend-tip {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0; z-index: 80;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--hairline); border-radius: var(--radius);
+  box-shadow: var(--shadow-pop); padding: 12px 14px; min-width: 230px; max-width: 300px;
+}
+.legend-tip.open { display: block; }
+.legend-tip .legend-row { display: flex; align-items: center; gap: 4px; padding: 4px 0; font-size: 12.5px; }
+.legend-tip .legend-section-h {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-3); margin: 8px 0 2px;
+}
+.legend-tip .legend-section-h:first-child { margin-top: 0; }
+
+/* ---- B. Calendar: triple (3-month) view ---- */
+.cal-triple {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  align-items: start;
+}
+.cal-triple-pane {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: var(--radius); overflow: hidden; min-width: 0;
+}
+.cal-month-cap {
+  font-size: 12.5px; font-weight: 700; color: var(--navy);
+  padding: 8px 10px; border-bottom: 1px solid var(--hairline);
+  background: var(--surface-3); letter-spacing: .02em;
+}
+html[data-theme="dark"] .cal-month-cap { color: var(--text); background: rgba(255,255,255,0.04); }
+.cal-month-compact .cal-cell { min-height: 64px; padding: 3px 4px; }
+.cal-month-compact .cal-daynum { font-size: 10.5px; }
+.cal-month-compact .cal-evt { font-size: 9.5px; padding: 1px 4px; line-height: 1.25; }
+.cal-month-compact .cal-weekhead span { font-size: 9.5px; padding: 3px 0; }
+.cal-single { max-width: 980px; }
+
+/* swipe affordance dots (mobile only, populated by JS optional) */
+.cal-swipe-hint { display: none; }
+
+/* ---- C. Holiday layer ---- */
+.cal-cell-top { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.cal-cell.is-holiday { background: rgba(206,24,30,0.055); }
+.cal-cell.is-holiday.out { background: rgba(206,24,30,0.03); }
+html[data-theme="dark"] .cal-cell.is-holiday { background: rgba(225,90,95,0.10); }
+.cal-hol-flag { font-size: 10px; line-height: 1; opacity: .9; cursor: default; }
+.cal-hol-n {
+  font-size: 9px; font-weight: 700; color: var(--red);
+  background: rgba(206,24,30,0.10); border-radius: 8px; padding: 0 5px; line-height: 14px;
+}
+html[data-theme="dark"] .cal-hol-n { color: #F2A0A3; background: rgba(225,90,95,0.18); }
+.cal-hol-label {
+  font-size: 9.5px; color: var(--red); font-weight: 600;
+  margin-top: 1px; line-height: 1.25;
+  overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+html[data-theme="dark"] .cal-hol-label { color: #E89497; }
+.cal-hol-label-sm { font-size: 8.5px; -webkit-line-clamp: 1; }
+.legend-swatch-hol {
+  display: inline-block; width: 14px; height: 14px; border-radius: 3px;
+  background: rgba(206,24,30,0.18); border: 1px solid rgba(206,24,30,0.4);
+  margin-right: 6px; vertical-align: -2px;
+}
+
+/* holiday on/off + market selector chips already use .chip-seg / .ms-*; nothing new */
+
+/* ---- A. Usage view ---- */
+.usage-view { max-width: 980px; margin: 0 auto; }
+.usage-head { margin-bottom: 16px; }
+.usage-title { font-size: 18px; font-weight: 700; color: var(--navy); margin: 0; }
+html[data-theme="dark"] .usage-title { color: var(--text); }
+.usage-sub { font-size: 12.5px; color: var(--text-2); margin: 4px 0 0; max-width: 640px; }
+.usage-body { display: flex; flex-direction: column; gap: 16px; }
+.usage-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.usage-kpi {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.usage-kpi-val { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.1; font-variant-numeric: tabular-nums; }
+html[data-theme="dark"] .usage-kpi-val { color: var(--text); }
+.usage-kpi-label { font-size: 11.5px; color: var(--text-3); margin-top: 4px; text-transform: uppercase; letter-spacing: .06em; }
+.usage-kpi-delta { font-size: 12px; font-weight: 600; margin-top: 4px; }
+.usage-kpi-delta.up { color: #2E7D32; }
+.usage-kpi-delta.down { color: var(--red); }
+.usage-kpi-delta.flat { color: var(--text-3); }
+.usage-chart-card {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+.usage-chart-card h3 { font-size: 13px; font-weight: 700; color: var(--navy); margin: 0 0 12px; }
+html[data-theme="dark"] .usage-chart-card h3 { color: var(--text); }
+.usage-chart { width: 100%; }
+.usage-bar { fill: var(--navy); }
+html[data-theme="dark"] .usage-bar { fill: #6E76A8; }
+.usage-bar-local { fill: var(--yellow); }
+.usage-axis { fill: var(--text-3); font-size: 10px; }
+.usage-grid { stroke: var(--hairline); stroke-dasharray: 2 3; }
+.usage-chart-legend { display: flex; gap: 18px; margin-top: 10px; font-size: 11.5px; color: var(--text-2); }
+.ucl { display: inline-flex; align-items: center; gap: 6px; }
+.ucl-sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.ucl-shared { background: var(--navy); }
+html[data-theme="dark"] .ucl-shared { background: #6E76A8; }
+.ucl-local { background: var(--yellow); }
+.usage-source { font-size: 11px; color: var(--text-3); margin: 0; line-height: 1.5; }
+.usage-source code { font-size: 10.5px; }
+.usage-empty {
+  background: var(--surface); border: 1px dashed var(--hairline);
+  border-radius: var(--radius); padding: 40px 24px; text-align: center; color: var(--text-2);
+}
+.usage-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---- Responsive: triple → swipe carousel on small screens ---- */
+@media (max-width: 1024px) {
+  .cal-triple { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .topbar-search { order: 5; flex-basis: 100%; max-width: none; }
+  /* horizontal swipe: panes become full-width snap targets */
+  .cal-triple {
+    display: flex; grid-template-columns: none; gap: 0;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scroll-padding: 0;
+    margin: 0 -10px; padding: 0 10px;
+  }
+  .cal-triple-pane {
+    flex: 0 0 88%; scroll-snap-align: center; margin-right: 10px;
+  }
+  .cal-triple-pane:last-child { margin-right: 0; }
+  .cal-swipe-hint { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+  .cal-swipe-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--steel-25); }
+  .cal-swipe-dot.on { background: var(--navy); }
+  html[data-theme="dark"] .cal-swipe-dot.on { background: var(--yellow); }
+  .usage-kpis { grid-template-columns: 1fr; }
+  .legend-tip { right: auto; left: 0; }
+}
+@media (max-width: 420px) {
+  .cal-triple-pane { flex-basis: 92%; }
+}
