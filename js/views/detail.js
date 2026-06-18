@@ -88,6 +88,7 @@ const Detail = (() => {
         ${field("Publication type", H.esc(p.publication_type) || "—")}
         ${field("Language", H.esc(p.language) || "—")}
         ${field("Team", H.esc(p.team) || "—")}
+        ${p.lead_author ? field("Lead author", H.esc(p.lead_author)) : ""}
         ${field("Report scope", `<span class="scope-tag scope-${p.report_scope==="Regional"?"reg":"loc"}">${H.esc(p.report_scope)}</span>`)}
         ${field("Frequency", freqBadge)}
         ${recMonthsRow}
@@ -142,6 +143,7 @@ const Detail = (() => {
       `- **Type:** ${p.publication_type}`,
       `- **Language:** ${p.language}`,
       `- **Team:** ${p.team || "—"}`,
+      p.lead_author ? `- **Lead author:** ${p.lead_author}` : null,
       `- **Scope:** ${p.report_scope}`,
       `- **Frequency:** ${p.frequency || "Ad Hoc"}`,
       (p.frequency && p.frequency !== "Ad Hoc")

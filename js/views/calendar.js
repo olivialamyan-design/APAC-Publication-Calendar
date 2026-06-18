@@ -1,12 +1,17 @@
 /* =============================================================================
  * views/calendar.js — CALENDAR VIEW
- * Month grid. Publications coloured BY MARKET. Click event -> detail panel.
- * Month nav (prev / next / Today / month picker) + single-click forward-12-mo
- * "Strip" alternate layout (12 stacked mini-month lists).
+ * Modes:
+ *   - "triple" (DEFAULT, 2026-06-18): three months side by side on desktop,
+ *     horizontal swipe between months on mobile. Shows current + next 2 months.
+ *   - "month": classic single-month grid (still available via the toggle).
+ *   - "strip": forward-12-month list.
+ * Publications coloured by report scope. Public holidays render as a SEPARATE
+ * secondary layer: a faint shaded day-cell background + small flag marker.
+ * Click an event -> detail panel.
  * =========================================================================== */
 const CalendarView = (() => {
   let mountEl = null;
-  let mode = "month";   // month | strip(forward12)
+  let mode = "triple";   // triple | month | strip
 
   function ensureMonth() {
     const s = State.get();
@@ -24,10 +29,7 @@ const CalendarView = (() => {
     return map;
   }
 
-  // -------- styling for a calendar event pill (market colour) --------
-  // FUTURE STATUS STYLING HOOK:
-  //   if (p.status === "delayed") add a red urgent flag here.
-  //   See docs/MAINTENANCE.md -> "Introducing the Status field".
+  // -------- styling for a calendar event pill (scope colour) --------
   function eventPill(p) {
     const c = DataLayer.colourFor(p);
     const cls = "cal-evt" + (p.recurring ? " is-recurring" : "");
@@ -41,24 +43,36 @@ const CalendarView = (() => {
     return pill;
   }
 
-  function renderMonthGrid(filtered) {
+  // -------- resolve active holidays for a given ISO date --------
+  function holidaysFor(iso) {
+    if (typeof Holidays === "undefined") return [];
     const s = State.get();
-    const { y, m } = s.calendarMonth;
-    const evts = eventsByDate(filtered);
+    if (!s.holidaysOn) return [];
+    return Holidays.forDate(iso, s.holidayMarkets);
+  }
+
+  // -------- build ONE month block (weekday header + day grid) --------
+  // Shared by the single-month and triple-month layouts.
+  // maxPerCell controls density (triple view is denser, so show fewer pills).
+  function buildMonthBlock(y, m, evts, opts = {}) {
     const today = State.todayISO();
+    const maxPerCell = opts.maxPerCell || 4;
 
-    const wrap = H.el("div", { class: "cal-month" });
+    const block = H.el("div", { class: "cal-month" + (opts.compact ? " cal-month-compact" : "") });
 
-    // weekday header (Mon-first)
+    // month caption (used in triple view; single view has its own toolbar title)
+    if (opts.showCaption) {
+      block.appendChild(H.el("div", { class: "cal-month-cap" }, `${H.MONTHS[m]} ${y}`));
+    }
+
     const wk = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
     const head = H.el("div", { class: "cal-weekhead" });
     wk.forEach(d => head.appendChild(H.el("div", { class: "cal-wk" }, d)));
-    wrap.appendChild(head);
+    block.appendChild(head);
 
     const grid = H.el("div", { class: "cal-grid" });
     const first = new Date(y, m, 1);
-    // Mon=0 offset
-    let startOffset = (first.getDay() + 6) % 7;
+    let startOffset = (first.getDay() + 6) % 7;     // Mon=0
     const daysInMonth = new Date(y, m + 1, 0).getDate();
     const prevDays = new Date(y, m, 0).getDate();
 
@@ -77,26 +91,80 @@ const CalendarView = (() => {
       const cell = H.el("div", { class: "cal-cell" + (c.out ? " out" : "") });
       const isToday = iso === today;
       if (isToday) cell.classList.add("today");
+
+      // ---- holiday layer (secondary): shade the cell + flag marker ----
+      const hols = c.out ? [] : holidaysFor(iso);
+      if (hols.length) {
+        cell.classList.add("is-holiday");
+        const names = hols.map(h => `${h.market}: ${h.name}`).join("\n");
+        cell.setAttribute("title", names);
+      }
+
+      const top = H.el("div", { class: "cal-cell-top" });
       const dnum = H.el("div", { class: "cal-daynum" }, String(c.day));
       if (isToday) dnum.classList.add("is-today");
-      cell.appendChild(dnum);
+      top.appendChild(dnum);
+      if (hols.length) {
+        const flag = H.el("span", { class: "cal-hol-flag", title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
+          `⚑${hols.length > 1 ? `<span class="cal-hol-n">${hols.length}</span>` : ""}`);
+        top.appendChild(flag);
+      }
+      cell.appendChild(top);
+
+      // holiday name label (only on in-month days, kept subdued + separate)
+      if (hols.length && !opts.compact) {
+        const hl = H.el("div", { class: "cal-hol-label", title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
+          H.esc(hols[0].name) + (hols.length > 1 ? ` +${hols.length - 1}` : ""));
+        cell.appendChild(hl);
+      } else if (hols.length && opts.compact) {
+        const hl = H.el("div", { class: "cal-hol-label cal-hol-label-sm",
+          title: hols.map(h => `${h.market}: ${h.name}`).join("\n") },
+          H.esc(hols.length > 1 ? `${hols.length} holidays` : hols[0].name));
+        cell.appendChild(hl);
+      }
 
       const dayEvts = evts[iso] || [];
       const list = H.el("div", { class: "cal-evts" });
-      dayEvts.slice(0, 4).forEach(p => list.appendChild(eventPill(p)));
-      if (dayEvts.length > 4) {
-        const more = H.el("button", { class: "cal-more" }, `+${dayEvts.length - 4} more`);
+      dayEvts.slice(0, maxPerCell).forEach(p => list.appendChild(eventPill(p)));
+      if (dayEvts.length > maxPerCell) {
+        const more = H.el("button", { class: "cal-more" }, `+${dayEvts.length - maxPerCell} more`);
         more.addEventListener("click", () => Detail.openList(dayEvts, iso));
         list.appendChild(more);
       }
       cell.appendChild(list);
       grid.appendChild(cell);
     });
-    wrap.appendChild(grid);
+    block.appendChild(grid);
+    return block;
+  }
+
+  // -------- single-month grid --------
+  function renderMonthGrid(filtered) {
+    const s = State.get();
+    const { y, m } = s.calendarMonth;
+    const evts = eventsByDate(filtered);
+    const wrap = H.el("div", { class: "cal-single" });
+    wrap.appendChild(buildMonthBlock(y, m, evts, { maxPerCell: 4 }));
     return wrap;
   }
 
-  // -------- forward-12-month strip (single click) --------
+  // -------- triple-month (3-up desktop / swipe mobile) --------
+  function renderTriple(filtered) {
+    const s = State.get();
+    const base = s.calendarMonth;            // anchor = first of the three months
+    const evts = eventsByDate(filtered);
+    const wrap = H.el("div", { class: "cal-triple", role: "group", "aria-label": "Three-month calendar" });
+    for (let i = 0; i < 3; i++) {
+      const d = new Date(base.y, base.m + i, 1);
+      const pane = H.el("div", { class: "cal-triple-pane" });
+      pane.appendChild(buildMonthBlock(d.getFullYear(), d.getMonth(), evts,
+        { compact: true, showCaption: true, maxPerCell: 3 }));
+      wrap.appendChild(pane);
+    }
+    return wrap;
+  }
+
+  // -------- forward-12-month strip --------
   function renderStrip(allFiltered) {
     const wrap = H.el("div", { class: "cal-strip" });
     const start = new Date(); start.setDate(1);
@@ -137,7 +205,7 @@ const CalendarView = (() => {
     const bar = H.el("div", { class: "cal-toolbar" });
 
     const left = H.el("div", { class: "cal-tb-left" });
-    const prev = H.el("button", { class: "btn-icon", title: "Previous month" }, "‹");
+    const prev = H.el("button", { class: "btn-icon", title: mode === "triple" ? "Previous month" : "Previous month" }, "‹");
     const next = H.el("button", { class: "btn-icon", title: "Next month" }, "›");
     const todayBtn = H.el("button", { class: "btn-ghost" }, "Today");
     prev.addEventListener("click", () => stepMonth(-1));
@@ -147,7 +215,6 @@ const CalendarView = (() => {
       State.set({ calendarMonth: { y: n.getFullYear(), m: n.getMonth() } });
     });
 
-    // month picker
     const picker = H.el("input", { type: "month", class: "cal-monthpick",
       value: `${y}-${String(m+1).padStart(2,"0")}` });
     picker.addEventListener("change", e => {
@@ -155,16 +222,27 @@ const CalendarView = (() => {
       State.set({ calendarMonth: { y: yy, m: mm - 1 } });
     });
 
+    // Title: triple view spans 3 months, so show a range.
+    let titleTxt;
+    if (mode === "triple") {
+      const end = new Date(y, m + 2, 1);
+      titleTxt = `${H.MONTHS_SHORT[m]} – ${H.MONTHS_SHORT[end.getMonth()]} ${end.getFullYear()}`;
+    } else {
+      titleTxt = `${H.MONTHS[m]} ${y}`;
+    }
     left.append(prev, next, todayBtn,
-      H.el("div", { class: "cal-title" }, `${H.MONTHS[m]} ${y}`), picker);
+      H.el("div", { class: "cal-title" }, titleTxt), picker);
 
     const right = H.el("div", { class: "cal-tb-right" });
+    const grp = H.el("div", { class: "seg-group" });
+    const tripleBtn = H.el("button", { class: "seg" + (mode==="triple"?" on":""), title: "Three months" }, "3 Months");
     const monthBtn = H.el("button", { class: "seg" + (mode==="month"?" on":"") }, "Month");
     const stripBtn = H.el("button", { class: "seg" + (mode==="strip"?" on":""), title: "Forward 12 months" }, "Forward 12-mo");
+    tripleBtn.addEventListener("click", () => { mode = "triple"; App.rerender(); });
     monthBtn.addEventListener("click", () => { mode = "month"; App.rerender(); });
     stripBtn.addEventListener("click", () => { mode = "strip"; App.rerender(); });
-    right.append(H.el("div", { class: "seg-group" })); 
-    right.firstChild.append(monthBtn, stripBtn);
+    grp.append(tripleBtn, monthBtn, stripBtn);
+    right.append(grp);
 
     bar.append(left, right);
     return bar;
@@ -182,7 +260,8 @@ const CalendarView = (() => {
     mount.innerHTML = "";
     mount.appendChild(toolbar());
     if (mode === "strip") mount.appendChild(renderStrip(filtered));
-    else mount.appendChild(renderMonthGrid(filtered));
+    else if (mode === "month") mount.appendChild(renderMonthGrid(filtered));
+    else mount.appendChild(renderTriple(filtered));
   }
 
   return { render, mode: () => mode };
