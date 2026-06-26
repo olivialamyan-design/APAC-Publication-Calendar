@@ -20,11 +20,11 @@
     },
     "country": {
       "type": "string",
-      "description": "One of the 14 markets (Global Research treated as a country-like option).",
+      "description": "One of the 14 markets plus the regional options Global and Asia Pacific (treated as country-like options).",
       "enum": [
         "Japan", "China", "Thailand", "Hong Kong", "Singapore", "Vietnam",
         "Philippines", "Malaysia", "South Korea", "Taiwan", "Australia",
-        "Indonesia", "India", "Global Research"
+        "Indonesia", "India", "Global", "Asia Pacific"
       ]
     },
     "city_state": {
@@ -41,8 +41,9 @@
       "items": {
         "type": "string",
         "enum": [
-          "Office", "Logistics", "Residential", "Retail", "Hotels",
-          "Industrial", "Capital Markets", "Data Centres", "Mixed Use"
+          "All", "Office", "Residential", "Retail", "Hospitality",
+          "Industrial & Logistics", "Capital Markets", "Data Centres",
+          "Living", "Mixed Use"
         ]
       }
     },
@@ -50,7 +51,7 @@
       "type": "string",
       "description": "Single-select.",
       "enum": [
-        "Market Reports", "Blogs", "White Papers",
+        "Market Reports", "Newsletter", "Blogs", "White Papers",
         "Thought Leadership", "Quarterly Outlooks", "Sector Updates"
       ]
     },

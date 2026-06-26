@@ -94,8 +94,14 @@ const DataLayer = (() => {
       errs.push("Date must be in YYYY-MM-DD format.");
     if (rec.publication_type && !cfg.PUBLICATION_TYPES.includes(rec.publication_type))
       errs.push("Unknown publication type.");
-    if (rec.language && !cfg.LANGUAGES.includes(rec.language))
-      errs.push("Unknown language.");
+    // language may be a semicolon-separated multi-language string
+    // (e.g. "English; Korean"); validate each token against LANGUAGES.
+    if (rec.language) {
+      String(rec.language).split(";").map(s => s.trim()).filter(Boolean)
+        .forEach(l => {
+          if (!cfg.LANGUAGES.includes(l)) errs.push("Unknown language: " + l);
+        });
+    }
     (rec.asset_class || []).forEach(a => {
       if (!cfg.ASSET_CLASSES.includes(a)) errs.push("Unknown asset class: " + a);
     });

@@ -239,11 +239,14 @@ def parse_recurring_months(value, where=""):
 
 
 def parse_asset_class(value):
-    """Asset class may hold multiple values separated by ; , / -> list[str]."""
+    """Asset class may hold multiple values separated by ; , / -> list[str].
+
+    A lone 'TBD' placeholder is dropped (treated as blank) per owner direction.
+    """
     if value is None:
         return []
     parts = re.split(r"[;,/]+", str(value))
-    return [p.strip() for p in parts if p.strip()]
+    return [p.strip() for p in parts if p.strip() and p.strip().upper() != "TBD"]
 
 
 def clean_text(value):

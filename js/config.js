@@ -31,7 +31,7 @@ window.APP_CONFIG = {
   // appended after the known ones (alphabetically) so the filter never goes
   // stale relative to the master spreadsheet.
   ASSET_CLASSES: [
-    "All", "Office", "Retail", "Logistics", "Industrial", "Residential",
+    "All", "Office", "Retail", "Industrial & Logistics", "Residential",
     "Hospitality", "Data Centres", "Capital Markets", "Living", "Mixed Use"
   ],
   PUBLICATION_TYPES: [
