@@ -25,7 +25,6 @@ const App = (() => {
       `${label}${selected.length ? ` <span class="ms-count">${selected.length}</span>` : ""} <span class="ms-caret">▾</span>`);
     const pop = H.el("div", { class: "ms-pop" });
     options.forEach(o => {
-      const id = `${key}-${o}`.replace(/\W/g, "");
       const row = H.el("label", { class: "ms-opt" });
       row.innerHTML = `<input type="checkbox" ${selected.includes(o) ? "checked" : ""}> <span>${H.esc(o)}</span>`;
       row.querySelector("input").addEventListener("change", e => {
@@ -58,22 +57,18 @@ const App = (() => {
     const bar = document.getElementById("filterBar");
     bar.innerHTML = "";
 
-    // Row 1: scope + range + holiday controls.
     const row1 = H.el("div", { class: "fb-row" });
 
-    // scope chips (default Both)
     const scopeGrp = H.el("div", { class: "chip-group", title: "Report scope" });
     ["Regional", "In-Country", "Both"].forEach(v =>
       scopeGrp.appendChild(segChip(v, v, s.scope, val => State.set({ scope: val }))));
     row1.appendChild(labeled("Scope", scopeGrp));
 
-    // range chips (default Forward 12mo)
     const rangeGrp = H.el("div", { class: "chip-group", title: "Time window" });
     [["All","all"],["History","history"],["Forward 12mo","forward12"]].forEach(([l,v]) =>
       rangeGrp.appendChild(segChip(l, v, s.range, val => State.set({ range: val }))));
     row1.appendChild(labeled("Window", rangeGrp));
 
-    // ---- Holiday controls (2026-06-18): toggle + market selector ----
     const holToggleGrp = H.el("div", { class: "chip-group", title: "Show / hide public holidays" });
     [["On", true], ["Off", false]].forEach(([lbl, val]) =>
       holToggleGrp.appendChild(
@@ -88,7 +83,6 @@ const App = (() => {
 
     bar.appendChild(row1);
 
-    // Row 2: multi-selects + city + dates
     const row2 = H.el("div", { class: "fb-row fb-row2" });
     row2.appendChild(multiSelect("Market", "markets", DataLayer.getMarkets().map(m => m.name), s.markets));
     row2.appendChild(multiSelect("Asset class", "assetClasses", DataLayer.distinctAssetClasses(), s.assetClasses));
@@ -106,9 +100,9 @@ const App = (() => {
     row2.appendChild(city);
 
     const from = H.el("input", { class: "fb-date", type: "date", value: s.dateFrom, title: "From date" });
-    const to = H.el("input", { class: "fb-date", type: "date", value: s.dateTo, title: "To date" });
+    const to   = H.el("input", { class: "fb-date", type: "date", value: s.dateTo,   title: "To date" });
     from.addEventListener("change", e => State.set({ dateFrom: e.target.value }));
-    to.addEventListener("change", e => State.set({ dateTo: e.target.value }));
+    to.addEventListener("change",   e => State.set({ dateTo:   e.target.value }));
     const dates = H.el("div", { class: "fb-dates" });
     dates.append(from, H.el("span", { class: "fb-dash" }, "→"), to);
     row2.appendChild(dates);
@@ -137,7 +131,6 @@ const App = (() => {
     if (ts) ts.value = "";
   }
 
-  // ---- Shared topbar search wiring (persistent input, not rebuilt) ----
   function wireTopSearch() {
     const input = document.getElementById("topSearch");
     if (!input) return;
@@ -151,7 +144,7 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // Scope legend (two-tone).
+  // Scope legend
   // ===========================================================================
   function buildLegend() {
     const box = document.getElementById("legendTip");
@@ -162,10 +155,7 @@ const App = (() => {
       { scope: "In-Country", label: "In-Country reports", c: { fill: "#79828C", text: "#FFFFFF" } }
     ];
     items.forEach(it => {
-      const item = H.el("button", {
-        class: "legend-item",
-        title: `Filter to ${it.label}`
-      });
+      const item = H.el("button", { class: "legend-item", title: `Filter to ${it.label}` });
       item.innerHTML =
         `<span class="legend-swatch" style="background:${it.c.fill}"></span>` +
         `<span class="legend-label">${H.esc(it.label)}</span>`;
@@ -206,13 +196,12 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // TBD side panel (collapsible right-edge drawer).
+  // TBD side panel
   // ===========================================================================
   function buildTbdPanel() {
     let panel = document.getElementById("tbdPanel");
     if (!panel) {
-      panel = H.el("aside", { id: "tbdPanel", class: "tbd-panel",
-        "aria-label": "TBD publications" });
+      panel = H.el("aside", { id: "tbdPanel", class: "tbd-panel", "aria-label": "TBD publications" });
       document.body.appendChild(panel);
       const tog = H.el("button", {
         id: "tbdToggle", class: "tbd-toggle",
@@ -228,8 +217,7 @@ const App = (() => {
       });
     }
     const tbd = DataLayer.getTBD();
-    document.getElementById("tbdToggle")
-      .querySelector(".tbd-toggle-num").textContent = String(tbd.length);
+    document.getElementById("tbdToggle").querySelector(".tbd-toggle-num").textContent = String(tbd.length);
 
     panel.innerHTML = "";
     const head = H.el("div", { class: "tbd-head" });
@@ -248,20 +236,14 @@ const App = (() => {
 
     const body = H.el("div", { class: "tbd-body" });
     if (!tbd.length) {
-      body.appendChild(H.el("div", { class: "tbd-empty" },
-        "No TBD publications. Everything has a date."));
+      body.appendChild(H.el("div", { class: "tbd-empty" }, "No TBD publications. Everything has a date."));
     } else {
       tbd.forEach(p => {
         const c = DataLayer.colourFor(p);
         const card = H.el("article", {
-          class: "tbd-card",
-          style: `--scope:${c.fill};`,
-          tabindex: "0",
-          role: "button",
-          title: "Open detail"
+          class: "tbd-card", style: `--scope:${c.fill};`, tabindex: "0", role: "button", title: "Open detail"
         });
-        const tags = [p.country, p.publication_type, p.frequency]
-          .filter(Boolean).join(" · ");
+        const tags = [p.country, p.publication_type, p.frequency].filter(Boolean).join(" · ");
         card.innerHTML =
           `<div class="tbd-card-head">` +
             `<span class="chip mkt-chip" style="background:${c.fill};color:${c.text};">${H.esc(p.country)}</span>` +
@@ -304,11 +286,9 @@ const App = (() => {
     const filtered = State.applyFilters(DataLayer.getAll());
 
     const mount = document.getElementById("viewMount");
-    const rc = document.getElementById("resultCount");
-    if (s.view === "usage") {
-      if (rc) rc.textContent = "";
-      UsageView.render(mount);
-    } else if (s.view === "table") {
+    const rc    = document.getElementById("resultCount");
+
+    if (s.view === "table") {
       if (rc) rc.textContent = `${filtered.length} shown`;
       TableView.render(mount, filtered);
     } else if (s.view === "quarters") {
@@ -370,19 +350,14 @@ const App = (() => {
       toggleLegend();
     });
 
-    // ---- Shared topbar search (drives State.search for every view) ----
     wireTopSearch();
 
-    // ---- Load holiday data (non-blocking; calendar reads it when ready) ----
     if (typeof Holidays !== "undefined") {
       Holidays.load().then(() => { if (State.get().view === "calendar") rerender(); })
         .catch(() => {});
     }
 
-    // ---- Record this page-open for usage tracking (best-effort) ----
-    if (typeof Usage !== "undefined") Usage.recordOpen();
-
-    // ---- Theme toggle ----
+    // Theme toggle
     const themeBtn = document.getElementById("btnTheme");
     function applyThemeIcon() {
       const t = document.documentElement.getAttribute("data-theme") || "dark";
@@ -392,19 +367,17 @@ const App = (() => {
     }
     applyThemeIcon();
     if (themeBtn) themeBtn.addEventListener("click", () => {
-      const cur = document.documentElement.getAttribute("data-theme") || "dark";
+      const cur  = document.documentElement.getAttribute("data-theme") || "dark";
       const next = cur === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("apac-theme", next); } catch (e) {}
       applyThemeIcon();
     });
 
-    // mobile filter drawer toggle
     const fbToggle = document.getElementById("btnFilters");
     if (fbToggle) fbToggle.addEventListener("click", () =>
       document.getElementById("filterBar").classList.toggle("drawer-open"));
 
-    // close popovers on outside click + Esc closes panels
     document.addEventListener("click", e => {
       document.querySelectorAll(".ms-pop.open").forEach(p => p.classList.remove("open"));
       const lw = e.target.closest && e.target.closest(".legend-wrap");
@@ -415,9 +388,9 @@ const App = (() => {
     });
 
     State.subscribe(() => {
-      const active = document.activeElement;
-      const reFocus = active && active.classList.contains("fb-city");
-      const caret = reFocus ? active.selectionStart : null;
+      const active   = document.activeElement;
+      const reFocus  = active && active.classList.contains("fb-city");
+      const caret    = reFocus ? active.selectionStart : null;
       buildFilterBar();
       if (reFocus) {
         const next = document.querySelector(".fb-city");

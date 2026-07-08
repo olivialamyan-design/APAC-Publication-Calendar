@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- THEME BOOTSTRAP — runs before paint to avoid a flash if user picked light last session.
-       Default is dark; stored preference (when available) overrides. -->
   <script>
     (function () {
       try {
@@ -18,8 +16,7 @@
         if (saved === "light" || saved === "dark") {
           document.documentElement.setAttribute("data-theme", saved);
         }
-        // else: leave the data-theme="dark" already set on <html>
-      } catch (e) { /* sandbox / private mode — keep default dark */ }
+      } catch (e) {}
     })();
   </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2325273A'/%3E%3Crect x='7' y='9' width='18' height='3' fill='%23FFDF00'/%3E%3Crect x='7' y='15' width='18' height='3' fill='%23EEE8E3'/%3E%3Crect x='7' y='21' width='12' height='3' fill='%23CE181E'/%3E%3C/svg%3E">
@@ -44,11 +41,8 @@
       <button class="tab" data-view="calendar" role="tab">Calendar</button>
       <button class="tab" data-view="quarters" role="tab">Quarters</button>
       <button class="tab" data-view="table" role="tab">Table</button>
-      <button class="tab" data-view="usage" role="tab">Usage</button>
     </nav>
 
-    <!-- Shared search lives next to the view tabs (2026-06-18). One input,
-         drives the same State.search used by every view. -->
     <div class="topbar-search">
       <input id="topSearch" class="fb-search top-search" type="search"
              placeholder="Search name, notes, city, team…"
@@ -62,10 +56,17 @@
       </button>
       <div class="legend-wrap">
         <button id="btnLegend" class="btn-ghost" aria-haspopup="true" aria-expanded="false">Legend</button>
-        <!-- Legend is now a click-to-open tooltip popover (2026-06-18) -->
         <div id="legendTip" class="legend-tip" role="tooltip" aria-hidden="true"></div>
       </div>
       <button id="btnFilters" class="btn-ghost only-mobile">Filters</button>
+      <a id="btnAnalytics"
+         href="https://dash.cloudflare.com/?to=/:account/web-analytics"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn-ghost"
+         title="Open Cloudflare Web Analytics dashboard">
+        📊 Analytics
+      </a>
     </div>
   </header>
 
@@ -90,8 +91,6 @@
   <script src="js/views/quarters.js"></script>
   <script src="js/views/leadership.js"></script>
   <script src="js/holidays.js"></script>
-  <script src="js/usage.js"></script>
-  <script src="js/views/usage.js"></script>
   <script src="js/app.js"></script>
 
   <!-- Cloudflare Web Analytics -->
