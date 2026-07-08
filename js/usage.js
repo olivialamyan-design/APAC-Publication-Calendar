@@ -1,46 +1,60 @@
 /* =============================================================================
- * usage.js — USAGE / PAGE-OPEN TRACKING (2026-06-18)
+ * usage.js — USAGE / PAGE-OPEN TRACKING (2026-07-08)
  *
  * GOAL: count how many times the platform is opened per day, over time.
- * NOT clickstream analytics — just visit counts. No third-party analytics.
+ * Also detects and records the device type (Desktop vs Mobile) for each open
+ * on this browser, shown in the Usage tab breakdown.
  *
  * WHERE THE DATA LIVES (important — GitHub Pages is static):
- *   A static page cannot securely write to the repo on its own, so the
- *   authoritative, SHARED, cross-user daily counts are produced server-side
- *   by a scheduled GitHub Action that snapshots GitHub Pages' own view-stats
- *   API into data/usage.json (see .github/workflows/usage-snapshot.yml).
- *   The Usage tab READS that committed file. This is passive (no client token)
- *   and persists across all users — front-end storage alone cannot do that.
+ *   Shared cross-user daily counts come from data/usage.json, written by a
+ *   scheduled GitHub Action (see .github/workflows/usage-snapshot.yml).
+ *   Device-type breakdown is stored in localStorage per browser (local only).
  *
  *   data/usage.json shape:
  *     { "source": "github-pages-views",
- *       "updated_at": "2026-06-18",
- *       "daily": [ { "date": "2026-06-17", "count": 42 }, ... ] }
+ *       "updated_at": "2026-07-08",
+ *       "daily": [ { "date": "2026-07-07", "count": 42 }, ... ] }
  *
- * LOCAL SIGNAL (secondary): we also keep a small localStorage tally of opens
- * from THIS browser. It is shown as a faint "this device" overlay and is NOT a
- * substitute for the shared server counts — it's a sanity reference only.
+ * LOCAL SIGNAL (this browser):
+ *   localStorage key "apac-usage-local"  → { "YYYY-MM-DD": n }
+ *   localStorage key "apac-device-opens" → { "desktop": n, "mobile": n }
  * =========================================================================== */
 const Usage = (() => {
-  const LS_KEY = "apac-usage-local"; // { "YYYY-MM-DD": n }
-  let _server = null;                // parsed data/usage.json (or null)
+  const LS_KEY        = "apac-usage-local";  // { "YYYY-MM-DD": n }
+  const LS_DEVICE_KEY = "apac-device-opens"; // { desktop: n, mobile: n }
+  let _server = null;
 
   function todayISO() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
   }
 
-  // ---- record one page open in this browser (best-effort, de-duped per load) ----
-  // De-dupe: a single page load counts once even if boot runs twice.
+  // ---- detect device type: "mobile" or "desktop" ----
+  function detectDevice() {
+    const ua = (navigator.userAgent || "").toLowerCase();
+    const hasTouchPoints = navigator.maxTouchPoints > 1;
+    const mobileUA = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/.test(ua);
+    // iPad with iPadOS reports as desktop UA but has touch points
+    if (mobileUA || (hasTouchPoints && window.innerWidth <= 1024)) return "mobile";
+    return "desktop";
+  }
+
+  // ---- record one page open (de-duped per load) ----
   let _recordedThisLoad = false;
   function recordOpen() {
     if (_recordedThisLoad) return;
     _recordedThisLoad = true;
     try {
+      // daily tally
       const map = readLocal();
       const t = todayISO();
       map[t] = (map[t] || 0) + 1;
       localStorage.setItem(LS_KEY, JSON.stringify(map));
+      // device type tally
+      const device = detectDevice();
+      const dev = readDeviceLocal();
+      dev[device] = (dev[device] || 0) + 1;
+      localStorage.setItem(LS_DEVICE_KEY, JSON.stringify(dev));
     } catch (e) { /* private mode / sandbox — ignore */ }
   }
 
@@ -49,6 +63,23 @@ const Usage = (() => {
       const raw = localStorage.getItem(LS_KEY);
       return raw ? JSON.parse(raw) : {};
     } catch (e) { return {}; }
+  }
+
+  function readDeviceLocal() {
+    try {
+      const raw = localStorage.getItem(LS_DEVICE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  // Returns { desktop: n, mobile: n, currentDevice: "desktop"|"mobile" }
+  function deviceStats() {
+    const dev = readDeviceLocal();
+    return {
+      desktop: dev.desktop || 0,
+      mobile:  dev.mobile  || 0,
+      currentDevice: detectDevice()
+    };
   }
 
   // ---- load the shared server-side counts ----
@@ -64,8 +95,7 @@ const Usage = (() => {
     return _server;
   }
 
-  // ---- merge server (authoritative) + local (this device) into one series ----
-  // Returns sorted [{ date, count, local }] across the union of dates.
+  // ---- merge server + local into one series ----
   function series() {
     const local = readLocal();
     const out = {};
@@ -89,24 +119,5 @@ const Usage = (() => {
     };
   }
 
-  // ---- CSV export of the daily usage series ----
-  function exportCsv() {
-    const rows = series();
-    const cols = ["date", "opens", "this_device_opens"];
-    const escCsv = v => {
-      v = v == null ? "" : String(v);
-      return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
-    };
-    const lines = [cols.join(",")].concat(
-      rows.map(r => [escCsv(r.date), escCsv(r.count), escCsv(r.local)].join(",")));
-    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url; a.download = `apac-usage-${todayISO()}.csv`;
-    document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
-    if (typeof App !== "undefined" && App.toast) App.toast(`Exported ${rows.length} days to CSV`);
-  }
-
-  return { recordOpen, loadServer, series, meta, exportCsv, todayISO };
+  return { recordOpen, loadServer, series, meta, deviceStats, todayISO };
 })();

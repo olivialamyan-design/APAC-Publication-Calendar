@@ -1,7 +1,7 @@
 /* =============================================================================
  * app.js — APPLICATION ORCHESTRATOR
- * Boots data, builds the filter bar + legend, handles tab switching, CSV
- * export, and routes the active view. Glue only — logic lives in the layers.
+ * Boots data, builds the filter bar + legend, handles tab switching, and
+ * routes the active view. Glue only — logic lives in the layers.
  * =========================================================================== */
 const App = (() => {
   let booted = false;
@@ -59,7 +59,6 @@ const App = (() => {
     bar.innerHTML = "";
 
     // Row 1: scope + range + holiday controls.
-    // (Search now lives next to the view tabs in the topbar — see wireTopSearch.)
     const row1 = H.el("div", { class: "fb-row" });
 
     // scope chips (default Both)
@@ -75,7 +74,6 @@ const App = (() => {
     row1.appendChild(labeled("Window", rangeGrp));
 
     // ---- Holiday controls (2026-06-18): toggle + market selector ----
-    // Holidays are a secondary layer; shown by default on first load.
     const holToggleGrp = H.el("div", { class: "chip-group", title: "Show / hide public holidays" });
     [["On", true], ["Off", false]].forEach(([lbl, val]) =>
       holToggleGrp.appendChild(
@@ -92,17 +90,11 @@ const App = (() => {
 
     // Row 2: multi-selects + city + dates
     const row2 = H.el("div", { class: "fb-row fb-row2" });
-    // Filter options are derived dynamically from the loaded dataset so they
-    // always reflect the master spreadsheet (cfg lists are ordering hints only).
     row2.appendChild(multiSelect("Market", "markets", DataLayer.getMarkets().map(m => m.name), s.markets));
     row2.appendChild(multiSelect("Asset class", "assetClasses", DataLayer.distinctAssetClasses(), s.assetClasses));
     row2.appendChild(multiSelect("Type", "pubTypes", DataLayer.distinctPubTypes(), s.pubTypes));
     row2.appendChild(multiSelect("Language", "languages", DataLayer.distinctLanguages(), s.languages));
     row2.appendChild(multiSelect("Team", "teams", State.distinctTeams(all), s.teams));
-
-    // ---- FUTURE STATUS MULTI-SELECT GOES HERE: ----
-    //   row2.appendChild(multiSelect("Status", "statuses", cfg.STATUS_VALUES, s.statuses));
-    // (Remember to add `statuses: []` to State and the filter in state.js.)
 
     const city = H.el("input", { class: "fb-city", type: "text",
       placeholder: "City / State…", value: s.cityState });
@@ -140,8 +132,6 @@ const App = (() => {
       markets: [], scope: cfg.DEFAULT_SCOPE, cityState: "", assetClasses: [],
       pubTypes: [], languages: [], teams: [], dateFrom: "", dateTo: "",
       range: cfg.DEFAULT_RANGE, search: ""
-      // Note: holiday on/off + holiday markets are intentionally NOT reset by
-      // the publication Clear button — they are a separate display layer.
     });
     const ts = document.getElementById("topSearch");
     if (ts) ts.value = "";
@@ -161,12 +151,9 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // Scope legend (two-tone). The colour system is now scope-based, not
-  // per-market — yellow = Regional, steel grey = In-Country.
+  // Scope legend (two-tone).
   // ===========================================================================
   function buildLegend() {
-    // Legend is now a click-to-open tooltip popover anchored to the Legend
-    // button (2026-06-18). Same content, rendered into #legendTip.
     const box = document.getElementById("legendTip");
     if (!box) return;
     box.innerHTML = "";
@@ -185,13 +172,11 @@ const App = (() => {
       item.addEventListener("click", () => { State.set({ scope: it.scope }); closeLegend(); });
       box.appendChild(item);
     });
-    // dotted swatch = recurring instance
     const rec = H.el("span", { class: "legend-item legend-static", title: "Recurring instance" });
     rec.innerHTML =
       `<span class="legend-swatch legend-swatch-rec" aria-hidden="true"></span>` +
       `<span class="legend-label">↻ Recurring instance</span>`;
     box.appendChild(rec);
-    // holiday swatch = public holiday day (shaded cell)
     const hol = H.el("span", { class: "legend-item legend-static", title: "Public holiday" });
     hol.innerHTML =
       `<span class="legend-swatch legend-swatch-hol" aria-hidden="true"></span>` +
@@ -221,9 +206,7 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // TBD side panel (collapsible right-edge drawer). Shows publications whose
-  // date is unknown so they don't disappear off the calendar. Available on
-  // every tab.
+  // TBD side panel (collapsible right-edge drawer).
   // ===========================================================================
   function buildTbdPanel() {
     let panel = document.getElementById("tbdPanel");
@@ -231,7 +214,6 @@ const App = (() => {
       panel = H.el("aside", { id: "tbdPanel", class: "tbd-panel",
         "aria-label": "TBD publications" });
       document.body.appendChild(panel);
-      // floating toggle button (lives outside the panel so it stays visible)
       const tog = H.el("button", {
         id: "tbdToggle", class: "tbd-toggle",
         title: "Show publications with no date (TBD)",
@@ -300,29 +282,6 @@ const App = (() => {
   }
 
   // ===========================================================================
-  // CSV export of the currently-filtered set (all columns)
-  // ===========================================================================
-  function exportCsv() {
-    const rows = State.applyFilters(DataLayer.getAll());
-    const cols = ["id","country","city_state","publication_name","asset_class",
-      "publication_type","language","expected_publication_date","team","notes",
-      "report_scope","status"];
-    const escCsv = v => {
-      if (Array.isArray(v)) v = v.join("; ");
-      v = v == null ? "" : String(v);
-      return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
-    };
-    const lines = [cols.join(",")].concat(
-      rows.map(r => cols.map(c => escCsv(r[c])).join(",")));
-    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = H.el("a", { href: url, download: `apac-publications-${State.todayISO()}.csv` });
-    document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
-    toast(`Exported ${rows.length} rows to CSV`);
-  }
-
-  // ===========================================================================
   // Tabs
   // ===========================================================================
   function buildTabs() {
@@ -359,7 +318,6 @@ const App = (() => {
       if (rc) rc.textContent = `${filtered.length} shown`;
       LeadershipView.renderLeadershipView(mount, filtered);
     } else {
-      // Calendar: clarify count so the month view isn't misread.
       const cm = s.calendarMonth;
       const inMonth = (cm && CalendarView.mode() === "month")
         ? filtered.filter(p => {
@@ -389,8 +347,6 @@ const App = (() => {
   async function boot() {
     if (booted) return; booted = true;
     State.readFromUrl();
-    // initialise the calendar month BEFORE first render so the count label is
-    // accurate on the initial paint.
     if (!State.get().calendarMonth) {
       const now = new Date();
       State.set({ calendarMonth: { y: now.getFullYear(), m: now.getMonth() } }, { silent: true });
@@ -409,8 +365,6 @@ const App = (() => {
     buildLegend();
     buildTbdPanel();
 
-    document.getElementById("btnAdd").addEventListener("click", () => Form.open(null));
-    document.getElementById("btnCsv").addEventListener("click", exportCsv);
     document.getElementById("btnLegend").addEventListener("click", e => {
       e.stopPropagation();
       toggleLegend();
@@ -422,20 +376,17 @@ const App = (() => {
     // ---- Load holiday data (non-blocking; calendar reads it when ready) ----
     if (typeof Holidays !== "undefined") {
       Holidays.load().then(() => { if (State.get().view === "calendar") rerender(); })
-        .catch(() => {/* holidays optional; app still works without them */});
+        .catch(() => {});
     }
 
     // ---- Record this page-open for usage tracking (best-effort) ----
     if (typeof Usage !== "undefined") Usage.recordOpen();
 
-    // ---- Theme toggle (light <-> dark). Dark is default; preference is
-    // persisted via localStorage when the host allows it. -----------------
+    // ---- Theme toggle ----
     const themeBtn = document.getElementById("btnTheme");
     function applyThemeIcon() {
       const t = document.documentElement.getAttribute("data-theme") || "dark";
       if (!themeBtn) return;
-      // crescent ☾ when in dark (offers to switch to light),
-      // sun ☀ when in light (offers to switch to dark)
       themeBtn.querySelector(".icon").textContent = (t === "dark") ? "\u263E" : "\u2600";
       themeBtn.setAttribute("title", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
     }
@@ -444,7 +395,7 @@ const App = (() => {
       const cur = document.documentElement.getAttribute("data-theme") || "dark";
       const next = cur === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("apac-theme", next); } catch (e) { /* sandbox */ }
+      try { localStorage.setItem("apac-theme", next); } catch (e) {}
       applyThemeIcon();
     });
 
@@ -456,7 +407,6 @@ const App = (() => {
     // close popovers on outside click + Esc closes panels
     document.addEventListener("click", e => {
       document.querySelectorAll(".ms-pop.open").forEach(p => p.classList.remove("open"));
-      // close the legend tooltip when clicking outside it / its button
       const lw = e.target.closest && e.target.closest(".legend-wrap");
       if (!lw) closeLegend();
     });
@@ -464,11 +414,7 @@ const App = (() => {
       if (e.key === "Escape") { Detail.close(); Form.close(); closeLegend(); }
     });
 
-    // Rebuild the filter bar on state change so chip active-states reflect,
-    // but preserve focus/caret on the text inputs the user is typing into.
     State.subscribe(() => {
-      // The topbar search input is persistent (not rebuilt) so it never loses
-      // focus. Only the in-bar City/State field is rebuilt; preserve its caret.
       const active = document.activeElement;
       const reFocus = active && active.classList.contains("fb-city");
       const caret = reFocus ? active.selectionStart : null;
@@ -477,7 +423,6 @@ const App = (() => {
         const next = document.querySelector(".fb-city");
         if (next) { next.focus(); try { next.setSelectionRange(caret, caret); } catch (e) {} }
       }
-      // keep the persistent topbar search box in sync if state.search changed
       const ts = document.getElementById("topSearch");
       if (ts && ts !== active && ts.value !== (State.get().search || "")) {
         ts.value = State.get().search || "";
@@ -487,7 +432,7 @@ const App = (() => {
     rerender();
   }
 
-  return { boot, rerender, refreshFromData, exportCsv, toast };
+  return { boot, rerender, refreshFromData, toast };
 })();
 
 document.addEventListener("DOMContentLoaded", App.boot);

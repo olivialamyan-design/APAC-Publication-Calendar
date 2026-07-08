@@ -1,8 +1,9 @@
 /* =============================================================================
- * views/usage.js — USAGE TAB
+ * views/usage.js — USAGE TAB (2026-07-08)
  * Renders a daily page-open bar chart (inline SVG, no chart library) plus a
- * CSV export button. Reads the shared series from Usage (server snapshot +
- * this-device local tally). Honours light/dark theme via CSS variables.
+ * Desktop vs Mobile device breakdown section.
+ * Reads the shared series from Usage (server snapshot + this-device local tally).
+ * Honours light/dark theme via CSS variables.
  * =========================================================================== */
 const UsageView = (() => {
 
@@ -10,12 +11,9 @@ const UsageView = (() => {
     mount.innerHTML = "";
     const wrap = H.el("div", { class: "usage-view" });
 
-    // Header row: title + export
+    // Header row: title only (Export CSV removed)
     const head = H.el("div", { class: "usage-head" });
     head.appendChild(H.el("h2", { class: "usage-title" }, "Platform usage"));
-    const exportBtn = H.el("button", { class: "btn-ghost" }, "Export usage CSV");
-    exportBtn.addEventListener("click", () => Usage.exportCsv());
-    head.appendChild(exportBtn);
     wrap.appendChild(head);
 
     const sub = H.el("p", { class: "usage-sub" },
@@ -24,14 +22,11 @@ const UsageView = (() => {
 
     mount.appendChild(wrap);
 
-    // Load shared counts then paint. (Local tally is available immediately.)
     Usage.loadServer().then(() => paint(wrap)).catch(() => paint(wrap));
-    // paint once immediately with whatever we have so the tab isn't blank
     paint(wrap);
   }
 
   function paint(wrap) {
-    // remove any previously painted body
     wrap.querySelectorAll(".usage-body").forEach(n => n.remove());
     const body = H.el("div", { class: "usage-body" });
 
@@ -40,38 +35,111 @@ const UsageView = (() => {
 
     // KPI cards
     const totalServer = data.reduce((s, d) => s + (d.count || 0), 0);
-    const totalLocal = data.reduce((s, d) => s + (d.local || 0), 0);
+    const totalLocal  = data.reduce((s, d) => s + (d.local || 0), 0);
     const last30 = data.slice(-30);
     const kpis = H.el("div", { class: "usage-kpis" });
-    kpis.appendChild(kpiCard("Total opens", fmt(totalServer || totalLocal), m.hasServer ? "shared across all users" : "this device only"));
-    kpis.appendChild(kpiCard("Days tracked", fmt(data.length), m.updatedAt ? `updated ${m.updatedAt}` : "\u2014"));
-    kpis.appendChild(kpiCard("Last 30 days", fmt(last30.reduce((s, d) => s + (d.count || d.local || 0), 0)), "rolling window"));
+    kpis.appendChild(kpiCard("Total opens", fmt(totalServer || totalLocal),
+      m.hasServer ? "shared across all users" : "this device only"));
+    kpis.appendChild(kpiCard("Days tracked", fmt(data.length),
+      m.updatedAt ? `updated ${m.updatedAt}` : "\u2014"));
+    kpis.appendChild(kpiCard("Last 30 days",
+      fmt(last30.reduce((s, d) => s + (d.count || d.local || 0), 0)), "rolling window"));
     body.appendChild(kpis);
 
     // Source note
     const note = H.el("div", { class: "usage-source" });
     if (m.hasServer) {
-      note.innerHTML = `Source: <strong>${H.esc(m.source || "GitHub Pages views")}</strong>. ` +
+      note.innerHTML =
+        `Source: <strong>${H.esc(m.source || "GitHub Pages views")}</strong>. ` +
         `Shared daily counts are produced by a scheduled GitHub Action that snapshots ` +
         `GitHub Pages' own view stats into <code>data/usage.json</code>. ` +
         `The faint overlay shows opens from this device.`;
     } else {
-      note.innerHTML = `<strong>Showing this-device counts only.</strong> ` +
+      note.innerHTML =
+        `<strong>Showing this-device counts only.</strong> ` +
         `Shared cross-user counts appear once the usage-snapshot GitHub Action has run ` +
-        `and committed <code>data/usage.json</code>. (GitHub Pages is static, so shared ` +
-        `counts must come from that committed file \u2014 not browser storage.)`;
+        `and committed <code>data/usage.json</code>.`;
     }
     body.appendChild(note);
 
-    // Chart
+    // Daily bar chart
     if (!data.length) {
       body.appendChild(H.el("div", { class: "usage-empty" },
         "No usage recorded yet. Open the platform a few times \u2014 counts will appear here."));
     } else {
-      body.appendChild(barChart(data.slice(-60))); // show up to last 60 days
+      body.appendChild(barChart(data.slice(-60)));
     }
 
+    // ---- Device breakdown section ----
+    body.appendChild(deviceBreakdown());
+
     wrap.appendChild(body);
+  }
+
+  // ---- Device breakdown: Desktop vs Mobile ----
+  function deviceBreakdown() {
+    const section = H.el("div", { class: "usage-device-section" });
+    section.appendChild(H.el("h3", { class: "usage-device-title" }, "Device breakdown"));
+    section.appendChild(H.el("p", { class: "usage-device-sub" },
+      "Detected from this browser only. Desktop includes all non-mobile browsers; Mobile includes phones and tablets."));
+
+    const ds = Usage.deviceStats();
+    const total = ds.desktop + ds.mobile;
+
+    if (total === 0) {
+      section.appendChild(H.el("div", { class: "usage-empty" },
+        "No device data recorded on this browser yet."));
+      return section;
+    }
+
+    const cards = H.el("div", { class: "usage-device-cards" });
+
+    // Desktop card
+    const deskPct = total > 0 ? Math.round((ds.desktop / total) * 100) : 0;
+    const mobPct  = total > 0 ? Math.round((ds.mobile  / total) * 100) : 0;
+
+    cards.appendChild(deviceCard(
+      "\uD83D\uDCBB", "Desktop", ds.desktop, deskPct,
+      ds.currentDevice === "desktop" ? "(this device)" : ""
+    ));
+    cards.appendChild(deviceCard(
+      "\uD83D\uDCF1", "Mobile", ds.mobile, mobPct,
+      ds.currentDevice === "mobile" ? "(this device)" : ""
+    ));
+
+    section.appendChild(cards);
+
+    // Bar chart: stacked proportion bar
+    if (total > 0) {
+      const barWrap = H.el("div", { class: "usage-device-bar-wrap" });
+      const bar = H.el("div", { class: "usage-device-bar" });
+      if (deskPct > 0) {
+        const deskSeg = H.el("div", { class: "usage-device-seg usage-device-seg-desktop",
+          style: `width:${deskPct}%`, title: `Desktop: ${deskPct}%` });
+        deskSeg.textContent = deskPct >= 10 ? `${deskPct}%` : "";
+        bar.appendChild(deskSeg);
+      }
+      if (mobPct > 0) {
+        const mobSeg = H.el("div", { class: "usage-device-seg usage-device-seg-mobile",
+          style: `width:${mobPct}%`, title: `Mobile: ${mobPct}%` });
+        mobSeg.textContent = mobPct >= 10 ? `${mobPct}%` : "";
+        bar.appendChild(mobSeg);
+      }
+      barWrap.appendChild(bar);
+      section.appendChild(barWrap);
+    }
+
+    return section;
+  }
+
+  function deviceCard(icon, label, count, pct, badge) {
+    const c = H.el("div", { class: "usage-device-card" });
+    c.innerHTML =
+      `<div class="usage-device-icon">${icon}</div>` +
+      `<div class="usage-device-val tnum">${fmt(count)}</div>` +
+      `<div class="usage-device-label">${H.esc(label)}</div>` +
+      `<div class="usage-device-pct">${pct}% of opens${badge ? ` <span class="usage-device-badge">${H.esc(badge)}</span>` : ""}</div>`;
+    return c;
   }
 
   function kpiCard(label, value, delta) {
@@ -100,7 +168,6 @@ const UsageView = (() => {
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", "Daily platform opens");
 
-    // gridlines + y labels (0, mid, max)
     [0, 0.5, 1].forEach(f => {
       const y = padT + innerH - innerH * f;
       const line = svgEl("line", { x1: padL, y1: y, x2: W - padR, y2: y, class: "usage-grid" });
@@ -114,7 +181,6 @@ const UsageView = (() => {
       const x = padL + i * (bw + gap);
       const v = d.count || 0;
       const lv = d.local || 0;
-      // shared (server) bar
       if (v > 0) {
         const h = innerH * (v / maxV);
         const bar = svgEl("rect", {
@@ -126,7 +192,6 @@ const UsageView = (() => {
         bar.appendChild(title);
         svg.appendChild(bar);
       }
-      // local overlay (thin marker on top) — only when no server data or as ref
       if (lv > 0) {
         const h = innerH * (lv / maxV);
         const ov = svgEl("rect", {
@@ -138,7 +203,6 @@ const UsageView = (() => {
         ov.appendChild(t2);
         svg.appendChild(ov);
       }
-      // x labels: show ~8 evenly spaced
       const step = Math.ceil(n / 8);
       if (i % step === 0 || i === n - 1) {
         const tx = svgEl("text", {
@@ -151,7 +215,6 @@ const UsageView = (() => {
 
     const card = H.el("div", { class: "usage-chart-card" });
     card.appendChild(svg);
-    // legend
     const lg = H.el("div", { class: "usage-chart-legend" });
     lg.innerHTML =
       `<span class="ucl"><span class="ucl-sw ucl-shared"></span> Shared opens (all users)</span>` +
