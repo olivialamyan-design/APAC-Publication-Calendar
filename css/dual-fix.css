@@ -1,30 +1,60 @@
 /*
  * dual-fix.css — override for 2-month (dual) calendar view
  * Loaded after styles.css in index.html.
- * Fixes: left and right month panes render at different heights when
- * one month has 5 week-rows and the other has 6.
+ * Fixes: the two month panes rendered at different sizes in the "2 Months"
+ * view — .cal-dual had no display:grid/flex, so panes fell back to block
+ * layout (stacked, full width, and unequal heights when one month has 5
+ * week-rows and the other has 6).
  */
 
-/* 1. Stretch both grid columns to the height of the taller month */
+/* 1. Lay the two months out as an equal-width, side-by-side grid.
+ *    Two 1fr tracks guarantee identical column widths; the grid's default
+ *    align-items: stretch makes both rows fill the height of the taller month. */
 .cal-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   align-items: stretch;
 }
 
-/* 2. Make the pane card fill that stretched height */
+/* 2. Make the pane card fill its stretched grid cell (equal height). */
 .cal-dual-pane {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 0; /* let panes shrink evenly instead of overflowing the grid */
 }
 
-/* 3. Let the inner month block expand to fill the pane */
+/* 3. Let the inner month block expand to fill the pane so both months are
+ *    the same overall size regardless of 5- vs 6-week layouts. */
 .cal-dual .cal-month {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 4. Mobile: restore auto height (flex scroll-snap layout, not grid) */
+/* 3b. The day grid absorbs the extra height so the shorter month's rows grow
+ *     to match the taller month (rows stay aligned across both calendars). */
+.cal-dual .cal-month .cal-grid {
+  flex: 1 1 auto;
+  grid-auto-rows: 1fr;
+}
+
+/* 4. Mobile: stack the two months in a single column and restore auto height
+ *    (flex scroll-snap layout, not the desktop 2-up grid). */
 @media (max-width: 760px) {
+  .cal-dual {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
   .cal-dual-pane {
     height: auto;
+  }
+  .cal-dual .cal-month,
+  .cal-dual .cal-month .cal-grid {
+    flex: 0 1 auto;
+  }
+  .cal-dual .cal-month .cal-grid {
+    grid-auto-rows: auto;
   }
 }
