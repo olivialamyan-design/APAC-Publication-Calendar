@@ -1,0 +1,30 @@
+/*
+ * dual-fix.css — override for 2-month (dual) calendar view
+ * Loaded after styles.css in index.html.
+ * Fixes: left and right month panes render at different heights when
+ * one month has 5 week-rows and the other has 6.
+ */
+
+/* 1. Stretch both grid columns to the height of the taller month */
+.cal-dual {
+  align-items: stretch;
+}
+
+/* 2. Make the pane card fill that stretched height */
+.cal-dual-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 3. Let the inner month block expand to fill the pane */
+.cal-dual .cal-month {
+  flex: 1 1 auto;
+}
+
+/* 4. Mobile: restore auto height (flex scroll-snap layout, not grid) */
+@media (max-width: 760px) {
+  .cal-dual-pane {
+    height: auto;
+  }
+}
