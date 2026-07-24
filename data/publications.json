@@ -1,0 +1,29 @@
+{
+  "generated": "2026-07-24",
+  "source": "APAC-Publication-Calendar-Master_20260724.xlsx",
+  "version": "4",
+  "total_records": 390,
+  "publications": [
+    {
+      "country": "Asia Pacific",
+      "city_state": "Region",
+      "publication_name": "APAC Capital Markets Newsletter",
+      "asset_class": ["Capital Markets"],
+      "publication_type": "Newsletter",
+      "language": "English",
+      "frequency": "Monthly",
+      "team": "APAC Research",
+      "lead_author": "Nick Wilson",
+      "notes": null,
+      "report_scope": "Regional",
+      "status": null,
+      "recurring_timing_window": "Early month",
+      "id": "placeholder-see-commit",
+      "expected_publication_date": "2026-07-24",
+      "is_recurring": true,
+      "instance_title": "APAC Capital Markets Newsletter placeholder",
+      "date_confidence": "Estimated",
+      "start_date": "2025-12-01"
+    }
+  ]
+}
