@@ -238,15 +238,34 @@ def parse_recurring_months(value, where=""):
     return sorted(set(months))
 
 
+# Canonical asset-class spelling corrections. Applied after trimming; keeps the
+# dynamically-derived filter bar clean when the master carries near-miss values.
+# (2026-07-24) Owner-approved: 'Data Centre' -> 'Data Centres',
+# 'Industrial' -> 'Industrial & Logistics'.
+ASSET_CLASS_CANON = {
+    "data centre":  "Data Centres",
+    "data centres": "Data Centres",
+    "industrial":   "Industrial & Logistics",
+}
+
+
 def parse_asset_class(value):
     """Asset class may hold multiple values separated by ; , / -> list[str].
 
     A lone 'TBD' placeholder is dropped (treated as blank) per owner direction.
+    Trailing/leading whitespace is trimmed and near-miss spellings are snapped
+    to the canonical taxonomy via ASSET_CLASS_CANON.
     """
     if value is None:
         return []
     parts = re.split(r"[;,/]+", str(value))
-    return [p.strip() for p in parts if p.strip() and p.strip().upper() != "TBD"]
+    out = []
+    for p in parts:
+        t = p.strip()
+        if not t or t.upper() == "TBD":
+            continue
+        out.append(ASSET_CLASS_CANON.get(t.lower(), t))
+    return out
 
 
 def clean_text(value):
