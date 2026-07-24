@@ -18,11 +18,12 @@
       "report_scope": "Regional",
       "status": null,
       "recurring_timing_window": "Early month",
-      "id": "placeholder-see-commit",
-      "expected_publication_date": "2026-07-24",
+      "id": "f2a1b3c4-0001-0001-0001-000000000001",
+      "expected_publication_date": "2025-12-05",
       "is_recurring": true,
-      "instance_title": "APAC Capital Markets Newsletter placeholder",
+      "instance_title": "APAC Capital Markets Newsletter Dec 2025",
       "date_confidence": "Estimated",
+      "period_suffix": "Dec 2025",
       "start_date": "2025-12-01"
     }
   ]
