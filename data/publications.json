@@ -567,6 +567,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2026-02",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2026-02-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Global",
     "city_state": "Global",
     "publication_name": "Global - World Cities Prime Residential Index Spotlight",
@@ -946,36 +976,6 @@
     "recurring_timing_window": null,
     "id": "australia--australian-industrial-spotlight--r5--2026-02",
     "parent_id": "australia--australian-industrial-spotlight--r5",
-    "recurring": true,
-    "expected_publication_date": "2026-02-27",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2026-02",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
     "recurring": true,
     "expected_publication_date": "2026-02-27",
     "is_tbd": false,
@@ -1741,6 +1741,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2026-05",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2026-05-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Global",
     "city_state": "Global",
     "publication_name": "Global Occupier Markets: Prime Office Costs",
@@ -2036,6 +2066,34 @@
     "date_confidence": "Confirmed"
   },
   {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "publication_name": "Australian Office Spotlight",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "team": "Australia Research",
+    "lead_author": "Katy Dean",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      10
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Late month",
+    "id": "australia--australian-office-spotlight--r3--2026-05",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2026-05-25",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Singapore",
     "city_state": "Singapore",
     "publication_name": "Singapore Residential Sales Briefing",
@@ -2119,89 +2177,6 @@
     "expected_publication_date": "2026-05-29",
     "is_tbd": false,
     "date_confidence": "Estimated"
-  },
-  {
-    "country": "Australia",
-    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
-    "publication_name": "Australian Office Spotlight",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "team": "Australia Research",
-    "lead_author": "Katy Dean",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Biannually",
-    "recurring_months": [
-      5,
-      9
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "australia--australian-office-spotlight--r3--2026-05",
-    "parent_id": "australia--australian-office-spotlight--r3",
-    "recurring": true,
-    "expected_publication_date": "2026-05-29",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2026-05",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2026-05-29",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Global",
-    "city_state": "Global",
-    "publication_name": "Global Capital Markets Research Q1 2026",
-    "asset_class": [
-      "Capital Markets"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "team": "World Research",
-    "lead_author": "Oliver Salmon",
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Ad Hoc",
-    "recurring_months": [],
-    "start_date": null,
-    "recurring_timing_window": null,
-    "id": "global--global-capital-markets-research-q1-2026--r65",
-    "parent_id": null,
-    "recurring": false,
-    "expected_publication_date": "2026-06-01",
-    "is_tbd": false,
-    "date_confidence": "Confirmed"
   },
   {
     "country": "Asia Pacific",
@@ -2841,31 +2816,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "India",
-    "city_state": "National",
-    "publication_name": "India - Beyond Make in India: The Rise of Made by India",
-    "asset_class": [
-      "Industrial & Logistics"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "India Research",
-    "lead_author": "Arvind Nandan",
-    "notes": "Expected in July 2026",
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Ad Hoc",
-    "recurring_months": [],
-    "start_date": null,
-    "recurring_timing_window": null,
-    "id": "india--india-beyond-make-in-india-the-rise-of-made-by-india--r25",
-    "parent_id": null,
-    "recurring": false,
-    "expected_publication_date": "2026-07-31",
-    "is_tbd": false,
-    "date_confidence": "Confirmed"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -3000,6 +2950,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2026-08",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2026-08-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -3010,7 +2990,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -3381,6 +3361,31 @@
     "date_confidence": "Confirmed"
   },
   {
+    "country": "Global",
+    "city_state": "Global",
+    "publication_name": "Global Capital Markets Research Q2 2026",
+    "asset_class": [
+      "Capital Markets"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "team": "World Research",
+    "lead_author": "Oliver Salmon",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "start_date": null,
+    "recurring_timing_window": null,
+    "id": "global--global-capital-markets-research-q2-2026--r65",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-08-25",
+    "is_tbd": false,
+    "date_confidence": "Confirmed"
+  },
+  {
     "country": "Singapore",
     "city_state": "Singapore",
     "publication_name": "Singapore Residential Sales Briefing",
@@ -3441,36 +3446,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2026-08",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2026-08-31",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -3503,36 +3478,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2026-09",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2026-09-07",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2026-09",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2026-09-07",
     "is_tbd": false,
@@ -3577,27 +3522,57 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Global",
-    "city_state": "Global",
-    "publication_name": "Global - Occupier Strategy Report",
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
     "asset_class": [
       "All"
     ],
     "publication_type": "Market Reports",
     "language": "English",
-    "team": "World Research",
-    "lead_author": "Sarah Brooks",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
     "notes": null,
     "report_scope": "Regional",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2026-09",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
+    "recurring": true,
+    "expected_publication_date": "2026-09-15",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "India",
+    "city_state": "National",
+    "publication_name": "India - Beyond Make in India: The Rise of Made by India",
+    "asset_class": [
+      "Industrial & Logistics"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "India Research",
+    "lead_author": "Arvind Nandan",
+    "notes": "Expected in July 2026",
+    "report_scope": "In-Country",
     "status": null,
     "frequency": "Ad Hoc",
     "recurring_months": [],
     "start_date": null,
     "recurring_timing_window": null,
-    "id": "global--global-occupier-strategy-report--r68",
+    "id": "india--india-beyond-make-in-india-the-rise-of-made-by-india--r25",
     "parent_id": null,
     "recurring": false,
-    "expected_publication_date": "2026-09-08",
+    "expected_publication_date": "2026-09-17",
     "is_tbd": false,
     "date_confidence": "Confirmed"
   },
@@ -3622,37 +3597,9 @@
     "id": "global--global-spotlight-on-wealth-trends--r67",
     "parent_id": null,
     "recurring": false,
-    "expected_publication_date": "2026-09-23",
-    "is_tbd": false,
-    "date_confidence": "Confirmed"
-  },
-  {
-    "country": "Australia",
-    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
-    "publication_name": "Australian Office Spotlight",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "team": "Australia Research",
-    "lead_author": "Katy Dean",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Biannually",
-    "recurring_months": [
-      5,
-      9
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "australia--australian-office-spotlight--r3--2026-09",
-    "parent_id": "australia--australian-office-spotlight--r3",
-    "recurring": true,
     "expected_publication_date": "2026-09-30",
     "is_tbd": false,
-    "date_confidence": "Estimated"
+    "date_confidence": "Confirmed"
   },
   {
     "country": "India",
@@ -3926,6 +3873,34 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "publication_name": "Australian Office Spotlight",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "team": "Australia Research",
+    "lead_author": "Katy Dean",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      10
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Late month",
+    "id": "australia--australian-office-spotlight--r3--2026-10",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2026-10-26",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "India",
     "city_state": "Ahmedabad, Bengaluru, Chennai, Delhi-NCR,Hyderabad, Kolkata, Mumbai,Pune, Coimbatore, Hosur,Guwahati, Patna,Bhubaneshwar,Indore,Nagpur,Rajpura,Lucknow,Jaipur",
     "publication_name": "India - Industrial & Logistics Market",
@@ -4122,6 +4097,31 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Global",
+    "city_state": "Global",
+    "publication_name": "Global - Occupier Strategy Report",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "World Research",
+    "lead_author": "Sarah Brooks",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Ad Hoc",
+    "recurring_months": [],
+    "start_date": null,
+    "recurring_timing_window": null,
+    "id": "global--global-occupier-strategy-report--r68",
+    "parent_id": null,
+    "recurring": false,
+    "expected_publication_date": "2026-11-05",
+    "is_tbd": false,
+    "date_confidence": "Confirmed"
+  },
+  {
     "country": "Singapore",
     "city_state": "Singapore",
     "publication_name": "Singapore Residential Leasing Briefing",
@@ -4152,6 +4152,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2026-11",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2026-11-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -4162,7 +4192,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -4512,36 +4542,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2026-11",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2026-11-30",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -4574,36 +4574,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2026-12",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2026-12-07",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2026-12",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2026-12-07",
     "is_tbd": false,
@@ -4644,6 +4614,36 @@
     "parent_id": "australia--australia-the-residential-review--r8",
     "recurring": true,
     "expected_publication_date": "2026-12-07",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2026-12",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
+    "recurring": true,
+    "expected_publication_date": "2026-12-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -5341,6 +5341,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2027-02",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2027-02-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -5351,7 +5381,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -5756,36 +5786,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2027-02",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2027-02-26",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -5818,36 +5818,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2027-03",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2027-03-05",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2027-03",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2027-03-05",
     "is_tbd": false,
@@ -5915,6 +5885,36 @@
     "parent_id": "global--global-capital-markets-research-annual-review-2026-report--r61",
     "recurring": true,
     "expected_publication_date": "2027-03-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2027-03",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
+    "recurring": true,
+    "expected_publication_date": "2027-03-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -6450,6 +6450,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2027-05",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2027-05-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -6460,7 +6490,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -6750,6 +6780,34 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "publication_name": "Australian Office Spotlight",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "team": "Australia Research",
+    "lead_author": "Katy Dean",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      10
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Late month",
+    "id": "australia--australian-office-spotlight--r3--2027-05",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2027-05-25",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Singapore",
     "city_state": "Singapore",
     "publication_name": "Singapore Residential Sales Briefing",
@@ -6810,64 +6868,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Australia",
-    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
-    "publication_name": "Australian Office Spotlight",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English",
-    "team": "Australia Research",
-    "lead_author": "Katy Dean",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Biannually",
-    "recurring_months": [
-      5,
-      9
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "australia--australian-office-spotlight--r3--2027-05",
-    "parent_id": "australia--australian-office-spotlight--r3",
-    "recurring": true,
-    "expected_publication_date": "2027-05-31",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2027-05",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2027-05-31",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -6900,36 +6900,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2027-06",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2027-06-07",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2027-06",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2027-06-07",
     "is_tbd": false,
@@ -6970,6 +6940,36 @@
     "parent_id": "australia--australia-the-residential-review--r8",
     "recurring": true,
     "expected_publication_date": "2027-06-07",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2027-06",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
+    "recurring": true,
+    "expected_publication_date": "2027-06-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -7619,6 +7619,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2027-08",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2027-08-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -7629,7 +7659,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -8035,36 +8065,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2027-08",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2027-08-31",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -8097,36 +8097,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2027-09",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2027-09-06",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2027-09",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2027-09-06",
     "is_tbd": false,
@@ -8171,30 +8141,32 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Australia",
-    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
-    "publication_name": "Australian Office Spotlight",
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
     "asset_class": [
-      "Office"
+      "All"
     ],
-    "publication_type": "Sector Updates",
+    "publication_type": "Market Reports",
     "language": "English",
-    "team": "Australia Research",
-    "lead_author": "Katy Dean",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
     "notes": null,
-    "report_scope": "In-Country",
+    "report_scope": "Regional",
     "status": null,
-    "frequency": "Biannually",
+    "frequency": "Quarterly",
     "recurring_months": [
-      5,
-      9
+      3,
+      6,
+      9,
+      12
     ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "australia--australian-office-spotlight--r3--2027-09",
-    "parent_id": "australia--australian-office-spotlight--r3",
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2027-09",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
     "recurring": true,
-    "expected_publication_date": "2027-09-30",
+    "expected_publication_date": "2027-09-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -8391,6 +8363,34 @@
     "parent_id": "japan--tokyo-residential-leasing--r32",
     "recurring": true,
     "expected_publication_date": "2027-10-15",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "Australia",
+    "city_state": "Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra",
+    "publication_name": "Australian Office Spotlight",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English",
+    "team": "Australia Research",
+    "lead_author": "Katy Dean",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Biannually",
+    "recurring_months": [
+      5,
+      10
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Late month",
+    "id": "australia--australian-office-spotlight--r3--2027-10",
+    "parent_id": "australia--australian-office-spotlight--r3",
+    "recurring": true,
+    "expected_publication_date": "2027-10-25",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -8621,6 +8621,36 @@
     "date_confidence": "Estimated"
   },
   {
+    "country": "Taiwan",
+    "city_state": "Taipei",
+    "publication_name": "Taipei Office Briefing",
+    "asset_class": [
+      "Office"
+    ],
+    "publication_type": "Sector Updates",
+    "language": "English; Chinese (Traditional)",
+    "team": "Taiwan Research",
+    "lead_author": "Erin Ting",
+    "notes": null,
+    "report_scope": "In-Country",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      2,
+      5,
+      8,
+      11
+    ],
+    "start_date": "2026-01-01",
+    "recurring_timing_window": "Early month",
+    "id": "taiwan--taipei-office-briefing--r50--2027-11",
+    "parent_id": "taiwan--taipei-office-briefing--r50",
+    "recurring": true,
+    "expected_publication_date": "2027-11-05",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Signals",
@@ -8631,7 +8661,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -8981,36 +9011,6 @@
     "date_confidence": "Estimated"
   },
   {
-    "country": "Taiwan",
-    "city_state": "Taipei",
-    "publication_name": "Taipei Office Briefing",
-    "asset_class": [
-      "Office"
-    ],
-    "publication_type": "Sector Updates",
-    "language": "English; Chinese (Traditional)",
-    "team": "Taiwan Research",
-    "lead_author": "Erin Ting",
-    "notes": null,
-    "report_scope": "In-Country",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      2,
-      5,
-      8,
-      11
-    ],
-    "start_date": "2026-01-01",
-    "recurring_timing_window": null,
-    "id": "taiwan--taipei-office-briefing--r50--2027-11",
-    "parent_id": "taiwan--taipei-office-briefing--r50",
-    "recurring": true,
-    "expected_publication_date": "2027-11-30",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
     "country": "Asia Pacific",
     "city_state": "Region",
     "publication_name": "APAC Capital Markets Newsletter",
@@ -9043,36 +9043,6 @@
     "recurring_timing_window": "Early month",
     "id": "asia-pacific--apac-capital-markets-newsletter--r57--2027-12",
     "parent_id": "asia-pacific--apac-capital-markets-newsletter--r57",
-    "recurring": true,
-    "expected_publication_date": "2027-12-06",
-    "is_tbd": false,
-    "date_confidence": "Estimated"
-  },
-  {
-    "country": "Asia Pacific",
-    "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
-    "asset_class": [
-      "All"
-    ],
-    "publication_type": "Market Reports",
-    "language": "English",
-    "team": "APAC Research",
-    "lead_author": null,
-    "notes": null,
-    "report_scope": "Regional",
-    "status": null,
-    "frequency": "Quarterly",
-    "recurring_months": [
-      3,
-      6,
-      9,
-      12
-    ],
-    "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2027-12",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
     "recurring": true,
     "expected_publication_date": "2027-12-06",
     "is_tbd": false,
@@ -9113,6 +9083,36 @@
     "parent_id": "australia--australia-the-residential-review--r8",
     "recurring": true,
     "expected_publication_date": "2027-12-06",
+    "is_tbd": false,
+    "date_confidence": "Estimated"
+  },
+  {
+    "country": "Asia Pacific",
+    "city_state": "Region",
+    "publication_name": "Inside Occupier Strategy",
+    "asset_class": [
+      "All"
+    ],
+    "publication_type": "Market Reports",
+    "language": "English",
+    "team": "APAC Research",
+    "lead_author": "Nicholas Tuan",
+    "notes": null,
+    "report_scope": "Regional",
+    "status": null,
+    "frequency": "Quarterly",
+    "recurring_months": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "start_date": "2026-09-01",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2027-12",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
+    "recurring": true,
+    "expected_publication_date": "2027-12-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -9598,7 +9598,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -9620,14 +9620,14 @@
   {
     "country": "Asia Pacific",
     "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
+    "publication_name": "Inside Occupier Strategy",
     "asset_class": [
       "All"
     ],
     "publication_type": "Market Reports",
     "language": "English",
     "team": "APAC Research",
-    "lead_author": null,
+    "lead_author": "Nicholas Tuan",
     "notes": null,
     "report_scope": "Regional",
     "status": null,
@@ -9639,11 +9639,11 @@
       12
     ],
     "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2028-03",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2028-03",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
     "recurring": true,
-    "expected_publication_date": "2028-03-06",
+    "expected_publication_date": "2028-03-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
@@ -9658,7 +9658,7 @@
     "language": "English",
     "team": "APAC Research",
     "lead_author": "Nick Wilson",
-    "notes": "Replacing APIQ",
+    "notes": null,
     "report_scope": "Regional",
     "status": null,
     "frequency": "Quarterly",
@@ -9680,14 +9680,14 @@
   {
     "country": "Asia Pacific",
     "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
+    "publication_name": "Inside Occupier Strategy",
     "asset_class": [
       "All"
     ],
     "publication_type": "Market Reports",
     "language": "English",
     "team": "APAC Research",
-    "lead_author": null,
+    "lead_author": "Nicholas Tuan",
     "notes": null,
     "report_scope": "Regional",
     "status": null,
@@ -9699,25 +9699,25 @@
       12
     ],
     "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2028-06",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2028-06",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
     "recurring": true,
-    "expected_publication_date": "2028-06-05",
+    "expected_publication_date": "2028-06-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
   {
     "country": "Asia Pacific",
     "city_state": "Region",
-    "publication_name": "APAC Occupier Market Report",
+    "publication_name": "Inside Occupier Strategy",
     "asset_class": [
       "All"
     ],
     "publication_type": "Market Reports",
     "language": "English",
     "team": "APAC Research",
-    "lead_author": null,
+    "lead_author": "Nicholas Tuan",
     "notes": null,
     "report_scope": "Regional",
     "status": null,
@@ -9729,11 +9729,11 @@
       12
     ],
     "start_date": "2026-09-01",
-    "recurring_timing_window": "Early month",
-    "id": "asia-pacific--apac-occupier-market-report--r58--2028-09",
-    "parent_id": "asia-pacific--apac-occupier-market-report--r58",
+    "recurring_timing_window": "Mid-month",
+    "id": "asia-pacific--inside-occupier-strategy--r58--2028-09",
+    "parent_id": "asia-pacific--inside-occupier-strategy--r58",
     "recurring": true,
-    "expected_publication_date": "2028-09-05",
+    "expected_publication_date": "2028-09-15",
     "is_tbd": false,
     "date_confidence": "Estimated"
   },
