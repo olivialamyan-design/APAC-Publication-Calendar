@@ -57,15 +57,27 @@
     },
     "language": {
       "type": "string",
-      "enum": [
-        "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
-        "Korean", "Thai", "Vietnamese", "Bahasa Indonesia", "Bahasa Malaysia"
+      "description": "One language, or several separated by '; ' (e.g. 'English; Korean') (multi-language allowed 2026-10-20, matching the form check in js/data.js). Each part must be one of the listed languages.",
+      "anyOf": [
+        {
+          "enum": [
+            "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
+            "Korean", "Thai", "Vietnamese", "Bahasa Indonesia", "Bahasa Malaysia"
+          ]
+        },
+        {
+          "pattern": "^(English|Chinese\\ \\(Simplified\\)|Chinese\\ \\(Traditional\\)|Japanese|Korean|Thai|Vietnamese|Bahasa\\ Indonesia|Bahasa\\ Malaysia)(; ?(English|Chinese\\ \\(Simplified\\)|Chinese\\ \\(Traditional\\)|Japanese|Korean|Thai|Vietnamese|Bahasa\\ Indonesia|Bahasa\\ Malaysia))+$"
+        }
       ]
     },
     "expected_publication_date": {
-      "type": "string",
+      "type": ["string", "null"],
       "format": "date",
-      "description": "ISO 8601 date (YYYY-MM-DD)."
+      "description": "ISO 8601 date (YYYY-MM-DD). null allowed (2026-10-20) only when is_tbd is true; those records show in the TBD panel."
+    },
+    "is_tbd": {
+      "type": "boolean",
+      "description": "OPTIONAL (documented 2026-10-20). True when no publication date is set yet; the platform routes the record to the TBD panel."
     },
     "team": {
       "type": "string",
@@ -91,7 +103,8 @@
       "enum": ["Confirmed", "Estimated", "TBD", null]
     },
     "notes": {
-      "type": "string"
+      "type": ["string", "null"],
+      "description": "OPTIONAL free text. null when the master sheet cell is blank (allowed 2026-10-20)."
     },
     "report_scope": {
       "type": "string",
@@ -103,5 +116,18 @@
       "type": ["string", "null"],
       "enum": ["idea", "drafting", "review", "sign off", "published", "delayed", null]
     }
-  }
+  },
+  "allOf": [
+    {
+      "description": "A record with no date must be flagged TBD.",
+      "if": {
+        "properties": { "expected_publication_date": { "type": "null" } },
+        "required": ["expected_publication_date"]
+      },
+      "then": {
+        "required": ["is_tbd"],
+        "properties": { "is_tbd": { "const": true } }
+      }
+    }
+  ]
 }
