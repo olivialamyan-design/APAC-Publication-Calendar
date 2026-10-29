@@ -157,11 +157,125 @@ never auto-assigned by publication type.
 
 ---
 
+## Savills events layer (added 2026-10-29)
+
+A display-only overlay, deliberately separate from publications.
+
+| Piece | File | Notes |
+|---|---|---|
+| Data | `data/events.json` | `{ generated_at, events: [...] }` — flat array, JSON-edit-only in v1 |
+| Schema | `data/events.schema.json` | JSON Schema (draft-07), same style as `data/schema.json` |
+| Loader | `js/events.js` → `SavillsEvents` | `load()`, `all()`, `forDate(iso)`, `isLoaded()`, plus `fmtRange(ev)` |
+| Calendar | `js/views/calendar.js` | `layoutWeek()`, `sevPill()`, `buildSevBlock()`; strip interleave in `renderStrip()` |
+| Popovers | `js/views/popover.js` | `Popover`, `EventPopover`, `HolidayPopover` |
+| Events tab | `js/views/events.js` → `EventsView` | `#view=events`, routed in `App.rerender()` |
+| Legend | `js/app.js → buildLegend()` | static "Savills event" swatch |
+
+**Invariants — keep these when extending:**
+- Events never enter `DataLayer`, `State.applyFilters()`, the URL, Table,
+  Quarters, Leadership or CSV export. They ignore the filter bar entirely.
+- No toggle and no storage. Loading is non-fatal (same pattern as `Holidays`):
+  a missing/malformed file yields an empty list; bad records are skipped
+  (`normalize()` drops records with no `name` or an invalid `start_date`, and
+  clamps a missing/invalid/earlier `end_date` to `start_date`).
+- Script order in `index.html`: `helpers → events.js → views/popover.js →
+  views… → views/events.js → holidays → app`.
+
+### Schema and enums
+
+| Field | Type | Allowed values |
+|---|---|---|
+| `id` | string | `<market-slug>--<name-slug>--<6 hex>`; hash = first 6 of `sha1("<name>\|<start_date>")` |
+| `name` | string | non-empty |
+| `start_date` / `end_date` | `YYYY-MM-DD` | `end_date ≥ start_date` (enforced in JS; JSON Schema can't compare fields) |
+| `market` | enum | Japan, China, Thailand, Hong Kong, Singapore, Vietnam, Philippines, Malaysia, South Korea, Taiwan, Australia, Indonesia, India, Asia Pacific, **Regional**, **Global** |
+| `city`, `venue`, `organiser` | string | free text |
+| `event_type` | enum | Webinar, Conference, Event, Other |
+| `audience` | enum / null | Internal, Client, Public, `null` |
+| `link` | URI / null | `http(s)://` only is rendered as a link (opens in a new tab) |
+| `notes` | string / null | free text |
+
+All twelve keys are required (use `null` for blanks) and `additionalProperties`
+is `false`, so the file stays predictable for automated regeneration. To add a
+market or type, extend the enum in `data/events.schema.json` — no JS change is
+needed (values are rendered as-is).
+
+### Rendering rules
+
+- Pills sit **above** publication pills in each day cell, in all three calendar
+  modes. Caps are counted separately from publications: `maxPerCell` = 2 in
+  2 Months, 4 in Month. Extra events collapse into a pink **+N more events**
+  button that opens a list popover for the day.
+- Multi-day events: `layoutWeek()` assigns each event a *lane* per 7-day row so
+  it keeps the same vertical slot across its days (invisible spacers hold
+  alignment). Segments use `.sev-cont-l` / `.sev-cont-r` to bleed into cell
+  padding and square the joins. The name is shown on the first cell of each
+  week segment; continuation cells are `tabindex=-1` with an `aria-label`.
+- Forward 12-mo strip: events overlapping the month are interleaved with the
+  month's publications by date (events first on ties), keyed by the first day
+  inside that month; they count towards the month total.
+
+### Changing the pink
+
+The two tokens live at the top of the "SAVILLS EVENTS LAYER" block in
+`css/styles.css`:
+
+```css
+--sev:      #D43880;   /* identity: legend swatch, strip border, dots */
+--sev-pill: #CC2F77;   /* text-bearing fill (white text 4.95:1) */
+```
+
+White on Savills pink `#D43880` measures **4.49:1** — just below WCAG AA — so
+every pink surface that carries text (calendar pills/bars, "+N more events")
+uses **`#CC2F77`** (white = **4.95:1**). `#D43880` is kept for non-text uses
+only: the legend swatch, the strip's left border and the dots. Both fills are
+theme-independent, so the ratio holds in light and dark mode. Pink is never
+used as a text colour. If you change either token, re-check white-on-fill ≥ 4.5:1.
+
+### Popover components (`js/views/popover.js`)
+
+- **`Popover.create(cls)`** — generic anchored card. Reuses the `.ms-pop`
+  surface/hairline/shadow (so it follows the theme tokens) with
+  `.app-pop { position: fixed }`; JS positions it below the anchor, flips above
+  when there's no room, and clamps to the viewport. Dismissal is global:
+  outside click (capture phase, so it also closes when the next click lands on
+  a pill that calls `stopPropagation`), Esc (focus returns to the anchor),
+  scroll and resize. `Popover.hideAll()` runs at the start of every
+  `CalendarView.render()` because anchors are replaced.
+- **`EventPopover.open(ev, anchor)` / `.openList(events, iso, anchor)`** — the
+  event card (blank fields hidden) and the day list; selecting a list item
+  swaps to that event's card. Used by calendar pills, the strip and the Events
+  tab. It is intentionally *not* the detail side panel.
+- **`HolidayPopover.attach(trigger, iso, hols)`** — wires a "+N more holiday(s)"
+  row: mouse/pen hover, keyboard focus (Enter/Space) and touch tap (toggle) open
+  a card listing **all** holidays for the day as "Market – Holiday name";
+  pointer leave (120 ms grace so the pointer can cross into the card), blur, Esc
+  or an outside tap close it. Caps are unchanged (1 row in 2 Months, 2 in Month).
+  The publications "+N more" button still opens `Detail.openList()`.
+
+### Future: regenerate events.json from a shared source (GitHub Action hook)
+
+<!-- HOOK: events-shared-source-action
+     A future workflow (e.g. .github/workflows/refresh-events.yml, modelled on
+     refresh-holidays.yml) can read a shared source — a SharePoint/Excel list,
+     Google Sheet or CSV export owned by Marketing / Commercial Research —
+     map its columns to the twelve fields above, generate ids with
+     sha1("<name>|<start_date>")[:6], validate against data/events.schema.json,
+     rewrite data/events.json (stamping generated_at) and commit to main only
+     when the content changes. The front end needs no change: it only reads
+     data/events.json. Once the Action is live, treat the shared source as the
+     master and stop hand-editing the JSON (manual edits would be overwritten). -->
+
+Until then, follow README → *Adding an event (JSON edit)*.
+
+---
+
 ## Common tasks
 
 - **Change the landing defaults** (scope / window): `js/config.js → DEFAULT_SCOPE`
   and `DEFAULT_RANGE`.
 - **Add an asset class / publication type / language**: edit the arrays in
   `js/config.js` (the form and filters read from there).
-- **Change the script load order**: keep `config → data → state → helpers → views
-  → app` in `index.html`; views depend on helpers, app depends on everything.
+- **Change the script load order**: keep `config → data → state → helpers →
+  events → views (popover first, events tab last) → holidays → app` in
+  `index.html`; views depend on helpers, app depends on everything.

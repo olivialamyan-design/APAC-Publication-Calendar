@@ -62,6 +62,42 @@ The 14 markets are: Japan, China, Thailand, Hong Kong, Singapore, Vietnam,
 Philippines, Malaysia, South Korea, Taiwan, Australia, Indonesia, India, and
 **Global Research** (treated as a country-like option — no special weighting).
 
+### Savills events — `data/events.json`
+
+Savills events (webinars, conferences, client events) live in a **separate**
+file, **`data/events.json`**, described by **`data/events.schema.json`**. They are
+a display-only layer: always shown, never filtered, not part of the URL and not
+mixed into publications (Table / Quarters / Leadership / CSV export ignore them).
+
+```json
+{
+  "generated_at": "2026-10-29T07:42:52+00:00",
+  "events": [
+    {
+      "id": "global--savills-annual-global-luxury-event--9c57dc",
+      "name": "Savills Annual Global Luxury Event",
+      "start_date": "2027-04-14",
+      "end_date": "2027-04-14",
+      "market": "Global",
+      "city": "Milan",
+      "venue": "Milan",
+      "event_type": "Event",
+      "organiser": "Commercial Research",
+      "audience": null,
+      "link": null,
+      "notes": null
+    }
+  ]
+}
+```
+
+- **market** — one of the publication markets (Japan … India, Asia Pacific) or
+  `Regional` / `Global`.
+- **event_type** — `Webinar`, `Conference`, `Event` or `Other`.
+- **audience** — `Internal`, `Client`, `Public` or `null`.
+- **end_date** — same as `start_date` for a one-day event; later for multi-day.
+- **link** / **notes** — optional (`null` hides them in the popover).
+
 ---
 
 ## Features
@@ -79,6 +115,18 @@ Philippines, Malaysia, South Korea, Taiwan, Australia, Indonesia, India, and
 - **CSV export** of the currently-filtered set, all columns.
 - **Add publication** — writes back to the repo via the GitHub API, or downloads
   an updated JSON file for manual commit.
+- **Savills events layer** — events from `data/events.json` render as pink pills
+  (above the publication pills) in 2 Months, Month and Forward 12-mo. Multi-day
+  events draw as a continuous bar across the days they span (name repeated at
+  the start of each week row). Caps match publications (2 / 4 per cell, counted
+  separately) with a pink **+N more events** list. Click any event for a small
+  popover with dates, type, market, city, venue, organiser, audience, link and
+  notes. Events always show and ignore the filter bar. Legend: **Savills event**.
+- **Events tab** — every event in a month-grouped table (Date(s), Name, Type,
+  Market, City, Venue, Organiser, Audience, Link). Ignores filters; click a row
+  for the event popover.
+- **Holiday popover** — hover, focus or tap **+N more holidays** to see every
+  holiday on that day as "Market – Holiday name".
 
 ---
 
@@ -106,6 +154,72 @@ The token is held **in memory only** for that session and is never stored.
 2. You get a `publications.json` containing all current records plus your new one.
 3. Replace `data/publications.json` in the repo with this file and commit it
    (via the GitHub web UI or `git`).
+
+---
+
+## Adding an event (JSON edit)
+
+Events are **JSON-edit-only in v1** — there is no in-app form.
+
+1. Open `data/events.json` on GitHub (pencil icon) or in your editor.
+2. Append a record to the `events` array (comma after the previous `}`).
+3. Build the `id` as `<market-slug>--<name-slug>--<6-char hash>`. Any unique
+   6 hex characters work; the convention is the first 6 of
+   `sha1("<name>|<start_date>")`:
+   ```bash
+   python3 -c "import hashlib;print(hashlib.sha1(b'APAC Capital Markets Forum|2027-05-18').hexdigest()[:6])"
+   ```
+4. Update `generated_at` to the current ISO timestamp.
+5. Commit to `main`. GitHub Pages serves it within a minute or two.
+
+Worked example — a two-day Singapore conference added after the seed record:
+
+```json
+{
+  "generated_at": "2026-11-02T09:00:00+08:00",
+  "events": [
+    {
+      "id": "global--savills-annual-global-luxury-event--9c57dc",
+      "name": "Savills Annual Global Luxury Event",
+      "start_date": "2027-04-14",
+      "end_date": "2027-04-14",
+      "market": "Global",
+      "city": "Milan",
+      "venue": "Milan",
+      "event_type": "Event",
+      "organiser": "Commercial Research",
+      "audience": null,
+      "link": null,
+      "notes": null
+    },
+    {
+      "id": "singapore--apac-capital-markets-forum--8c4508",
+      "name": "APAC Capital Markets Forum",
+      "start_date": "2027-05-18",
+      "end_date": "2027-05-19",
+      "market": "Singapore",
+      "city": "Singapore",
+      "venue": "Marina Bay Sands Expo",
+      "event_type": "Conference",
+      "organiser": "APAC Research",
+      "audience": "Client",
+      "link": "https://www.savills.com.sg/",
+      "notes": "Speaker slots confirmed by end-April."
+    }
+  ]
+}
+```
+
+Rules: dates are `YYYY-MM-DD`; `end_date` ≥ `start_date`; enums must match the
+schema exactly. Validate before committing (optional):
+
+```bash
+pip install jsonschema
+python3 -c "import json,jsonschema;jsonschema.validate(json.load(open('data/events.json')),json.load(open('data/events.schema.json')));print('valid')"
+```
+
+A malformed file never breaks the app — the events layer simply shows nothing,
+and individual records with a missing name or invalid start date are skipped.
 
 ---
 
@@ -177,15 +291,22 @@ css/styles.css          Savills foundation; market colour comes from data
 data/publications.json  SINGLE SOURCE OF TRUTH (array of records)
 data/schema.json        JSON Schema for a record
 data/markets.json       14 markets + colour assignments
+data/events.json        Savills events (separate display-only layer)
+data/events.schema.json JSON Schema for events.json
+data/holidays.json      public holidays (refreshed by GitHub Action)
 js/config.js            EDIT THIS to point at your repo
 js/data.js              DATA LAYER: load, validate, GitHub read/write
 js/state.js             STATE LAYER: filters, URL sync, applyFilters
 js/views/helpers.js     shared DOM/date/chip utilities
+js/events.js            EVENTS LAYER: SavillsEvents.load/all/forDate/isLoaded
+js/views/popover.js     anchored popovers: EventPopover + HolidayPopover
 js/views/calendar.js    month grid + forward-12 strip
 js/views/table.js       dense sortable table
 js/views/detail.js      right-hand detail side panel
 js/views/form.js        add/edit form + GitHub commit UI
 js/views/leadership.js  RESERVED v2 stub (#view=leadership)
+js/views/events.js      Events tab (#view=events), month-grouped table
+js/holidays.js          public holiday layer
 js/app.js               orchestrator: filter bar, legend, tabs, CSV, boot
 docs/MAINTENANCE.md     how to extend (Status field, leadership view, palette)
 ```
