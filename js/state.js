@@ -11,7 +11,7 @@ const State = (() => {
 
   // ---- the canonical filter state object ----
   const state = {
-    view: "calendar",                 // calendar | quarters | table | usage | leadership(reserved)
+    view: "calendar",                 // calendar | quarters | table | events | usage | leadership(reserved)
     markets: [],                      // [] = all
     scope: cfg.DEFAULT_SCOPE,         // Regional | In-Country | Both
     cityState: "",                    // substring chip
@@ -90,7 +90,7 @@ const State = (() => {
     const h = new URLSearchParams(location.hash.replace(/^#/, ""));
     if (h.has("view")) {
       const v = h.get("view");
-      if (["calendar", "table", "quarters", "usage", "leadership"].includes(v)) state.view = v;
+      if (["calendar", "table", "quarters", "events", "usage", "leadership"].includes(v)) state.view = v;
     }
   }
 

@@ -300,6 +300,10 @@ const App = (() => {
     } else if (s.view === "quarters") {
       if (rc) rc.textContent = `${filtered.length} in filter`;
       QuartersView.render(mount, filtered);
+    } else if (s.view === "events") {
+      // Savills events tab (2026-10-29) — ignores the filter bar entirely.
+      if (rc) rc.textContent = `${EventsView.count()} events`;
+      EventsView.render(mount);
     } else if (s.view === "leadership") {
       if (rc) rc.textContent = `${filtered.length} shown`;
       LeadershipView.renderLeadershipView(mount, filtered);

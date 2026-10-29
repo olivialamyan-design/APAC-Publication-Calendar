@@ -1265,3 +1265,18 @@ html[data-theme="dark"] .cal-sev { box-shadow: none; }
 .sev-pop-item:hover, .sev-pop-item:focus-visible { background: var(--steel-10); }
 .sev-pop-item-name { font-weight: 600; }
 .sev-pop-item-meta { grid-column: 2; color: var(--text-2); font-size: 11.5px; }
+
+/* ---- Events tab (2026-10-29) ---- */
+.ev-tbl .ev-month-row td {
+  background: var(--surface-3); color: var(--text); font-weight: 700; font-size: 12px;
+  letter-spacing: .02em; padding: 7px 11px; cursor: default;
+  border-bottom: 1px solid var(--hairline);
+}
+.ev-tbl tbody tr.ev-month-row:hover { background: transparent; }
+.ev-tbl .ev-month-row .strip-count { margin-left: 6px; }
+.ev-tbl .ev-col-date { white-space: nowrap; }
+.ev-tbl .col-name { white-space: nowrap; }
+.ev-tbl .ev-name { font-weight: 600; }
+.ev-tbl .sev-dot { vertical-align: -1px; }
+.ev-tbl tr.ev-row:focus-visible { outline: 2px solid var(--sev); outline-offset: -2px; }
+html[data-theme="dark"] .ev-tbl .ev-month-row td { background: rgba(255,255,255,0.04); }
