@@ -10,6 +10,14 @@
  * pale rows (#EEE8E3) INSIDE the day cell, BELOW the publication items, in the
  * format "Market - Holiday Name".
  * Click an event -> detail panel.
+ *
+ * Savills events layer (2026-10-29): pink pills/bars rendered ABOVE the
+ * publication pills in every day cell (all three modes). Events come from
+ * SavillsEvents (js/events.js), ignore the filter bar, and are capped
+ * separately from publications (2 in 2-Months, 4 in Month). Multi-day events
+ * are laid out in per-week "lanes" so each event keeps the same vertical slot
+ * across the days it spans and reads as one continuous bar; the name shows on
+ * the first cell of each week segment. Click -> EventPopover (not the panel).
  * =========================================================================== */
 const CalendarView = (() => {
   let mountEl = null;
@@ -43,6 +51,77 @@ const CalendarView = (() => {
     }, (p.recurring ? '<span class="cal-evt-rec" aria-hidden="true">↻</span> ' : "") + H.esc(p.publication_name));
     pill.addEventListener("click", e => { e.stopPropagation(); Detail.open(p.id); });
     return pill;
+  }
+
+  // -------- Savills events (2026-10-29) --------
+  function eventsFor(iso) {
+    return (typeof SavillsEvents !== "undefined") ? SavillsEvents.forDate(iso) : [];
+  }
+
+  // Assign each event a lane (vertical slot) within one 7-day week row so a
+  // multi-day bar stays aligned across the days it spans.
+  // Returns an array (per column) of { lanes: [ev|undefined...], all: [ev...] }.
+  function layoutWeek(isos) {
+    const seen = new Map();
+    isos.forEach(iso => eventsFor(iso).forEach(ev => { if (!seen.has(ev.id)) seen.set(ev.id, ev); }));
+    const evs = Array.from(seen.values()).sort((a, b) =>
+      a.start_date.localeCompare(b.start_date) ||
+      b.end_date.localeCompare(a.end_date) ||
+      a.name.localeCompare(b.name));
+    const cols = isos.map(() => ({ lanes: [], all: [] }));
+    evs.forEach(ev => {
+      const span = [];
+      isos.forEach((iso, i) => { if (iso >= ev.start_date && iso <= ev.end_date) span.push(i); });
+      let lane = 0;
+      while (span.some(i => cols[i].lanes[lane])) lane++;
+      span.forEach(i => { cols[i].lanes[lane] = ev; cols[i].all.push(ev); });
+    });
+    return cols;
+  }
+
+  // One pink pill / bar segment for an event in a given cell.
+  function sevPill(ev, iso, col) {
+    const segStart = iso === ev.start_date || col === 0;   // first cell of week segment
+    let cls = "cal-evt cal-sev";
+    if (iso !== ev.start_date) cls += " sev-cont-l";        // continues from the left
+    if (iso !== ev.end_date)   cls += " sev-cont-r";        // continues to the right
+    const range = SavillsEvents.fmtRange(ev);
+    const pill = H.el("button", {
+      class: cls, type: "button",
+      "data-ev-id": ev.id,
+      "aria-haspopup": "dialog", "aria-expanded": "false",
+      "aria-label": `Savills event: ${ev.name}, ${range}${segStart ? "" : " (continued)"}`,
+      title: `${ev.name} — ${range}`,
+      tabindex: segStart ? null : "-1"
+    }, segStart ? H.esc(ev.name) : "&nbsp;");
+    pill.addEventListener("click", e => { e.stopPropagation(); EventPopover.open(ev, pill); });
+    return pill;
+  }
+
+  // The event block for one cell: lanes < cap rendered (with invisible spacers
+  // to hold alignment), events in lanes >= cap counted into "+N more events".
+  function buildSevBlock(iso, col, layout, cap) {
+    if (!layout || !layout.all.length) return null;
+    const wrap = H.el("div", { class: "cal-sevs" });
+    let lastShown = -1;
+    for (let l = 0; l < Math.min(cap, layout.lanes.length); l++) if (layout.lanes[l]) lastShown = l;
+    for (let l = 0; l <= lastShown; l++) {
+      const ev = layout.lanes[l];
+      if (ev) wrap.appendChild(sevPill(ev, iso, col));
+      else wrap.appendChild(H.el("span", { class: "cal-evt cal-sev cal-sev-spacer", "aria-hidden": "true" }, "&nbsp;"));
+    }
+    const hidden = layout.all.filter(ev => layout.lanes.indexOf(ev) >= cap).length;
+    if (hidden > 0) {
+      const all = eventsFor(iso);
+      const more = H.el("button", {
+        class: "cal-more-sev", type: "button",
+        "aria-haspopup": "dialog", "aria-expanded": "false",
+        title: `Show all ${all.length} Savills events on ${H.fmtLong(iso)}`
+      }, `+${hidden} more event${hidden > 1 ? "s" : ""}`);
+      more.addEventListener("click", e => { e.stopPropagation(); EventPopover.openList(all, iso, more); });
+      wrap.appendChild(more);
+    }
+    return wrap;
   }
 
   // -------- resolve active holidays for a given ISO date --------
@@ -86,10 +165,19 @@ const CalendarView = (() => {
     while (cells.length % 7 !== 0 || cells.length < 35)
       cells.push({ day: cells.length - (startOffset + daysInMonth) + 1, out: true, y, m: m + 1 });
 
-    cells.forEach(c => {
+    const isoOf = c => {
       const cy = c.m < 0 ? y - 1 : c.m > 11 ? y + 1 : y;
       const cm = (c.m + 12) % 12;
-      const iso = `${cy}-${String(cm+1).padStart(2,"0")}-${String(c.day).padStart(2,"0")}`;
+      return `${cy}-${String(cm+1).padStart(2,"0")}-${String(c.day).padStart(2,"0")}`;
+    };
+    // Savills events: lay out lanes per week row (7 cells at a time).
+    const sevLayout = [];
+    for (let w = 0; w < cells.length; w += 7) {
+      layoutWeek(cells.slice(w, w + 7).map(isoOf)).forEach(l => sevLayout.push(l));
+    }
+
+    cells.forEach((c, idx) => {
+      const iso = isoOf(c);
       const cell = H.el("div", { class: "cal-cell" + (c.out ? " out" : "") });
       const isToday = iso === today;
       if (isToday) cell.classList.add("today");
@@ -103,6 +191,10 @@ const CalendarView = (() => {
       if (isToday) dnum.classList.add("is-today");
       top.appendChild(dnum);
       cell.appendChild(top);
+
+      // ---- Savills events ABOVE publications (separate cap) ----
+      const sevBlock = buildSevBlock(iso, idx % 7, sevLayout[idx], maxPerCell);
+      if (sevBlock) { cell.appendChild(sevBlock); cell.classList.add("has-sev"); }
 
       // ---- publication items first: show only 1-2, then "+N more" ----
       const dayEvts = evts[iso] || [];
@@ -177,12 +269,37 @@ const CalendarView = (() => {
         return pd.getFullYear() === y && pd.getMonth() === m;
       }).sort((a,b) => a.expected_publication_date.localeCompare(b.expected_publication_date));
 
+      // Savills events overlapping this month (ignore filters), keyed by the
+      // first day of the event that falls inside the month.
+      const mStart = `${y}-${String(m+1).padStart(2,"0")}-01`;
+      const mEnd   = `${y}-${String(m+1).padStart(2,"0")}-${String(new Date(y, m + 1, 0).getDate()).padStart(2,"0")}`;
+      const monthSevs = (typeof SavillsEvents !== "undefined" ? SavillsEvents.all() : [])
+        .filter(ev => ev.start_date <= mEnd && ev.end_date >= mStart)
+        .map(ev => ({ kind: "sev", ev, key: ev.start_date < mStart ? mStart : ev.start_date }));
+      // Interleave by date; events sort before publications on the same day.
+      const items = monthSevs.concat(monthEvts.map(p => ({ kind: "pub", p, key: p.expected_publication_date })))
+        .sort((a, b) => a.key.localeCompare(b.key) || (a.kind === b.kind ? 0 : a.kind === "sev" ? -1 : 1));
+
       const col = H.el("div", { class: "strip-month" });
       col.appendChild(H.el("div", { class: "strip-head" },
-        `${H.MONTHS_SHORT[m]} ${y} <span class="strip-count">${monthEvts.length}</span>`));
+        `${H.MONTHS_SHORT[m]} ${y} <span class="strip-count">${items.length}</span>`));
       const body = H.el("div", { class: "strip-body" });
-      if (!monthEvts.length) body.appendChild(H.el("div", { class: "strip-empty" }, "—"));
-      monthEvts.forEach(p => {
+      if (!items.length) body.appendChild(H.el("div", { class: "strip-empty" }, "—"));
+      items.forEach(it => {
+        if (it.kind === "sev") {
+          const ev = it.ev;
+          const row = H.el("button", {
+            class: "strip-evt strip-sev", type: "button",
+            "data-ev-id": ev.id, "aria-haspopup": "dialog", "aria-expanded": "false",
+            title: `Savills event: ${ev.name} — ${SavillsEvents.fmtRange(ev)}`
+          }, `<span class="strip-date">${H.parseISO(it.key).getDate()}</span>
+              <span class="strip-name">${H.esc(ev.name)}${ev.multi_day ? ` <span class="strip-sev-range">(${H.esc(SavillsEvents.fmtRange(ev))})</span>` : ""}</span>
+              <span class="mkt-dot sev-dot"></span>`);
+          row.addEventListener("click", e => { e.stopPropagation(); EventPopover.open(ev, row); });
+          body.appendChild(row);
+          return;
+        }
+        const p = it.p;
         const c2 = DataLayer.colourFor(p);
         const row = H.el("button", {
           class: "strip-evt" + (p.recurring ? " is-recurring" : ""),
@@ -257,6 +374,7 @@ const CalendarView = (() => {
 
   function render(mount, filtered) {
     mountEl = mount;
+    if (typeof Popover !== "undefined") Popover.hideAll();   // anchors are about to be replaced
     ensureMonth();
     mount.innerHTML = "";
     mount.appendChild(toolbar());

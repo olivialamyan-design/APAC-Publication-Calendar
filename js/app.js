@@ -172,6 +172,12 @@ const App = (() => {
       `<span class="legend-swatch legend-swatch-hol" aria-hidden="true"></span>` +
       `<span class="legend-label">Public holiday (shaded day)</span>`;
     box.appendChild(hol);
+    // Savills events layer (2026-10-29) — static, non-filtering item.
+    const sev = H.el("span", { class: "legend-item legend-static", title: "Savills event (always shown; not affected by filters)" });
+    sev.innerHTML =
+      `<span class="legend-swatch legend-swatch-sev" aria-hidden="true"></span>` +
+      `<span class="legend-label">Savills event</span>`;
+    box.appendChild(sev);
   }
 
   function openLegend() {

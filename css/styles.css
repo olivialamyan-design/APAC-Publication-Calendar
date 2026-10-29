@@ -1188,3 +1188,80 @@ html[data-theme="dark"] .ucl-shared { background: #6E76A8; }
 @media (max-width: 420px) {
   .cal-dual-pane { flex-basis: 94%; }
 }
+
+/* =============================================================================
+ * SAVILLS EVENTS LAYER (2026-10-29)
+ * Brand pink #D43880 is the event identity colour (legend swatch, strip border
+ * and dots — non-text uses). White text on #D43880 measures 4.49:1, just under
+ * WCAG AA, so text-bearing pills/buttons use the minimally darkened
+ * --sev-pill #CC2F77 (white = 4.95:1). Fill + text are theme-independent, so
+ * the ratio holds in light and dark. Change both here — see MAINTENANCE.md.
+ * =========================================================================== */
+:root {
+  --sev:      #D43880;   /* identity: legend swatch, strip border, dots */
+  --sev-pill: #CC2F77;   /* text-bearing fill (white text 4.95:1) */
+}
+
+/* ---- calendar day cells: events sit ABOVE the publication pills ---- */
+.cal-sevs { display: flex; flex-direction: column; gap: 3px; flex: none; }
+.cal-sev {
+  background: var(--sev-pill); color: #FFFFFF; font-weight: 600;
+  width: auto; min-width: 0; cursor: pointer;
+}
+.cal-sev:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
+/* continuous multi-day bar: bleed into the cell padding and square the joins */
+.cal-sev.sev-cont-l { margin-left: -5px; border-top-left-radius: 0; border-bottom-left-radius: 0; padding-left: 6px; }
+.cal-sev.sev-cont-r { margin-right: -5px; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.cal-sev-spacer { visibility: hidden; pointer-events: none; }
+html[data-theme="dark"] .cal-sev { box-shadow: none; }
+.cal-more-sev {
+  align-self: flex-start; background: var(--sev-pill); color: #FFFFFF;
+  border: none; border-radius: 3px; font-size: 10.5px; font-weight: 600;
+  padding: 1px 6px; line-height: 1.3; cursor: pointer;
+}
+.cal-more-sev:hover { filter: brightness(0.92); }
+.cal-month-compact .cal-more-sev { font-size: 9.5px; padding: 0 5px; }
+
+/* ---- forward-12 strip: pink left border + pink dot ---- */
+.strip-evt.strip-sev { border-left-color: var(--sev); }
+.strip-sev .strip-name { font-weight: 600; }
+.strip-sev-range { font-weight: 400; color: var(--text-2); }
+.sev-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; display: inline-block; background: var(--sev); }
+
+/* ---- legend swatch ---- */
+.legend-swatch-sev { background: var(--sev); border-color: var(--sev); }
+
+/* ---- anchored popovers (reuse .ms-pop card; fixed + positioned by JS) ---- */
+.ms-pop.app-pop {
+  position: fixed; top: 0; left: 0; z-index: 110;
+  color: var(--text); max-height: min(70vh, 420px);
+}
+.sev-pop { min-width: 250px; max-width: 320px; padding: 0; border-top: 3px solid var(--sev); }
+.sev-pop-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 8px 10px 0 12px;
+}
+.sev-pop-tag {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-2);
+}
+.sev-pop-x {
+  background: transparent; border: none; color: var(--text-2); font-size: 13px;
+  line-height: 1; padding: 4px; border-radius: 3px;
+}
+.sev-pop-x:hover { background: var(--steel-10); color: var(--text); }
+.sev-pop-title { font-size: 14px; font-weight: 700; padding: 4px 12px 6px; color: var(--text); }
+.sev-pop-body { padding: 0 12px 10px; }
+.sev-pop-row { display: grid; grid-template-columns: 76px 1fr; gap: 8px; padding: 3px 0; font-size: 12.5px; }
+.sev-pop-k { color: var(--text-2); font-weight: 600; }
+.sev-pop-v { color: var(--text); overflow-wrap: anywhere; }
+.sev-pop-link { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+.sev-pop-link:hover { text-decoration-thickness: 2px; }
+.sev-pop-list { display: flex; flex-direction: column; padding: 6px; }
+.sev-pop-item {
+  display: grid; grid-template-columns: 12px 1fr; column-gap: 8px; align-items: center;
+  text-align: left; background: transparent; border: none; border-radius: 3px;
+  padding: 6px 8px; color: var(--text); font-size: 12.5px;
+}
+.sev-pop-item:hover, .sev-pop-item:focus-visible { background: var(--steel-10); }
+.sev-pop-item-name { font-weight: 600; }
+.sev-pop-item-meta { grid-column: 2; color: var(--text-2); font-size: 11.5px; }
