@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-29T07:42:52+00:00",
+  "events": [
+    {
+      "id": "global--savills-annual-global-luxury-event--9c57dc",
+      "name": "Savills Annual Global Luxury Event",
+      "start_date": "2027-04-14",
+      "end_date": "2027-04-14",
+      "market": "Global",
+      "city": "Milan",
+      "venue": "Milan",
+      "event_type": "Event",
+      "organiser": "Commercial Research",
+      "audience": null,
+      "link": null,
+      "notes": null
+    }
+  ]
+}

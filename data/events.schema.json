@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Savills APAC Research Events file",
+  "description": "Shape of /data/events.json (added 2026-10-29). A wrapper object with a generated_at timestamp and a flat array of Savills event records. Events are a display-only layer on the Calendar and the Events tab: they ignore the filter bar, are not part of URL filter state and are excluded from CSV export. v1 is JSON-edit-only (no in-app form). The layout is deliberately flat so a future GitHub Action can regenerate the whole file from a shared source — see docs/MAINTENANCE.md -> 'Savills events layer'.",
+  "type": "object",
+  "required": ["generated_at", "events"],
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the last edit or regeneration."
+    },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/event" }
+    }
+  },
+  "definitions": {
+    "event": {
+      "type": "object",
+      "required": [
+        "id", "name", "start_date", "end_date", "market", "city", "venue",
+        "event_type", "organiser", "audience", "link", "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable unique id: '<market-slug>--<name-slug>--<6-hex hash>' (same slug style as publication ids), e.g. 'global--savills-annual-global-luxury-event--9c57dc'. The hash is the first 6 hex chars of sha1('<name>|<start_date>').",
+          "pattern": "^[a-z0-9-]+--[a-z0-9-]+--[a-f0-9]{6}$"
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "ISO 8601 date (YYYY-MM-DD)."
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "ISO 8601 date, >= start_date. Equal to start_date for a one-day event. (JSON Schema cannot compare two fields; js/events.js enforces the ordering and drops invalid records.)"
+        },
+        "market": {
+          "type": "string",
+          "description": "One of the publication markets, or Regional / Global for multi-market events.",
+          "enum": [
+            "Japan", "China", "Thailand", "Hong Kong", "Singapore", "Vietnam",
+            "Philippines", "Malaysia", "South Korea", "Taiwan", "Australia",
+            "Indonesia", "India", "Asia Pacific", "Regional", "Global"
+          ]
+        },
+        "city": { "type": "string" },
+        "venue": { "type": "string" },
+        "event_type": {
+          "type": "string",
+          "enum": ["Webinar", "Conference", "Event", "Other"]
+        },
+        "organiser": { "type": "string", "description": "Owning team, e.g. 'Commercial Research'." },
+        "audience": {
+          "type": ["string", "null"],
+          "enum": ["Internal", "Client", "Public", null]
+        },
+        "link": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Registration or info page (opens in a new tab), or null."
+        },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

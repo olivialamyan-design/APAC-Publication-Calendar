@@ -356,6 +356,13 @@ const App = (() => {
       Holidays.load().then(() => { if (State.get().view === "calendar") rerender(); })
         .catch(() => {});
     }
+    // Savills events layer (2026-10-29) — loaded alongside holidays, non-fatal.
+    if (typeof SavillsEvents !== "undefined") {
+      SavillsEvents.load().then(() => {
+        const v = State.get().view;
+        if (v === "calendar" || v === "events") rerender();
+      }).catch(() => {});
+    }
 
     // Theme toggle
     const themeBtn = document.getElementById("btnTheme");
