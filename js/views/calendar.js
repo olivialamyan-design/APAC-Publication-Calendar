@@ -218,9 +218,15 @@ const CalendarView = (() => {
             `${H.esc(h.market)} - ${H.esc(h.name)}`));
         });
         if (hols.length > maxHol) {
-          holWrap.appendChild(H.el("div", { class: "cal-hol-row cal-hol-more",
-            title: hols.map(h => `${h.market} - ${h.name}`).join("\n") },
-            `+${hols.length - maxHol} more holiday${hols.length - maxHol > 1 ? "s" : ""}`));
+          // 2026-10-29: custom hover / focus / tap card (HolidayPopover)
+          // replaces the slow, touch-invisible native title tooltip. The card
+          // lists ALL holidays for the day, including the visible rows.
+          const n = hols.length - maxHol;
+          const more = H.el("div", { class: "cal-hol-row cal-hol-more",
+            "aria-label": `${n} more holiday${n > 1 ? "s" : ""} on ${H.fmtLong(iso)} — show all ${hols.length}` },
+            `+${n} more holiday${n > 1 ? "s" : ""}`);
+          HolidayPopover.attach(more, iso, hols);
+          holWrap.appendChild(more);
         }
         cell.appendChild(holWrap);
       }

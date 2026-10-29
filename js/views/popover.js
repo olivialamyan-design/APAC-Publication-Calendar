@@ -195,3 +195,67 @@ const EventPopover = (() => {
 
   return { open, openList, close: () => pop.hide() };
 })();
+/* -------------------------------------------------------------------------
+ * HolidayPopover — "+N more holidays" card. Mouse/pen: hover. Keyboard:
+ * focus. Touch: tap toggles. Dismiss: pointer leave, blur, Esc, outside tap.
+ * ----------------------------------------------------------------------- */
+const HolidayPopover = (() => {
+  const pop = Popover.create("hol-pop");
+  let hideTimer = null;
+
+  function html(iso, hols) {
+    const lines = hols.map(h =>
+      `<li>${H.esc(h.market)} – ${H.esc(h.name)}</li>`).join("");
+    return `<div class="hol-pop-head">Public holidays · ${H.esc(H.fmtLong(iso))}</div>` +
+           `<ul class="hol-pop-list">${lines}</ul>`;
+  }
+
+  function showFor(trigger, iso, hols) {
+    clearTimeout(hideTimer);
+    if (pop.isOpen() && pop.anchor() === trigger) return;
+    pop.show(trigger, html(iso, hols), {
+      label: `Public holidays on ${H.fmtLong(iso)}`,
+      onRender: el => {
+        el.onpointerenter = () => clearTimeout(hideTimer);
+        el.onpointerleave = e => { if (e.pointerType !== "touch") scheduleHide(); };
+      },
+      onHide: a => a && a.setAttribute && a.setAttribute("aria-expanded", "false")
+    });
+    trigger.setAttribute("aria-expanded", "true");
+  }
+
+  function scheduleHide() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => pop.hide(), 120);
+  }
+
+  // Wire a "+N more holiday(s)" element. `hols` = ALL holidays for the day.
+  function attach(trigger, iso, hols) {
+    let lastPointer = "mouse", lastDown = 0;
+    trigger.setAttribute("tabindex", "0");
+    trigger.setAttribute("role", "button");
+    trigger.setAttribute("aria-haspopup", "dialog");
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.addEventListener("pointerdown", e => { lastPointer = e.pointerType || "mouse"; lastDown = Date.now(); });
+    trigger.addEventListener("pointerenter", e => { if (e.pointerType !== "touch") showFor(trigger, iso, hols); });
+    trigger.addEventListener("pointerleave", e => { if (e.pointerType !== "touch") scheduleHide(); });
+    trigger.addEventListener("focus", () => {
+      if (Date.now() - lastDown < 600) return;          // pointer path handles it
+      showFor(trigger, iso, hols);
+    });
+    trigger.addEventListener("blur", () => {
+      if (lastPointer === "touch") return;              // touch closes via outside tap
+      scheduleHide();
+    });
+    trigger.addEventListener("click", e => {
+      e.stopPropagation();
+      if (lastPointer === "touch" && pop.isOpen() && pop.anchor() === trigger) pop.hide();
+      else showFor(trigger, iso, hols);
+    });
+    trigger.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showFor(trigger, iso, hols); }
+    });
+  }
+
+  return { attach, close: () => pop.hide() };
+})();

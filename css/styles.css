@@ -1280,3 +1280,14 @@ html[data-theme="dark"] .cal-sev { box-shadow: none; }
 .ev-tbl .sev-dot { vertical-align: -1px; }
 .ev-tbl tr.ev-row:focus-visible { outline: 2px solid var(--sev); outline-offset: -2px; }
 html[data-theme="dark"] .ev-tbl .ev-month-row td { background: rgba(255,255,255,0.04); }
+
+/* ---- Holiday "+N more" hover card (2026-10-29) ---- */
+.cal-hol-more { cursor: help; }
+.cal-hol-more:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
+.hol-pop { min-width: 220px; max-width: 320px; padding: 8px 10px; }
+.hol-pop-head {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-2); margin-bottom: 4px;
+}
+.hol-pop-list { list-style: none; margin: 0; padding: 0; }
+.hol-pop-list li { font-size: 12px; line-height: 1.4; padding: 2px 0; color: var(--text); }
