@@ -3,7 +3,7 @@
  * All Savills events (data/events.json via SavillsEvents) as a table grouped
  * by month, chronological. Ignores the filter bar entirely. Clicking a row
  * opens the same EventPopover used by the calendar pills.
- * Columns: Date(s), Name, Type, Market, City, Venue, Organiser, Audience, Link.
+ * Columns: Date(s), Name, Type, Market, Venue, Organiser, Audience, Link.
  * =========================================================================== */
 const EventsView = (() => {
   const COLS = [
@@ -12,7 +12,6 @@ const EventsView = (() => {
       render: ev => `<span class="sev-dot" aria-hidden="true"></span> <span class="ev-name">${H.esc(ev.name)}</span>` },
     { label: "Type",      render: ev => H.esc(ev.event_type) },
     { label: "Market",    render: ev => H.esc(ev.market) },
-    { label: "City",      render: ev => H.esc(ev.city) },
     { label: "Venue",     render: ev => H.esc(ev.venue) },
     { label: "Organiser", render: ev => H.esc(ev.organiser) },
     { label: "Audience",  render: ev => H.esc(ev.audience) },

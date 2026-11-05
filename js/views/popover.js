@@ -123,7 +123,6 @@ const EventPopover = (() => {
       [ev.multi_day ? "Dates" : "Date", H.esc(SavillsEvents.fmtRange(ev))],
       ["Type", ev.event_type && H.esc(ev.event_type)],
       ["Market", ev.market && H.esc(ev.market)],
-      ["City", ev.city && H.esc(ev.city)],
       ["Venue", ev.venue && H.esc(ev.venue)],
       ["Organiser", ev.organiser && H.esc(ev.organiser)],
       ["Audience", ev.audience && H.esc(ev.audience)],
@@ -166,7 +165,7 @@ const EventPopover = (() => {
       `<button type="button" class="sev-pop-item" data-i="${i}">` +
         `<span class="sev-dot" aria-hidden="true"></span>` +
         `<span class="sev-pop-item-name">${H.esc(ev.name)}</span>` +
-        `<span class="sev-pop-item-meta">${H.esc([ev.event_type, ev.city].filter(Boolean).join(" · "))}</span>` +
+        `<span class="sev-pop-item-meta">${H.esc([ev.event_type, ev.venue].filter(Boolean).join(" · "))}</span>` +
       `</button>`).join("");
     const html =
       `<div class="sev-pop-head">` +

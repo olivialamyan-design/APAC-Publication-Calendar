@@ -1,9 +1,37 @@
 {
-  "generated_at": "2026-10-29T07:42:52+00:00",
+  "generated_at": "2026-11-05T08:20:39+00:00",
   "events": [
     {
-      "id": "global--savills-annual-global-luxury-event--9c57dc",
-      "name": "Savills Annual Global Luxury Event",
+      "id": "global--global-capital-markets-first-look-at-q3-2026--3a4dbb",
+      "name": "Global Capital Markets: First Look at Q3 2026",
+      "start_date": "2026-10-26",
+      "end_date": "2026-10-26",
+      "market": "Global",
+      "city": "Online",
+      "venue": "Online",
+      "event_type": "Webinar",
+      "organiser": "World Research",
+      "audience": "Public",
+      "link": "https://www.savills.com/research_articles/255800/395614-0?utm_source=ExactTarget&utm_medium=Email&utm_term=5463757&utm_content=10085284&utm_campaign=INV+-+Event+Follow+Up+-+Global+Capital+Markets+Research+Q3+2026+webinar+Didn%27t+attend",
+      "notes": null
+    },
+    {
+      "id": "asia-pacific--hk-end-of-year-client-event--797355",
+      "name": "HK End-of-Year Client Event",
+      "start_date": "2026-12-03",
+      "end_date": "2026-12-03",
+      "market": "Asia Pacific",
+      "city": "Hong Kong",
+      "venue": "Central, Hong Kong",
+      "event_type": "Event",
+      "organiser": "APAC Valuation, APAC Capital Markets, HK Investment",
+      "audience": "Client",
+      "link": null,
+      "notes": null
+    },
+    {
+      "id": "global--global-luxury-retail-outlook-2027--642881",
+      "name": "Global Luxury Retail Outlook 2027",
       "start_date": "2027-04-14",
       "end_date": "2027-04-14",
       "market": "Global",
@@ -11,7 +39,7 @@
       "venue": "Milan",
       "event_type": "Event",
       "organiser": "Commercial Research",
-      "audience": null,
+      "audience": "Client",
       "link": null,
       "notes": null
     }
