@@ -52,7 +52,8 @@
       "description": "Single-select.",
       "enum": [
         "Market Reports", "Newsletter", "Blogs", "White Papers",
-        "Thought Leadership", "Quarterly Outlooks", "Sector Updates"
+        "Thought Leadership", "Quarterly Outlooks", "Sector Updates",
+        "Articles", "Impacts Articles"
       ]
     },
     "language": {
