@@ -42,13 +42,14 @@ const CalendarView = (() => {
   // -------- styling for a calendar event pill (scope colour) --------
   function eventPill(p) {
     const c = DataLayer.colourFor(p);
-    const cls = "cal-evt" + (p.recurring ? " is-recurring" : "");
+    const cls = "cal-evt" + (p.recurring ? " is-recurring" : "") + (p.published ? " is-published" : "");
     const pill = H.el("button", {
       class: cls,
       style: `background:${c.fill};color:${c.text};`,
       "data-id": p.id,
-      title: `${p.publication_name} — ${p.country}${p.recurring ? " (recurring)" : ""}`
-    }, (p.recurring ? '<span class="cal-evt-rec" aria-hidden="true">↻</span> ' : "") + H.esc(p.publication_name));
+      title: `${p.publication_name} — ${p.country}${p.recurring ? " (recurring, " + (p.date_confidence || "Estimated").toLowerCase() + ")" : ""}${p.published ? " (published)" : ""}`
+    }, (p.recurring ? '<span class="cal-evt-rec" aria-hidden="true">↻</span> ' : "") +
+       (p.published ? '<span class="cal-evt-pub" aria-label="Published">✓</span> ' : "") + H.esc(p.publication_name));
     pill.addEventListener("click", e => { e.stopPropagation(); Detail.open(p.id); });
     return pill;
   }
@@ -308,11 +309,11 @@ const CalendarView = (() => {
         const p = it.p;
         const c2 = DataLayer.colourFor(p);
         const row = H.el("button", {
-          class: "strip-evt" + (p.recurring ? " is-recurring" : ""),
+          class: "strip-evt" + (p.recurring ? " is-recurring" : "") + (p.published ? " is-published" : ""),
           style: `border-left-color:${c2.fill};`,
           "data-id": p.id
         }, `<span class="strip-date">${H.parseISO(p.expected_publication_date).getDate()}</span>
-            <span class="strip-name">${p.recurring ? '<span class="strip-rec">↻</span> ' : ''}${H.esc(p.publication_name)}</span>
+            <span class="strip-name">${p.recurring ? '<span class="strip-rec">↻</span> ' : ''}${p.published ? '<span class="cal-evt-pub" aria-label="Published">✓</span> ' : ''}${H.esc(p.publication_name)}</span>
             <span class="mkt-dot" style="background:${c2.fill}"></span>`);
         row.addEventListener("click", () => Detail.open(p.id));
         body.appendChild(row);

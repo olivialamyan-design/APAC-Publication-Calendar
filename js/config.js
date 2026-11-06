@@ -35,8 +35,8 @@ window.APP_CONFIG = {
     "Hospitality", "Data Centres", "Capital Markets", "Living", "Mixed Use"
   ],
   PUBLICATION_TYPES: [
-    "Market Reports", "Newsletter", "Quarterly Outlooks", "Sector Updates",
-    "Thought Leadership", "White Papers", "Blogs"
+    "Market Reports", "Newsletter", "Outlooks", "Sector Updates",
+    "Thought Leadership", "White Papers", "Articles", "Impacts Articles", "Blogs"
   ],
   LANGUAGES: [
     "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
@@ -47,5 +47,6 @@ window.APP_CONFIG = {
   // ---- FUTURE: Status taxonomy (NOT used in v1 UI). ----
   // When you wire the Status filter/badge later, this is the canonical list.
   // See docs/MAINTENANCE.md -> "Introducing the Status field".
-  STATUS_VALUES: ["idea", "drafting", "review", "sign off", "published", "delayed"]
+  // v6 (2026-11-06): the master sheet uses published / planned per issue.
+  STATUS_VALUES: ["published", "planned", "idea", "drafting", "review", "sign off", "delayed"]
 };

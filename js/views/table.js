@@ -11,11 +11,13 @@ const TableView = (() => {
   // and add it to the sort handling. See docs/MAINTENANCE.md.
   const COLS = [
     { key: "expected_publication_date", label: "Date", cls: "tnum",
-      render: p => H.fmtLong(p.expected_publication_date) },
+      render: p => H.fmtLong(p.expected_publication_date) + " " + H.dateBadge(p) },
     { key: "country", label: "Market",
       render: p => H.marketDot(p) + H.esc(p.country) },
     { key: "publication_name", label: "Publication", cls: "col-name",
-      render: p => H.esc(p.publication_name) },
+      render: p => p.savills_url
+        ? `<a href="${H.esc(p.savills_url)}" target="_blank" rel="noopener" class="pub-link" onclick="event.stopPropagation()">${H.esc(p.publication_name)}</a>`
+        : H.esc(p.publication_name) },
     { key: "city_state", label: "City / State", render: p => H.esc(p.city_state) },
     { key: "asset_class", label: "Asset Class",
       render: p => p.asset_class.map(a => `<span class="badge">${H.esc(a)}</span>`).join("") },

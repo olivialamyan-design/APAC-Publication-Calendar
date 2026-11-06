@@ -60,5 +60,20 @@ const H = (() => {
   // small badge (asset classes etc.)
   const badge = (txt, cls = "") => el("span", { class: "badge " + cls }, esc(txt));
 
-  return { MONTHS, MONTHS_SHORT, esc, el, parseISO, fmtLong, isPast, marketChip, marketDot, badge };
+  // v5 (2026-11-05): status badge for a publication date.
+  //   Overdue    -> Status planned but the date has passed (needs review)
+  //   Published  -> Status published (Published & Planned sheet, date <= build date)
+  //   Confirmed  -> exact future date on a Published & Planned row
+  //   Estimated  -> projected from the Recurring Timing Window / fallback
+  //   needs date -> Published & Planned row with Publication Date "TBD"
+  const dateBadge = p => {
+    if (!p) return "";
+    if (p.overdue) return `<span class="badge badge-overdue">Overdue - review</span>`;
+    if (p.needs_date) return `<span class="badge badge-needs-date">needs date</span>`;
+    if (p.published) return `<span class="badge badge-published">Published</span>`;
+    const c = p.date_confidence || (p.recurring ? "Estimated" : "Confirmed");
+    return `<span class="badge badge-conf badge-conf-${esc(c.toLowerCase())}">${esc(c)}</span>`;
+  };
+
+  return { MONTHS, MONTHS_SHORT, esc, el, parseISO, fmtLong, isPast, marketChip, marketDot, badge, dateBadge };
 })();

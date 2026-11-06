@@ -47,7 +47,9 @@ const Detail = (() => {
 
     // Recurring badge — yes/no
     const recBadge = p.recurring
-      ? `<span class="badge badge-rec">↻ Recurring instance</span>`
+      ? `<span class="badge badge-rec">↻ Projected instance</span>`
+      : (p.record_type === "published" || p.record_type === "planned")
+      ? `<span class="badge">Issue of a recurring series</span>`
       : (p.frequency && p.frequency !== "Ad Hoc"
           ? `<span class="badge">Series rule</span>`
           : `<span class="badge">One-off</span>`);
@@ -62,15 +64,29 @@ const Detail = (() => {
       ? field("Recurring months", H.esc(fmtMonths(p.recurring_months)))
       : "";
 
-    // Date Confidence (2026-06-18, v4) — always shown when known. Per spec the
-    // value is shown plainly (e.g. "Estimated") with no extra explanatory copy.
-    const dateConfidenceRow = p.date_confidence
+    // Date Confidence — computed automatically by the platform (v5: no owner
+    // override). Published issues show a "Published" badge instead.
+    const dateConfidenceRow = (p.date_confidence && !p.published)
       ? field("Date Confidence", `<span class="dp-conf dp-conf-${p.date_confidence.toLowerCase()}">${H.esc(p.date_confidence)}</span>`)
       : "";
+    const periodRow = p.period ? field("Period", H.esc(p.period)) : "";
+    const linkRow = p.savills_url
+      ? field("Savills page", `<a href="${H.esc(p.savills_url)}" target="_blank" rel="noopener" class="pub-link">Open on Savills.com</a>`)
+      : "";
+    const sourceRow = p.source_check ? field("Date source", H.esc(p.source_check)) : "";
+    const plannedRow = p.planned_date ? field("Planned date", `<span class="tnum">${H.fmtLong(p.planned_date)}</span>`) : "";
+    const titleHtml = p.savills_url
+      ? `<a href="${H.esc(p.savills_url)}" target="_blank" rel="noopener" class="pub-link">${H.esc(p.publication_name)}</a>`
+      : H.esc(p.publication_name);
 
     // TBD banner — only for TBD rows
     const tbdBanner = p.is_tbd
-      ? `<div class="dp-tbd-banner">No publication date set yet — this row is in the TBD queue. Click Edit to set a date.</div>`
+      ? (p.needs_date
+          ? `<div class="dp-tbd-banner">Needs date — this issue is in the Published & Planned sheet with Publication Date "TBD". Add the exact date in the master workbook.</div>`
+          : `<div class="dp-tbd-banner">No publication date set yet — this row is in the TBD queue. Click Edit to set a date.</div>`)
+      : "";
+    const overdueBanner = p.overdue
+      ? `<div class="dp-overdue">Planned date has passed. Check whether this issue is out and update the master sheet (set Status to published and add the Savills URL, or enter a new planned date).</div>`
       : "";
 
     // FUTURE STATUS BADGE would render here (tolerant of null).
@@ -84,11 +100,16 @@ const Detail = (() => {
         ${p.recurring ? `<span class="chip dp-chip-rec" title="Recurring instance">↻</span>` : ""}
         <button class="btn-icon dp-close" title="Close">✕</button>
       </div>
-      <h2 class="dp-title">${H.esc(p.publication_name)}</h2>
+      <h2 class="dp-title">${titleHtml} ${H.dateBadge(p)}</h2>
       ${tbdBanner}
+      ${overdueBanner}
       <div class="dp-body">
-        ${field("Expected publication", `<span class="tnum">${p.expected_publication_date ? H.fmtLong(p.expected_publication_date) : '<em class="dp-muted">TBD</em>'}</span>`)}
+        ${field(p.published ? "Published" : "Expected publication", `<span class="tnum">${p.expected_publication_date ? H.fmtLong(p.expected_publication_date) : '<em class="dp-muted">TBD</em>'}</span>`)}
         ${dateConfidenceRow}
+        ${periodRow}
+        ${linkRow}
+        ${sourceRow}
+        ${plannedRow}
         ${field("Country", H.esc(p.country) || "—")}
         ${field("City / State", H.esc(p.city_state) || "—")}
         ${field("Asset class", assets)}
@@ -124,7 +145,7 @@ const Detail = (() => {
       const c = DataLayer.colourFor(p);
       return `<button class="dp-listitem" data-id="${p.id}">
         <span class="mkt-dot" style="background:${c.fill}"></span>
-        ${p.recurring ? '<span class="dp-list-rec" title="Recurring">↻</span> ' : ''}
+        ${p.recurring ? '<span class="dp-list-rec" title="Recurring">↻</span> ' : ''}${p.published ? '<span class="cal-evt-pub" title="Published">✓</span> ' : ''}
         ${H.esc(p.publication_name)} <em>${H.esc(p.country)}</em></button>`;
     }).join("");
     panel.innerHTML = `
@@ -145,7 +166,9 @@ const Detail = (() => {
       `**${p.publication_name}**`,
       ``,
       `- **Market:** ${p.country}${p.city_state ? " — " + p.city_state : ""}`,
-      `- **Expected publication:** ${p.expected_publication_date ? H.fmtLong(p.expected_publication_date) : "TBD"}`,
+      `- **${p.published ? "Published" : "Expected publication"}:** ${p.expected_publication_date ? H.fmtLong(p.expected_publication_date) : "TBD"}`,
+      p.period ? `- **Period:** ${p.period}` : null,
+      p.savills_url ? `- **Savills page:** ${p.savills_url}` : null,
       `- **Asset class:** ${p.asset_class.join(", ") || "—"}`,
       `- **Type:** ${p.publication_type}`,
       `- **Language:** ${p.language}`,
@@ -155,7 +178,7 @@ const Detail = (() => {
       `- **Frequency:** ${p.frequency || "Ad Hoc"}`,
       (p.frequency && p.frequency !== "Ad Hoc")
         ? `- **Recurring months:** ${fmtMonths(p.recurring_months)}` : null,
-      p.recurring ? `- **Recurring instance:** yes` : null,
+      p.recurring ? `- **Projected instance:** yes (${p.date_confidence || "Estimated"})` : null,
       p.notes ? `- **Notes:** ${p.notes}` : null
     ].filter(Boolean).join("\n");
   }

@@ -1291,3 +1291,24 @@ html[data-theme="dark"] .ev-tbl .ev-month-row td { background: rgba(255,255,255,
 }
 .hol-pop-list { list-style: none; margin: 0; padding: 0; }
 .hol-pop-list li { font-size: 12px; line-height: 1.4; padding: 2px 0; color: var(--text); }
+
+/* ---------------------------------------------------------------------------
+ * v5 two-sheet model (2026-11-05): Published / Confirmed / Estimated badges,
+ * Savills links, and the "needs date" tag in the TBD panel.
+ * ------------------------------------------------------------------------- */
+.cal-evt-pub { font-weight: 700; font-size: 0.9em; margin-right: 1px; }
+.badge-overdue { background: #DDEBF7; color: #1F4E79; border-color: #9DC3E6; font-weight: 600; }
+html[data-theme="dark"] .badge-overdue { background: #1F4E79; color: #DDEBF7; border-color: #9DC3E6; }
+.dp-overdue { background: #DDEBF7; color: #1F4E79; border: 1px solid #9DC3E6; border-radius: 6px; padding: 8px 10px; margin: 8px 18px 4px; font-size: 13px; }
+html[data-theme="dark"] .dp-overdue { background: #1F4E79; color: #DDEBF7; }
+.badge-published { background: #25273A; color: #FFFFFF; border-color: #25273A; font-weight: 600; }
+.badge-conf-confirmed { border-color: var(--text); color: var(--text); font-weight: 600; }
+.badge-conf-estimated { border-style: dashed; color: var(--text-2); }
+.badge-conf-tbd { color: var(--text-3); }
+.badge-needs-date, .tbd-needs-date { background: #FFF3CD; color: #664D03; border: 1px solid #E0C46C; font-weight: 600; }
+.dp-title .badge { vertical-align: middle; font-size: 11px; margin-left: 6px; }
+a.pub-link { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a.pub-link:hover { text-decoration-thickness: 2px; }
+.tbd-card-head .tbd-needs-date { margin-left: auto; margin-right: 4px; }
+html[data-theme="dark"] .badge-published { background: #FFDF00; color: #25273A; border-color: #FFDF00; }
+html[data-theme="dark"] .badge-needs-date, html[data-theme="dark"] .tbd-needs-date { background: #4a3d10; color: #FFE38A; border-color: #8a7020; }

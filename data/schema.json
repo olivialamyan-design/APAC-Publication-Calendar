@@ -22,9 +22,21 @@
       "type": "string",
       "description": "One of the 14 markets plus the regional options Global and Asia Pacific (treated as country-like options).",
       "enum": [
-        "Japan", "China", "Thailand", "Hong Kong", "Singapore", "Vietnam",
-        "Philippines", "Malaysia", "South Korea", "Taiwan", "Australia",
-        "Indonesia", "India", "Global", "Asia Pacific"
+        "Japan",
+        "China",
+        "Thailand",
+        "Hong Kong",
+        "Singapore",
+        "Vietnam",
+        "Philippines",
+        "Malaysia",
+        "South Korea",
+        "Taiwan",
+        "Australia",
+        "Indonesia",
+        "India",
+        "Global",
+        "Asia Pacific"
       ]
     },
     "city_state": {
@@ -41,9 +53,16 @@
       "items": {
         "type": "string",
         "enum": [
-          "All", "Office", "Residential", "Retail", "Hospitality",
-          "Industrial & Logistics", "Capital Markets", "Data Centres",
-          "Living", "Mixed Use"
+          "All",
+          "Office",
+          "Residential",
+          "Retail",
+          "Hospitality",
+          "Industrial & Logistics",
+          "Capital Markets",
+          "Data Centres",
+          "Living",
+          "Mixed Use"
         ]
       }
     },
@@ -51,9 +70,16 @@
       "type": "string",
       "description": "Single-select.",
       "enum": [
-        "Market Reports", "Newsletter", "Blogs", "White Papers",
-        "Thought Leadership", "Quarterly Outlooks", "Sector Updates",
-        "Articles", "Impacts Articles"
+        "Market Reports",
+        "Newsletter",
+        "Blogs",
+        "White Papers",
+        "Thought Leadership",
+        "Quarterly Outlooks",
+        "Sector Updates",
+        "Articles",
+        "Impacts Articles",
+        "Outlooks"
       ]
     },
     "language": {
@@ -62,8 +88,15 @@
       "anyOf": [
         {
           "enum": [
-            "English", "Chinese (Simplified)", "Chinese (Traditional)", "Japanese",
-            "Korean", "Thai", "Vietnamese", "Bahasa Indonesia", "Bahasa Malaysia"
+            "English",
+            "Chinese (Simplified)",
+            "Chinese (Traditional)",
+            "Japanese",
+            "Korean",
+            "Thai",
+            "Vietnamese",
+            "Bahasa Indonesia",
+            "Bahasa Malaysia"
           ]
         },
         {
@@ -72,7 +105,10 @@
       ]
     },
     "expected_publication_date": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date",
       "description": "ISO 8601 date (YYYY-MM-DD). null allowed (2026-10-20) only when is_tbd is true; those records show in the TBD panel."
     },
@@ -85,49 +121,167 @@
       "description": "Owning research team, e.g. 'HK Research'."
     },
     "lead_author": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "OPTIONAL (added 2026-06-18). The named individual who owns/authors the publication, distinct from the broader team. UI tolerates null/missing."
     },
     "start_date": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date",
       "description": "OPTIONAL in JSON, REQUIRED in the master sheet for recurring rows (added 2026-06-18). For recurring series: the ISO date (YYYY-MM-DD) the series begins. Future instances are projected on/after this date. Null = project from the upload/build date. Backend-only: not surfaced in the detail panel."
     },
     "recurring_timing_window": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "OPTIONAL (added 2026-06-18, v4). For recurring rows whose exact date is not yet known: the within-month timing band used to estimate a placeholder date (Early month -> 5th, Mid-month -> 15th, Late month -> 25th, each snapped to a business day). 'TBD' or null falls back to the last business day of the month.",
-      "enum": ["Early month", "Mid-month", "Late month", "TBD", null]
+      "enum": [
+        "Early month",
+        "Mid-month",
+        "Late month",
+        "TBD",
+        null
+      ]
     },
     "date_confidence": {
-      "type": ["string", "null"],
-      "description": "Per-instance confidence in the publication date (added 2026-06-18, v4). Owner-set value in the master sheet overrides platform inference; if blank the platform infers it: a confirmed Expected Publication Date -> 'Confirmed' (next occurrence only); a timing window or fallback estimate -> 'Estimated'; no date and no timing -> 'TBD'. Shown in the detail panel.",
-      "enum": ["Confirmed", "Estimated", "TBD", null]
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Computed automatically by the build script (v6, 2026-11-06; no owner override). Published & Planned rows with an exact date -> 'Confirmed'; Recurring Timing Window or last-business-day fallback -> 'Estimated'; 'TBD' or no timing -> 'TBD'.",
+      "enum": [
+        "Confirmed",
+        "Estimated",
+        "TBD",
+        null
+      ]
     },
     "notes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "OPTIONAL free text. null when the master sheet cell is blank (allowed 2026-10-20)."
     },
     "report_scope": {
       "type": "string",
       "description": "Regional reports are the default landing view. In-Country reports are local-market only.",
-      "enum": ["Regional", "In-Country"]
+      "enum": [
+        "Regional",
+        "In-Country"
+      ]
     },
     "status": {
-      "description": "FUTURE-EXTENSIBLE. NOT required in v1. UI tolerates null/missing. Planned future values: idea, drafting, review, sign off, published, delayed.",
-      "type": ["string", "null"],
-      "enum": ["idea", "drafting", "review", "sign off", "published", "delayed", null]
+      "description": "Issue status from the Published & Planned sheet (v6): published = out; planned = not out yet. Projected instances are 'planned'. Legacy values kept for compatibility.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "published",
+        "planned",
+        "idea",
+        "drafting",
+        "review",
+        "sign off",
+        "delayed",
+        null
+      ]
+    },
+    "base_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Base Publication Name from the master workbook (without period). The displayed publication_name is base_name + ' ' + period."
+    },
+    "period": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Period label for the issue, e.g. 'Q3 2026', '1H 2026', 'Nov 2026', '2026'. Null for Ad Hoc."
+    },
+    "record_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "published",
+        "planned",
+        "adhoc",
+        "projected",
+        null
+      ],
+      "description": "published = recurring-series issue that is out; planned = recurring-series issue with Status planned (exact date or TBD); adhoc = one-off row from Published & Planned; projected = future instance estimated from the Upcoming Recurring sheet."
+    },
+    "published": {
+      "type": "boolean",
+      "description": "True when the row has Status = published and its date is on or before the build date."
+    },
+    "needs_date": {
+      "type": "boolean",
+      "description": "True when Publication Date is 'TBD' (or 'Date TBC'). Shown in the TBD panel with a 'needs date' tag."
+    },
+    "savills_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Link to the issue on Savills.com (optional). The title links to it when present."
+    },
+    "source_check": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Where the Publication Date came from: 'Savills HK listing', 'Savills listing (other site)', 'Not found - manual input needed', or 'Manual'."
+    },
+    "planned_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional originally planned date (YYYY-MM-DD) from the Published sheet."
+    },
+    "recurring": {
+      "type": "boolean",
+      "description": "True for projected instances of a recurring series."
+    },
+    "overdue": {
+      "type": "boolean",
+      "description": "True when a Published & Planned row has Status = planned and its date has passed (needs review)."
     }
   },
   "allOf": [
     {
       "description": "A record with no date must be flagged TBD.",
       "if": {
-        "properties": { "expected_publication_date": { "type": "null" } },
-        "required": ["expected_publication_date"]
+        "properties": {
+          "expected_publication_date": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "expected_publication_date"
+        ]
       },
       "then": {
-        "required": ["is_tbd"],
-        "properties": { "is_tbd": { "const": true } }
+        "required": [
+          "is_tbd"
+        ],
+        "properties": {
+          "is_tbd": {
+            "const": true
+          }
+        }
       }
     }
   ]

@@ -127,33 +127,43 @@ No code change is required — the market list is data-driven.
 
 ## Recurring date model (build-time expansion)
 
-Recurring rows are pre-expanded into `data/publications.json` by
-`tools/build_publications.py` — the browser never computes dates. Regenerate
-after any change:
+Updated 2026-11-06 (build script v6). The master workbook has these sheets,
+and the build script reads three of them:
+
+| Sheet | Used for |
+|---|---|
+| Instructions | Plain-language guide and colour legend for the team (not read) |
+| Published & Planned | One row per issue. `Status` = `published` or `planned` |
+| Upcoming Recurring | One row per recurring series (months, timing window) |
+| Data Checks | Auto list of flagged rows (not read) |
+| Event & Webinar | Rebuilds `data/events.json` (rows with TBD dates are skipped) |
+| Reference Lists | Dropdown values (not read) |
+
+Regenerate after any change:
 
 ```
-python3 tools/build_publications.py --xlsx APAC-Publication-Calendar-Master-5.xlsx --out data/publications.json
+python3 tools/build_publications.py --xlsx APAC-Publication-Calendar-Master_YYYYMMDD.xlsx \
+  --out data/publications.json --events data/events.json --report build_report.json
 ```
 
-Date for each generated occurrence is resolved in priority order:
+Rules:
 
-1. **Exact next-occurrence override** — `Expected Publication Date` on a
-   recurring row is used for the next upcoming occurrence only
-   (`date_confidence = "Confirmed"`); later instances revert to the estimate.
-2. **Recurring Timing Window** — `Early month`→5, `Mid-month`→15,
-   `Late month`→25, snapped to a business day via `adjust_to_business_day()`
-   (weekend → previous business day, kept in the same month). `Estimated`.
-3. **Fallback** — no window / `TBD` → `last_business_day_of_month()`
-   (Mon–Fri; public holidays ignored). `Estimated`.
+1. **Published & Planned rows** are shown at their exact date
+   (`date_confidence = "Confirmed"`). `published` rows show a "Published" badge and
+   link to the Savills URL. `planned` rows with a past date get `overdue = true`
+   and an "Overdue - review" badge. `TBD` dates go to the TBD panel with a
+   "needs date" tag.
+2. **Upcoming Recurring** series are projected forward only after the latest
+   dated issue of that series. Date = Recurring Timing Window (`Early month`→5,
+   `Mid-month`→15, `Late month`→25, weekend → previous business day), or the last
+   business day of the month if no window. `Estimated`.
+3. `Next Date` is retired: put the next confirmed date on a `planned` row instead.
+   Date Confidence is computed automatically; there is no owner override.
+4. Nothing before 2026-01-01 is published to the site. An old-format workbook
+   (single `Publications` sheet) fails with a clear message.
 
-`date_confidence` is inferred when blank (exact→Confirmed, window/fallback→
-Estimated, neither→TBD); an owner value overrides. `Start Date` gates the first
-generated instance and is backend-only. Two fields are emitted per record:
-`recurring_timing_window` and `date_confidence` (both surfaced by
-`js/data.js → normalize()`; `detail.js` renders the Date Confidence row).
-
-Existing rows with no window keep `null` and use the fallback — windows are
-never auto-assigned by publication type.
+Workbook colours: red = must fix (build fails), blue = review (planned date passed,
+month outside the usual months, or published with a future date), amber = TBD.
 
 ---
 

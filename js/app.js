@@ -229,7 +229,7 @@ const App = (() => {
     const head = H.el("div", { class: "tbd-head" });
     head.innerHTML =
       `<div class="tbd-title">TBD <span class="tbd-count tnum">${tbd.length}</span></div>` +
-      `<div class="tbd-sub">Publications without a confirmed date. Click any to open detail and set a date.</div>`;
+      `<div class="tbd-sub">Publications without a confirmed date, including issues marked "TBD" in the Published & Planned sheet (tagged "needs date"). Click any to open detail.</div>`;
     const close = H.el("button", { class: "btn-icon tbd-close", title: "Close" }, "✕");
     close.addEventListener("click", () => {
       panel.classList.remove("open");
@@ -253,6 +253,7 @@ const App = (() => {
         card.innerHTML =
           `<div class="tbd-card-head">` +
             `<span class="chip mkt-chip" style="background:${c.fill};color:${c.text};">${H.esc(p.country)}</span>` +
+            (p.needs_date ? `<span class="tbd-card-tag tbd-needs-date">needs date</span>` : "") +
             `<span class="tbd-card-tag">${H.esc(p.frequency || "Ad Hoc")}</span>` +
           `</div>` +
           `<h4 class="tbd-card-title">${H.esc(p.publication_name)}</h4>` +

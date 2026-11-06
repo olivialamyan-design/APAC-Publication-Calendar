@@ -73,6 +73,18 @@ const DataLayer = (() => {
       date_confidence: r.date_confidence || null,
       parent_id: r.parent_id || null,
       is_tbd: isTbd,
+      // v5 two-sheet model (2026-11-05): Published rows vs projected instances.
+      // publication_name is already the displayed title (base name + period);
+      // base_name / period are kept for matching and the detail panel.
+      base_name: r.base_name || r.publication_name || "",
+      period: r.period || null,
+      record_type: r.record_type || (r.recurring ? "projected" : "adhoc"),
+      published: r.published === true,
+      overdue: r.overdue === true,
+      needs_date: r.needs_date === true,
+      savills_url: (typeof r.savills_url === "string" && /^https?:\/\//i.test(r.savills_url)) ? r.savills_url : null,
+      source_check: r.source_check || null,
+      planned_date: r.planned_date || null,
       // FUTURE-EXTENSIBLE: status is nullable in v1; UI must tolerate null/missing.
       status: (r.status === undefined ? null : r.status)
     };
