@@ -89,6 +89,10 @@ const App = (() => {
     row2.appendChild(multiSelect("Type", "pubTypes", DataLayer.distinctPubTypes(), s.pubTypes));
     row2.appendChild(multiSelect("Language", "languages", DataLayer.distinctLanguages(), s.languages));
     row2.appendChild(multiSelect("Team", "teams", State.distinctTeams(all), s.teams));
+    // Status filter - only on the publication views (not Events)
+    if (["calendar", "quarters", "table"].includes(s.view)) {
+      row2.appendChild(multiSelect("Status", "statuses", cfg.DATE_STATUS_VALUES, s.statuses));
+    }
 
     const city = H.el("input", { class: "fb-city", type: "text",
       placeholder: "City / State…", value: s.cityState });
@@ -124,7 +128,7 @@ const App = (() => {
     const cfg = window.APP_CONFIG;
     State.set({
       markets: [], scope: cfg.DEFAULT_SCOPE, cityState: "", assetClasses: [],
-      pubTypes: [], languages: [], teams: [], dateFrom: "", dateTo: "",
+      pubTypes: [], languages: [], teams: [], statuses: [], dateFrom: "", dateTo: "",
       range: cfg.DEFAULT_RANGE, search: ""
     });
     const ts = document.getElementById("topSearch");

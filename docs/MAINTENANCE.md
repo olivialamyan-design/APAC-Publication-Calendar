@@ -52,7 +52,18 @@ intentionally keeps it in memory for security.)
 
 ---
 
-## Introducing the Status field (planned v2)
+## Status filter (added 2026-11-09)
+
+The filter bar has a **Status** multi-select (Calendar, Quarters and Table tabs only; hidden on
+Events). Options come from `APP_CONFIG.DATE_STATUS_VALUES`; each record gets exactly one value
+from `State.dateStatus(p)`: Published (`published`), Overdue - review (`overdue`, not published),
+Estimated (`date_confidence = Estimated`), otherwise Confirmed. Selection syncs to the URL as
+`?status=` and is cleared by Clear. TBD items are not affected (TBD panel unchanged). Overdue is
+set when the data is built, so it reflects the last update.
+
+---
+
+## Introducing the workflow Status field (planned v2)
 
 Status already exists in the schema as a **nullable** field. Planned values:
 `idea, drafting, review, sign off, published, delayed` (defined once in

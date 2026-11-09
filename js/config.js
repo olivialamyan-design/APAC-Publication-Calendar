@@ -48,5 +48,7 @@ window.APP_CONFIG = {
   // When you wire the Status filter/badge later, this is the canonical list.
   // See docs/MAINTENANCE.md -> "Introducing the Status field".
   // v6 (2026-11-06): the master sheet uses published / planned per issue.
+  // Status filter options (2026-11-09), in display order
+  DATE_STATUS_VALUES: ["Published", "Confirmed", "Estimated", "Overdue - review"],
   STATUS_VALUES: ["published", "planned", "idea", "drafting", "review", "sign off", "delayed"]
 };

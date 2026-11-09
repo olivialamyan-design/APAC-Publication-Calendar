@@ -26,11 +26,8 @@ const State = (() => {
     // ---- Public holiday display layer (2026-06-18) ----
     holidaysOn: true,                 // shown by default on first load
     holidayMarkets: [],               // [] = all configured holiday markets
-    // ---------------------------------------------------------------------
-    // FUTURE STATUS FILTER GOES HERE:
-    //   statuses: [],  // [] = all; values from cfg.STATUS_VALUES
-    // See docs/MAINTENANCE.md -> "Introducing the Status field".
-    // ---------------------------------------------------------------------
+    // ---- Status filter (2026-11-09): Published | Confirmed | Estimated | Overdue - review
+    statuses: [],                     // [] = all; values from cfg.DATE_STATUS_VALUES
     calendarMonth: null               // {y, m} the calendar is showing (0-based m)
   };
 
@@ -63,6 +60,7 @@ const State = (() => {
     // holidays default ON; only record when explicitly turned off
     if (state.holidaysOn === false) q.set("hol", "0");
     if (state.holidayMarkets.length) q.set("holmkt", state.holidayMarkets.join(","));
+    if (state.statuses.length) q.set("status", state.statuses.join(","));
 
     const qs = q.toString();
     const hash = `#view=${state.view}`;
@@ -86,6 +84,8 @@ const State = (() => {
     if (q.has("q")) state.search = q.get("q");
     if (q.has("hol")) state.holidaysOn = q.get("hol") !== "0";
     if (q.has("holmkt")) state.holidayMarkets = splitList(q.get("holmkt"));
+    if (q.has("status")) state.statuses = splitList(q.get("status"))
+      .filter(v => cfg.DATE_STATUS_VALUES.includes(v));
 
     const h = new URLSearchParams(location.hash.replace(/^#/, ""));
     if (h.has("view")) {
@@ -153,8 +153,8 @@ const State = (() => {
         if (p.expected_publication_date >= today ||
             p.expected_publication_date < histStart) return false;
       }
-      // ---- FUTURE STATUS FILTER would AND here:
-      //   if (s.statuses.length && !s.statuses.includes(p.status)) return false;
+      // status (match ANY selected) - see dateStatus()
+      if (s.statuses.length && !s.statuses.includes(dateStatus(p))) return false;
       // search across name / notes / city_state / team
       if (term) {
         const hay = [p.publication_name, p.notes, p.city_state, p.team]
@@ -165,6 +165,18 @@ const State = (() => {
     });
   }
 
+  // ---- one status per record for the Status filter (mutually exclusive) ----
+  //   Published        = released issue
+  //   Overdue - review = not published and past its planned / estimated date
+  //   Estimated        = projected from Upcoming Recurring
+  //   Confirmed        = exact future date from Published & Planned
+  function dateStatus(p) {
+    if (p.published) return "Published";
+    if (p.overdue) return "Overdue - review";
+    if (p.date_confidence === "Estimated") return "Estimated";
+    return "Confirmed";
+  }
+
   // ---- distinct teams in the dataset (for the Team multi-select) ----
   function distinctTeams(all) {
     return Array.from(new Set(all.map(p => p.team).filter(Boolean))).sort();
@@ -172,6 +184,6 @@ const State = (() => {
 
   return {
     subscribe, notify, set, get, readFromUrl, syncToUrl, applyFilters,
-    distinctTeams, todayISO, plus12MonthsISO, minus12MonthsISO
+    distinctTeams, dateStatus, todayISO, plus12MonthsISO, minus12MonthsISO
   };
 })();
