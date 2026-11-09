@@ -85,7 +85,9 @@ const Detail = (() => {
           ? `<div class="dp-tbd-banner">Needs date — this issue is in the Published & Planned sheet with Publication Date "TBD". Add the exact date in the master workbook.</div>`
           : `<div class="dp-tbd-banner">No publication date set yet — this row is in the TBD queue. Click Edit to set a date.</div>`)
       : "";
-    const overdueBanner = p.overdue
+    const overdueBanner = (p.overdue && p.recurring)
+      ? `<div class="dp-overdue">Estimated date has passed. If this issue is out, add it to the Published & Planned sheet (Status = published, date and Savills URL); if it is delayed, add a planned row with the new date.</div>`
+      : p.overdue
       ? `<div class="dp-overdue">Planned date has passed. Check whether this issue is out and update the master sheet (set Status to published and add the Savills URL, or enter a new planned date).</div>`
       : "";
 

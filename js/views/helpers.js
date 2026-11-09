@@ -65,11 +65,10 @@ const H = (() => {
   //   Published  -> Status published (Published & Planned sheet, date <= build date)
   //   Confirmed  -> exact future date on a Published & Planned row
   //   Estimated  -> projected from the Recurring Timing Window / fallback
-  //   needs date -> Published & Planned row with Publication Date "TBD"
+  //   TBD        -> Published & Planned row with Publication Date "TBD" (listed in the TBD panel, no extra tag)
   const dateBadge = p => {
     if (!p) return "";
     if (p.overdue) return `<span class="badge badge-overdue">Overdue - review</span>`;
-    if (p.needs_date) return `<span class="badge badge-needs-date">needs date</span>`;
     if (p.published) return `<span class="badge badge-published">Published</span>`;
     const c = p.date_confidence || (p.recurring ? "Estimated" : "Confirmed");
     return `<span class="badge badge-conf badge-conf-${esc(c.toLowerCase())}">${esc(c)}</span>`;

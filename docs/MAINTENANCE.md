@@ -151,10 +151,14 @@ Rules:
 1. **Published & Planned rows** are shown at their exact date
    (`date_confidence = "Confirmed"`). `published` rows show a "Published" badge and
    link to the Savills URL. `planned` rows with a past date get `overdue = true`
-   and an "Overdue - review" badge. `TBD` dates go to the TBD panel with a
-   "needs date" tag.
+   and an "Overdue - review" badge. `TBD` dates go to the TBD panel (no extra tag).
+   The site title is always Publication Name + the Period typed on the sheet.
 2. **Upcoming Recurring** series are projected forward only after the latest
-   dated issue of that series. Date = Recurring Timing Window (`Early month`→5,
+   dated issue of that series. Quarter / half-year labels continue from the latest
+   Period on Published & Planned (Q3 2026 -> Q4 2026 -> ...), never re-derived from
+   the slot month; a slot is skipped if it is earlier than the series' own release
+   lag allows. An estimated issue up to 45 days late stays on the site flagged
+   `overdue` ("Overdue - review"). Date = Recurring Timing Window (`Early month`→5,
    `Mid-month`→15, `Late month`→25, weekend → previous business day), or the last
    business day of the month if no window. `Estimated`.
 3. `Next Date` is retired: put the next confirmed date on a `planned` row instead.

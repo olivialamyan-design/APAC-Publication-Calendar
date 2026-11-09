@@ -384,7 +384,11 @@ def build(path, today):
             check(PUB_SHEET, p["_row"], name, "Recurring series row has no Period - it cannot be matched to the series.")
         if s and period:
             pp = period_parse(period)
-            if s["style"] in ("Quarter", "Half-year", "Month", "Year") and pp and pp[0] != s["style"]:
+            # v6.2: the Period is always used as typed. A month label inside a quarter /
+            # half-year series (e.g. "Sep 2026") is accepted and counted as the period
+            # that contains it for estimating the next issues - no flag.
+            if s["style"] in ("Quarter", "Half-year", "Month", "Year") and pp and pp[0] != s["style"] \
+                    and not (pp[0] == "Month" and s["style"] in ("Quarter", "Half-year")):
                 check(PUB_SHEET, p["_row"], name, f"Period '{period}' does not match the series style ({s['style']}).")
             s["published"][period] = pdate
             if pdate:
@@ -471,7 +475,13 @@ def build(path, today):
         pubs = s["published"]
         # mapping slot -> period ordinal
         parsed = {lab: period_parse(lab) for lab in pubs}
-        valid = {lab: pp for lab, pp in parsed.items() if pp and pp[0] == kind}
+        valid = {}
+        for lab, pp in parsed.items():
+            if pp and pp[0] == kind:
+                valid[lab] = pp
+            elif pp and pp[0] == "Month" and kind in ("Quarter", "Half-year"):
+                per_m = 3 if kind == "Quarter" else 6
+                valid[lab] = (kind, pp[1], (pp[2] - 1) // per_m + 1)  # Sep 2026 -> Q3 2026
         if kind in ("Month",):
             slot_period = {sl: period_ord("Month", sl[0], sl[1]) for sl in slots}
         elif kind == "Year":
@@ -491,32 +501,61 @@ def build(path, today):
                 slot_period = {sl: aord + (i - ai) for i, sl in enumerate(slots)}
         latest = max((period_ord(*pp) for pp in valid.values()), default=None)
         pub_ords = {period_ord(*pp) for pp in valid.values()}
+        # v6.1: for Quarter / Half-year series the period label continues from the
+        # latest Period on the Published & Planned sheet (next period, then the one
+        # after...). Slots only decide the DATE. Month / Year series label by slot.
+        sequential = kind in ("Quarter", "Half-year") and latest is not None
+        nxt = latest + 1 if sequential else None
+        # release lag (months from period end to publication) seen on the sheet
+        lags = []
+        if sequential:
+            per_n = 3 if kind == "Quarter" else 6
+            for lab, pp in valid.items():
+                if pubs.get(lab):
+                    d_ = pubs[lab]
+                    lags.append((d_.year * 12 + d_.month) - (pp[1] * 12 + pp[2] * per_n))
+        min_lag = min(lags) if lags else None
         first = True
         overdue = []
         for sl in slots:
-            o = slot_period[sl]
-            if latest is not None and o <= latest:
-                continue
-            # never project into (or before) the month of the latest known issue (published or planned)
             if s.get("latest_date") and (sl[0], sl[1]) <= (s["latest_date"].year, s["latest_date"].month):
-                continue
-            if o in pub_ords:
                 continue
             est, conf = estimate(sl[0], sl[1], s["window"])
             if s["start"] and est < s["start"] and not (first and s["next_date"]):
                 continue
             if est < FLOOR:
                 continue
+            if sequential:
+                while nxt in pub_ords:
+                    nxt += 1
+                o = nxt
+                py_, pi_ = ord_to_period(kind, o)
+                end_m = pi_ * (3 if kind == "Quarter" else 6)
+                if min_lag is not None and (sl[0] * 12 + sl[1]) - (py_ * 12 + end_m) < min(min_lag - 1, 0):
+                    continue  # too early for this period, based on the series' own release lag
+            else:
+                o = slot_period[sl]
+                if latest is not None and o <= latest:
+                    continue
+                if o in pub_ords:
+                    continue
             if first and s["next_date"]:
                 date_, conf = s["next_date"], "Confirmed"
             else:
                 date_ = est
             if date_ > horizon:
                 break
-            if date_ < today:
+            is_overdue = date_ < today
+            if is_overdue and (today - date_).days > 45:
                 overdue.append(period_label(kind, *ord_to_period(kind, o)))
-                first = False
-                continue
+                if not sequential:
+                    first = False
+                    continue
+                continue  # sequential: the period moves to the next slot
+            if sequential:
+                nxt += 1
+            if is_overdue:
+                overdue.append(period_label(kind, *ord_to_period(kind, o)))
             first = False
             py, pi = ord_to_period(kind, o)
             plabel = period_label(kind, py, pi)
@@ -538,7 +577,7 @@ def build(path, today):
                 "record_type": "projected",
                 "published": False,
                 "needs_date": False,
-                "overdue": False,
+                "overdue": is_overdue,
                 "status": "planned",
                 "expected_publication_date": date_.isoformat(),
                 "is_tbd": False,
